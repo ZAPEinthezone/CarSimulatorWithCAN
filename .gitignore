@@ -1,0 +1,14 @@
+# Build files
+build/
+cmake-build-*/
+
+*.exe
+*.obj
+
+# IDE
+.vs/
+.vscode/
+
+# Temp
+*.log
+*.tmp
