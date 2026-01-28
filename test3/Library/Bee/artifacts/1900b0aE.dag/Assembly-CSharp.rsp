@@ -357,7 +357,9 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/CameraFollow.cs"
-"Assets/Scripts/CarMove.cs"
+"Assets/Scripts/canbas/ICSimReceiver.cs"
+"Assets/Scripts/Car/CarMove.cs"
+"Assets/Scripts/UI update/ICSimUIHandler.cs"
 -langversion:9.0
 /deterministic
 /optimize+
