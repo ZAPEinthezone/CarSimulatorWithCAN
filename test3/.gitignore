@@ -1,0 +1,28 @@
+# Build files
+build/
+cmake-build-*/
+
+*.exe
+*.obj
+
+# IDE
+.vs/
+.vscode/
+
+# Temp
+*.log
+*.tmp
+
+# 忽略整個 Library 與 Temp 資料夾
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# 忽略 Visual Studio 產生的暫存檔
+*.csproj
+*.sln
+*.suo
+*.user
