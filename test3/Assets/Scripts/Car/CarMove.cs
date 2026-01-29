@@ -1,37 +1,35 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class CarMove : MonoBehaviour
 {
-    public float maxSpeed = 30f;
-    public float acceleration = 12f;
+    [Header("移動參數")]
+    public float maxSpeed = 25f;       // 稍微下修極速，增加操控性
+    public float acceleration = 8f;    // 調低加速度，解決加速太快的問題
     public float turnSpeed = 70f;
     public float brakePower = 20f;
 
-    [Header("Road Limit")]
-    public LayerMask roadMask;
-    public float rayHeight = 2f;
-    public float rayDist = 8f;
+    [Header("自動對齊設定")]
+    public LayerMask roadMask;         // 務必在 Inspector 選擇 "Road" 圖層
+    public float rayStartHeight = 10f;
 
-    [Tooltip("離開路面時回彈強度(越大彈越多)")]
-    public float bounceStrength = 6f;
+    private float currentSpeed = 0f;
+    private Rigidbody rb;
 
-    [Tooltip("回彈時速度衰減(0.6=剩60%)")]
-    public float bounceSpeedDamp = 0.6f;
-
-    float currentSpeed = 0f;
-
-    Vector3 lastOnRoadPos;
-    Quaternion lastOnRoadRot;
-    bool hasLastOnRoad = false;
-
-    bool IsOnRoad()
+    void Start()
     {
-        Vector3 origin = transform.position + Vector3.up * rayHeight;
-        return Physics.Raycast(origin, Vector3.down, rayDist, roadMask);
+        rb = GetComponent<Rigidbody>();
+
+        // 防止碰撞時車子像不倒翁一樣亂翻
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+        // 遊戲開始時自動對齊路面
+        PlaceOnRoad();
     }
 
     void Update()
     {
+        // 1. 讀取輸入
         float moveInput = 0f;
         float turnInput = 0f;
 
@@ -40,51 +38,53 @@ public class CarMove : MonoBehaviour
         if (Input.GetKey(KeyCode.D)) turnInput += 1f;
         if (Input.GetKey(KeyCode.A)) turnInput -= 1f;
 
-        bool onRoad = IsOnRoad();
-
-        if (onRoad)
-        {
-            lastOnRoadPos = transform.position;
-            lastOnRoadRot = transform.rotation;
-            hasLastOnRoad = true;
-        }
-        else if (hasLastOnRoad)
-        {
-            Vector3 toSafe = (lastOnRoadPos - transform.position);
-            toSafe.y = 0f;
-
-            // 1) 位置往安全點推回（推回更明顯一點）
-            if (toSafe.sqrMagnitude > 0.0001f)
-                transform.position += toSafe.normalized * (bounceStrength * 1.5f) * Time.deltaTime;
-
-            // 2) 仍然允許轉向（讓你可以自己轉回路上）
-            transform.Rotate(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
-
-            // 3) 反彈感：把速度往反方向推一點點，並衰減
-            currentSpeed = Mathf.Lerp(currentSpeed, -Mathf.Abs(currentSpeed) * 0.3f, 8f * Time.deltaTime);
-
-            // 4) 讓車慢慢回正（不要太強，不然會像被鎖方向）
-            transform.rotation = Quaternion.Slerp(transform.rotation, lastOnRoadRot, 2f * Time.deltaTime);
-
-            // 不 return：讓下面的加減速邏輯仍然可以跑（你按 W 可以脫困）
-        }
-
-        else
-        {
-            // 還沒記到任何合法點之前，先不要擋你操作
-            // 讓車可以先動一下，直到第一次在路上為止
-        }
-
+        // 2. 處理加速與減速 (使用 MoveTowards 讓數值增加更平穩)
         if (moveInput > 0)
-            currentSpeed += acceleration * Time.deltaTime;
+        {
+            currentSpeed = Mathf.MoveTowards(currentSpeed, maxSpeed, acceleration * Time.deltaTime);
+        }
         else if (moveInput < 0)
-            currentSpeed -= brakePower * Time.deltaTime;
+        {
+            currentSpeed = Mathf.MoveTowards(currentSpeed, -maxSpeed * 0.4f, brakePower * Time.deltaTime);
+        }
         else
-            currentSpeed = Mathf.Lerp(currentSpeed, 0, 2f * Time.deltaTime);
+        {
+            // 放開按鍵時的自然滑行感
+            currentSpeed = Mathf.Lerp(currentSpeed, 0, 1.5f * Time.deltaTime);
+        }
 
-        currentSpeed = Mathf.Clamp(currentSpeed, -maxSpeed * 0.4f, maxSpeed);
+        // 3. 處理轉向 (在速度極低時降低轉向力，模擬真實感)
+        float speedFactor = Mathf.Clamp01(rb.velocity.magnitude / 2f);
+        transform.Rotate(Vector3.up * turnInput * turnSpeed * speedFactor * Time.deltaTime);
+    }
 
-        transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
-        transform.Rotate(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
+    void FixedUpdate()
+    {
+        // 4. 使用物理力移動車子，這能讓 CarSpeedDetector 正確抓到速度
+        // 並且能與 NavMeshGuard 的位置修正邏輯完美相容
+        Vector3 desiredVelocity = transform.forward * currentSpeed;
+
+        // 保留垂直方向的速度（例如重力造成的下墜或跳躍）
+        desiredVelocity.y = rb.velocity.y;
+
+        rb.velocity = desiredVelocity;
+    }
+
+    // 自動將車子放置於路面上
+    [ContextMenu("立即對齊路面")]
+    public void PlaceOnRoad()
+    {
+        Ray ray = new Ray(transform.position + Vector3.up * rayStartHeight, Vector3.down);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, rayStartHeight * 2f, roadMask))
+        {
+            transform.position = hit.point + Vector3.up * 0.2f; // 稍微懸空防止卡進地板
+            Debug.Log("CarMove: 已自動對齊路面");
+        }
+        else
+        {
+            Debug.LogWarning("CarMove: 找不到路面，請確認 Road Mask 是否勾選了 map 所在的圖層");
+        }
     }
 }
