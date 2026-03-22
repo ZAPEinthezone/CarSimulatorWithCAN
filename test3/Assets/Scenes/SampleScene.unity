@@ -10755,15 +10755,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPrefabs:
-  - {fileID: 591223045427588598, guid: 5584ab78b96c12842bd54d4bde0010c9, type: 3}
   - {fileID: 591223045427588598, guid: 37768d41243568f4c92809c7d46bbda3, type: 3}
   - {fileID: 591223045427588598, guid: 6dc11274b9c1e554cae1a22ee82f15c2, type: 3}
   - {fileID: 591223045427588598, guid: ad11bb64066a9f94c96590931ed1a396, type: 3}
   - {fileID: 591223045427588598, guid: 9ce1302d1435b6f49bde31b913997edd, type: 3}
   - {fileID: 591223045427588598, guid: cd75fb2b2ebfbf14ebdb174dc15d7a3f, type: 3}
   - {fileID: 591223045427588598, guid: 0158088ea89228545a9c37bc8fe656ba, type: 3}
-  spawnInterval: 4
-  maxCars: 100
+  spawnInterval: 2
+  maxCars: 10000
   startNodes:
   - {fileID: 349269046}
   - {fileID: 2083272988}
@@ -10771,6 +10770,7 @@ MonoBehaviour:
   - {fileID: 126345399}
   - {fileID: 1586603609}
   - {fileID: 1114264808}
+  - {fileID: 1354500744}
 --- !u!114 &78121639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82669,7 +82669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &683341364
 Transform:
   m_ObjectHideFlags: 0
@@ -135571,6 +135571,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -135659,7 +135660,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58ee8d5fce63bad4eba70038a95a7e48, type: 3}
   m_Name: 
@@ -135667,6 +135668,21 @@ MonoBehaviour:
   target: {fileID: 0}
   offset: {x: 0, y: 4, z: -8}
   smoothSpeed: 5
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715c4bd8ffc7af146ad2531e30dd0fba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 20
+  sprintSpeed: 60
+  lookSpeed: 2
 --- !u!114 &966379874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247338,7 +247354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes:
-  - {fileID: 0}
   - {fileID: 1226631978}
 --- !u!114 &1671676758
 MonoBehaviour:
