@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
@@ -6,10 +6,10 @@ public class NPC_WaypointDrive : MonoBehaviour
 {
     private NavMeshAgent agent;
 
-    [Header("¥Ø«eªº¾É¯è¥Ø¼Ğ")]
-    public TrafficNode targetNode; // ²{¦b¥u­n°O¦í¡u¤U¤@­ÓÂI¡v¬O½Ö´N¦n¤F¡I
+    [Header("ç›®å‰çš„å°èˆªç›®æ¨™")]
+    public TrafficNode targetNode; // ç¾åœ¨åªè¦è¨˜ä½ã€Œä¸‹ä¸€å€‹é»ã€æ˜¯èª°å°±å¥½äº†ï¼
 
-    [Header("¨¾¼²¹p¹F")]
+    [Header("é˜²æ’é›·é”")]
     public float sensorLength = 6f;
     public Vector3 sensorOffset = new Vector3(0, 0.5f, 0.5f);
 
@@ -30,14 +30,22 @@ public class NPC_WaypointDrive : MonoBehaviour
 
         CheckForwardCollision();
 
-        // ©è¹F¥Ø¼Ğ¸`ÂI®É¡A¦V¸`ÂI¡u°İ¸ô¡v¡I
+        // æŠµé”ç›®æ¨™ç¯€é»æ™‚ï¼Œå‘ç¯€é»ã€Œå•è·¯ã€ï¼
         if (!agent.pathPending && agent.remainingDistance < 2f)
         {
-            TrafficNode nextNode = targetNode.GetNextNode(); // ¦ÑÁó¡A¤U¤@¨B¥h­ş¡H
+            TrafficNode nextNode = targetNode.GetNextNode(); // è€é—†ï¼Œä¸‹ä¸€æ­¥å»å“ªï¼Ÿ
+
             if (nextNode != null)
             {
-                targetNode = nextNode; // §ó·s¥Ø¼Ğ
+                // å¦‚æœé‚„æœ‰è·¯ï¼Œå°±ç¹¼çºŒå¾€ä¸‹ä¸€ç«™é–‹
+                targetNode = nextNode;
                 agent.SetDestination(targetNode.transform.position);
+            }
+            else
+            {
+                // ğŸš— æ ¸å¿ƒé­”æ³•ï¼šå¦‚æœ nextNode æ˜¯ç©ºçš„ (ä»£è¡¨æ²’è·¯äº†)
+                // ä»»å‹™å®Œæˆï¼Œç›´æ¥æŠŠé€™å°è»Šå¾éŠæˆ²ä¸­åˆªé™¤ï¼
+                Destroy(gameObject);
             }
         }
     }
@@ -49,7 +57,7 @@ public class NPC_WaypointDrive : MonoBehaviour
         {
             if (hit.collider.CompareTag("Car"))
             {
-                agent.isStopped = true; // ¹J¨ì«e¨®¨Ä¨Ä·Ù¨®
+                agent.isStopped = true; // é‡åˆ°å‰è»Šä¹–ä¹–ç…è»Š
                 Debug.DrawLine(transform.position, hit.point, Color.red);
                 return;
             }

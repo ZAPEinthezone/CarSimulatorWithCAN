@@ -1,18 +1,18 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class NPCCarSpawner : MonoBehaviour
+public class NPC_CarSpawner : MonoBehaviour
 {
-    [Header("¥Í¦¨³]©w")]
-    public GameObject carPrefab;
-    public float spawnInterval = 4f;
-    public int maxCars = 10;
+    [Header("ç”Ÿæˆè¨­å®š")]
+    // ğŸŒŸ é€™è£¡å‡ç´šæˆé™£åˆ—äº†ï¼å¯ä»¥å¡ç„¡é™å¤šç¨®è»Š
+    public GameObject[] carPrefabs;
 
-    [Header("¥X¥ÍÂIªº¸`ÂI (¥i©ñ¦h­Ó)")]
-    public List<TrafficNode> startNodes; // §â¦a¹Ï¤WÀH«K´X­Ó Node ¥á¶i¨Ó·í¥X¥ÍÂI
+    public float spawnInterval = 1.5f;
+    public int maxCars = 50;
 
-    private int currentCarCount = 0;
+    [Header("å‡ºç”Ÿé»çš„ç¯€é» (å¯æ”¾å¤šå€‹)")]
+    public List<TrafficNode> startNodes;
 
     void Start()
     {
@@ -21,23 +21,27 @@ public class NPCCarSpawner : MonoBehaviour
 
     IEnumerator SpawnCarRoutine()
     {
-        while (currentCarCount < maxCars)
+        while (true)
         {
-            if (startNodes.Count > 0)
+            GameObject[] currentCars = GameObject.FindGameObjectsWithTag("Car");
+
+            // ç¢ºä¿æœ‰è¨­å®šè»Šæ¬¾ã€æœ‰å‡ºç”Ÿé»ï¼Œä¸”é‚„æ²’é”ä¸Šé™
+            if (carPrefabs.Length > 0 && startNodes.Count > 0 && currentCars.Length < maxCars)
             {
-                // ÀH¾÷¬D¿ï¤@­Ó¥X¥ÍÂI
                 TrafficNode startNode = startNodes[Random.Range(0, startNodes.Count)];
 
-                GameObject newCar = Instantiate(carPrefab, startNode.transform.position, startNode.transform.rotation);
+                // ğŸ² æ ¸å¿ƒé­”æ³•ï¼šå¾ä½ çµ¦çš„è»Šæ¬¾æ¸…å–®è£¡ï¼Œéš¨æ©ŸæŠ½ä¸€å°å‡ºä¾†ï¼
+                GameObject randomCarPrefab = carPrefabs[Random.Range(0, carPrefabs.Length)];
+
+                GameObject newCar = Instantiate(randomCarPrefab, startNode.transform.position, startNode.transform.rotation);
 
                 NPC_WaypointDrive driveScript = newCar.GetComponent<NPC_WaypointDrive>();
                 if (driveScript != null)
                 {
-                    // §i¶D·s¨®¤l¡G§Aªº²Ä¤@¯¸¡A´N¬O¥X¥ÍÂIªº¡u¤U¤@¯¸¡v
                     driveScript.targetNode = startNode.GetNextNode();
                 }
-                currentCarCount++;
             }
+
             yield return new WaitForSeconds(spawnInterval);
         }
     }
