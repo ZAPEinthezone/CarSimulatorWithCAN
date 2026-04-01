@@ -168,6 +168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 649407609}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &7189207
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +217,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1364487828}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &9309251
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +251,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 816908008}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &9309253
 Transform:
   m_ObjectHideFlags: 0
@@ -306,6 +315,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1194060669}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &12233809
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +364,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1447596883}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &12805849
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +413,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 217141130}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &13780724
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +462,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1285077232}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &20037596
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +511,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 735992134}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &27916519
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +545,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1669205441}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &27916521
 Transform:
   m_ObjectHideFlags: 0
@@ -662,6 +689,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1973633689}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &33599396
 Transform:
   m_ObjectHideFlags: 0
@@ -708,6 +738,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1640993409}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &38330407
 Transform:
   m_ObjectHideFlags: 0
@@ -754,6 +787,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1092564968}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &38706307
 Transform:
   m_ObjectHideFlags: 0
@@ -800,6 +836,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 168515487}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &41035365
 Transform:
   m_ObjectHideFlags: 0
@@ -846,6 +885,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1069186672}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &46827363
 Transform:
   m_ObjectHideFlags: 0
@@ -907,6 +949,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1538071152}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &53201590
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,6 +983,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1979757055}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &53201592
 Transform:
   m_ObjectHideFlags: 0
@@ -999,6 +1047,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1234803195}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &61187387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,6 +1096,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1457290857}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &62582071
 Mesh:
   m_ObjectHideFlags: 0
@@ -7692,6 +7746,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1420076159}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &76578167
 Transform:
   m_ObjectHideFlags: 0
@@ -7800,6 +7857,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 762575694}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &83356519
 Transform:
   m_ObjectHideFlags: 0
@@ -7861,6 +7921,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 346229383}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &94762639
 GameObject:
   m_ObjectHideFlags: 0
@@ -7892,6 +7955,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1833907284}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &94762641
 Transform:
   m_ObjectHideFlags: 0
@@ -7953,6 +8019,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1581316557}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &101110221
 GameObject:
   m_ObjectHideFlags: 0
@@ -7999,6 +8068,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 692261177}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &101774313
 GameObject:
   m_ObjectHideFlags: 0
@@ -8030,6 +8102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1017529852}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &101774315
 Transform:
   m_ObjectHideFlags: 0
@@ -8076,6 +8151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 875137107}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &104790844
 Transform:
   m_ObjectHideFlags: 0
@@ -8121,6 +8199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes: []
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &115244560
 Transform:
   m_ObjectHideFlags: 0
@@ -8182,6 +8263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 457084043}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &119783969
 GameObject:
   m_ObjectHideFlags: 0
@@ -8262,6 +8346,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1417504084}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &122191705
 GameObject:
   m_ObjectHideFlags: 1
@@ -8412,6 +8499,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1402389649}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &125892228
 Transform:
   m_ObjectHideFlags: 0
@@ -8473,6 +8563,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1877460273}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &126578028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8504,6 +8597,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 543237846}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &126578030
 Transform:
   m_ObjectHideFlags: 0
@@ -8633,6 +8729,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1695283303}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &131123736
 Transform:
   m_ObjectHideFlags: 0
@@ -8679,6 +8778,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1876103966}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &131972574
 Transform:
   m_ObjectHideFlags: 0
@@ -8844,6 +8946,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 547552805}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &133475341
 Transform:
   m_ObjectHideFlags: 0
@@ -8905,6 +9010,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 602656013}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &136956333
 GameObject:
   m_ObjectHideFlags: 0
@@ -8951,6 +9059,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 725147672}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &138580829
 GameObject:
   m_ObjectHideFlags: 0
@@ -8997,6 +9108,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1732218271}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &138875818
 GameObject:
   m_ObjectHideFlags: 0
@@ -9028,6 +9142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 681204144}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &138875820
 Transform:
   m_ObjectHideFlags: 0
@@ -9204,6 +9321,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1265103798}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &151415201
 GameObject:
   m_ObjectHideFlags: 0
@@ -9250,6 +9370,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1377053710}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &155478477
 GameObject:
   m_ObjectHideFlags: 0
@@ -9281,6 +9404,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1713161584}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &155478479
 Transform:
   m_ObjectHideFlags: 0
@@ -9327,6 +9453,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 769352437}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &163492161
 Transform:
   m_ObjectHideFlags: 0
@@ -9538,6 +9667,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 38330406}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &168515488
 Transform:
   m_ObjectHideFlags: 0
@@ -13782,6 +13914,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 53201591}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &177020165
 Transform:
   m_ObjectHideFlags: 0
@@ -13843,6 +13978,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 54791876}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &178291164
 Mesh:
   m_ObjectHideFlags: 0
@@ -14039,6 +14177,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1522036021}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &182416988
 Transform:
   m_ObjectHideFlags: 0
@@ -14085,6 +14226,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1054892946}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &186787758
 Transform:
   m_ObjectHideFlags: 0
@@ -14131,6 +14275,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 800564092}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &193073708
 Transform:
   m_ObjectHideFlags: 0
@@ -14178,6 +14325,9 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 1712859817}
   - {fileID: 1467337448}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &197737834
 Transform:
   m_ObjectHideFlags: 0
@@ -14224,6 +14374,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 387722890}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &201629447
 Transform:
   m_ObjectHideFlags: 0
@@ -14285,6 +14438,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1743335973}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &206932512
 GameObject:
   m_ObjectHideFlags: 0
@@ -14331,6 +14487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 33599395}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &213249936
 GameObject:
   m_ObjectHideFlags: 0
@@ -14362,6 +14521,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2036317830}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &213249938
 Transform:
   m_ObjectHideFlags: 0
@@ -14423,6 +14585,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 849454758}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &215346921
 GameObject:
   m_ObjectHideFlags: 0
@@ -14552,6 +14717,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1061128645}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &216252348
 GameObject:
   m_ObjectHideFlags: 0
@@ -14598,6 +14766,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 693173783}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &217141128
 GameObject:
   m_ObjectHideFlags: 0
@@ -14644,6 +14815,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1345566082}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &220018227
 Mesh:
   m_ObjectHideFlags: 0
@@ -14855,6 +15029,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1721031566}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!28 &234901684
 Texture2D:
   m_ObjectHideFlags: 0
@@ -14997,6 +15174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1716993432}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &250427485
 Transform:
   m_ObjectHideFlags: 0
@@ -15058,6 +15238,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 758416155}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &260965175
 GameObject:
   m_ObjectHideFlags: 0
@@ -15179,6 +15362,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 476139691}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &268172195
 GameObject:
   m_ObjectHideFlags: 0
@@ -15210,6 +15396,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2016271828}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &268172197
 Transform:
   m_ObjectHideFlags: 0
@@ -15271,6 +15460,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 232918768}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &273638110
 GameObject:
   m_ObjectHideFlags: 0
@@ -15349,6 +15541,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 832857089}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &287663419
 GameObject:
   m_ObjectHideFlags: 0
@@ -15380,6 +15575,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 301254884}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &287663421
 Transform:
   m_ObjectHideFlags: 0
@@ -15441,6 +15639,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 668843230}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &288278368
 GameObject:
   m_ObjectHideFlags: 0
@@ -15472,6 +15673,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 888095064}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &288278370
 Transform:
   m_ObjectHideFlags: 0
@@ -15518,6 +15722,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 605839999}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &289495121
 Transform:
   m_ObjectHideFlags: 0
@@ -15579,6 +15786,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 499070497}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &291313421
 GameObject:
   m_ObjectHideFlags: 0
@@ -15625,6 +15835,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 13780726}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &293757082
 GameObject:
   m_ObjectHideFlags: 0
@@ -17802,6 +18015,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 322272226}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &297708275
 GameObject:
   m_ObjectHideFlags: 0
@@ -17848,6 +18064,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1531958812}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &301254883
 GameObject:
   m_ObjectHideFlags: 0
@@ -17879,6 +18098,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 411959512}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &301254885
 Transform:
   m_ObjectHideFlags: 0
@@ -17940,6 +18162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 630534826}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &302880744
 GameObject:
   m_ObjectHideFlags: 0
@@ -23569,6 +23794,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1978737525}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &310640495
 Transform:
   m_ObjectHideFlags: 0
@@ -23630,6 +23858,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1756855632}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!64 &317905662
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23814,6 +24045,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 135477621}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &322527724
 GameObject:
   m_ObjectHideFlags: 0
@@ -24290,6 +24524,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 749055666}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &345707518
 Transform:
   m_ObjectHideFlags: 0
@@ -24351,6 +24588,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 392908072}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &348877625
 GameObject:
   m_ObjectHideFlags: 0
@@ -24480,6 +24720,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 841527167}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &350289858
 GameObject:
   m_ObjectHideFlags: 0
@@ -24512,6 +24755,9 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 250427484}
   - {fileID: 1201962324}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &350289860
 Transform:
   m_ObjectHideFlags: 0
@@ -24558,6 +24804,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1676018193}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &351247786
 Transform:
   m_ObjectHideFlags: 0
@@ -24734,6 +24983,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 499070497}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &360272847
 GameObject:
   m_ObjectHideFlags: 0
@@ -24780,6 +25032,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1715426178}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!28 &360387993
 Texture2D:
   m_ObjectHideFlags: 0
@@ -24875,6 +25130,9 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 2001402517}
   - {fileID: 950441578}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &364773756
 Mesh:
   m_ObjectHideFlags: 0
@@ -25118,6 +25376,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1256493052}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &374181210
 GameObject:
   m_ObjectHideFlags: 0
@@ -25149,6 +25410,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 288253683}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &374181212
 Transform:
   m_ObjectHideFlags: 0
@@ -25210,6 +25474,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1300740386}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &384484089
 GameObject:
   m_ObjectHideFlags: 0
@@ -25256,6 +25523,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1447846496}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &387722889
 GameObject:
   m_ObjectHideFlags: 0
@@ -25287,6 +25557,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1356118400}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &387722891
 Transform:
   m_ObjectHideFlags: 0
@@ -25333,6 +25606,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2003374216}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &390663293
 Transform:
   m_ObjectHideFlags: 0
@@ -25394,6 +25670,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 622375378}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &392908070
 GameObject:
   m_ObjectHideFlags: 0
@@ -25440,6 +25719,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1320586950}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &398698325
 GameObject:
   m_ObjectHideFlags: 0
@@ -25471,6 +25753,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 83356518}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &398698327
 Transform:
   m_ObjectHideFlags: 0
@@ -25532,6 +25817,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 522268731}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &411959510
 GameObject:
   m_ObjectHideFlags: 0
@@ -25578,6 +25866,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 138580831}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &413226860
 GameObject:
   m_ObjectHideFlags: 0
@@ -25624,6 +25915,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 490290955}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &414830605
 GameObject:
   m_ObjectHideFlags: 0
@@ -25655,6 +25949,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 645223869}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &414830607
 Transform:
   m_ObjectHideFlags: 0
@@ -25716,6 +26013,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 924840657}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &425530985
 GameObject:
   m_ObjectHideFlags: 0
@@ -25764,6 +26064,9 @@ MonoBehaviour:
   - {fileID: 1648546865}
   - {fileID: 357656091}
   - {fileID: 302800955}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &428677212
 GameObject:
   m_ObjectHideFlags: 0
@@ -25795,6 +26098,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 182416987}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &428677214
 Transform:
   m_ObjectHideFlags: 0
@@ -26053,6 +26359,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2100202897}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &437911762
 GameObject:
   m_ObjectHideFlags: 0
@@ -26099,6 +26408,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 777882166}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &438358583
 GameObject:
   m_ObjectHideFlags: 0
@@ -26130,6 +26442,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1766442781}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &438358585
 Transform:
   m_ObjectHideFlags: 0
@@ -26191,6 +26506,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 286955836}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &447526530
 GameObject:
   m_ObjectHideFlags: 0
@@ -26237,6 +26555,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 700765456}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &451662243
 GameObject:
   m_ObjectHideFlags: 0
@@ -42904,6 +43225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 879347712}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &458848168
 GameObject:
   m_ObjectHideFlags: 0
@@ -42935,6 +43259,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 133475340}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &458848170
 Transform:
   m_ObjectHideFlags: 0
@@ -42996,6 +43323,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 49335364}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &460973651
 GameObject:
   m_ObjectHideFlags: 0
@@ -43059,6 +43389,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 288278369}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &469673318
 Transform:
   m_ObjectHideFlags: 0
@@ -43120,6 +43453,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2074710121}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &478920522
 Mesh:
   m_ObjectHideFlags: 0
@@ -43331,6 +43667,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 608394204}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &482800365
 GameObject:
   m_ObjectHideFlags: 0
@@ -43362,6 +43701,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 414830606}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &482800367
 Transform:
   m_ObjectHideFlags: 0
@@ -43423,6 +43765,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1579464283}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &490290953
 GameObject:
   m_ObjectHideFlags: 0
@@ -43469,6 +43814,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 214586716}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &497849769
 GameObject:
   m_ObjectHideFlags: 0
@@ -43515,6 +43863,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1848356910}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &499070495
 GameObject:
   m_ObjectHideFlags: 0
@@ -43561,6 +43912,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 645905440}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &512329425
 GameObject:
   m_ObjectHideFlags: 0
@@ -43607,6 +43961,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1209137794}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &513028714
 GameObject:
   m_ObjectHideFlags: 0
@@ -43638,6 +43995,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 411959512}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &513028716
 Transform:
   m_ObjectHideFlags: 0
@@ -43699,6 +44059,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1670270028}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &513934324
 GameObject:
   m_ObjectHideFlags: 1
@@ -43866,6 +44229,9 @@ MonoBehaviour:
   - {fileID: 202547758}
   - {fileID: 1070385426}
   - {fileID: 177020164}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &521412820
 GameObject:
   m_ObjectHideFlags: 0
@@ -43995,6 +44361,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1895369534}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &523566911
 GameObject:
   m_ObjectHideFlags: 0
@@ -44026,6 +44395,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 41035364}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &523566913
 Transform:
   m_ObjectHideFlags: 0
@@ -44087,6 +44459,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1847425622}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &538251495
 GameObject:
   m_ObjectHideFlags: 0
@@ -44133,6 +44508,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1055578255}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &543237845
 GameObject:
   m_ObjectHideFlags: 0
@@ -44164,6 +44542,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 286955836}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &543237847
 Transform:
   m_ObjectHideFlags: 0
@@ -44210,6 +44591,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1988468251}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &547552806
 Transform:
   m_ObjectHideFlags: 0
@@ -44271,6 +44655,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 552337878}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &552337876
 GameObject:
   m_ObjectHideFlags: 0
@@ -44317,6 +44704,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2122828852}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &554541416
 GameObject:
   m_ObjectHideFlags: 0
@@ -44427,6 +44817,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 995226707}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &561561941
 GameObject:
   m_ObjectHideFlags: 0
@@ -44458,6 +44851,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 428677213}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &561561943
 Transform:
   m_ObjectHideFlags: 0
@@ -44519,6 +44915,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 972736938}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &567400301
 GameObject:
   m_ObjectHideFlags: 0
@@ -44565,6 +44964,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 9509149}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &568148538
 GameObject:
   m_ObjectHideFlags: 0
@@ -44611,6 +45013,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2130162831}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &574037544
 GameObject:
   m_ObjectHideFlags: 0
@@ -44657,6 +45062,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 288253683}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &585840424
 GameObject:
   m_ObjectHideFlags: 0
@@ -44688,6 +45096,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1147961909}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &585840426
 Transform:
   m_ObjectHideFlags: 0
@@ -44749,6 +45160,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 619914923}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &586728795
 GameObject:
   m_ObjectHideFlags: 0
@@ -44795,6 +45209,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1404837261}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &587858432
 GameObject:
   m_ObjectHideFlags: 0
@@ -44826,6 +45243,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 766040093}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &587858434
 Transform:
   m_ObjectHideFlags: 0
@@ -44887,6 +45307,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 20037598}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
+--- !u!1 &597118356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3996854906587344390, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &602656011
 GameObject:
   m_ObjectHideFlags: 0
@@ -44933,6 +45361,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1470801900}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &605839998
 GameObject:
   m_ObjectHideFlags: 0
@@ -44964,6 +45395,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1589707682}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &605840000
 Transform:
   m_ObjectHideFlags: 0
@@ -45012,6 +45446,9 @@ MonoBehaviour:
   - {fileID: 672605137}
   - {fileID: 1565802346}
   - {fileID: 1586237779}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &608394205
 Transform:
   m_ObjectHideFlags: 0
@@ -45058,6 +45495,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1560887302}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &609389491
 Transform:
   m_ObjectHideFlags: 0
@@ -45119,6 +45559,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1975136104}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &612669321
 GameObject:
   m_ObjectHideFlags: 0
@@ -45150,6 +45593,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 268172196}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &612669323
 Transform:
   m_ObjectHideFlags: 0
@@ -45165,6 +45611,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 30146498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &612761735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1590606239858199312, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &615634810
 GameObject:
   m_ObjectHideFlags: 0
@@ -45196,6 +45647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1860654821}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &615634812
 Transform:
   m_ObjectHideFlags: 0
@@ -45257,6 +45711,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1131224179}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &619914921
 GameObject:
   m_ObjectHideFlags: 0
@@ -45303,6 +45760,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1002897355}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &620021333
 GameObject:
   m_ObjectHideFlags: 0
@@ -45349,6 +45809,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1629559919}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &622375376
 GameObject:
   m_ObjectHideFlags: 0
@@ -45395,6 +45858,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1859527783}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &622799709
 GameObject:
   m_ObjectHideFlags: 0
@@ -45524,6 +45990,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1646619864}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &625583598
 GameObject:
   m_ObjectHideFlags: 0
@@ -45557,6 +46026,9 @@ MonoBehaviour:
   - {fileID: 666220426}
   - {fileID: 1024527558}
   - {fileID: 698691209}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &625583600
 Transform:
   m_ObjectHideFlags: 0
@@ -45650,6 +46122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 684038403}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &645223868
 GameObject:
   m_ObjectHideFlags: 0
@@ -45681,6 +46156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 920942862}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &645223870
 Transform:
   m_ObjectHideFlags: 0
@@ -45742,6 +46220,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 610278765}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &645907420
 GameObject:
   m_ObjectHideFlags: 0
@@ -45788,6 +46269,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1729811640}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &649407607
 GameObject:
   m_ObjectHideFlags: 0
@@ -45834,6 +46318,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1506974059}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &651387850
 GameObject:
   m_ObjectHideFlags: 0
@@ -45865,6 +46352,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1284113627}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &651387852
 Transform:
   m_ObjectHideFlags: 0
@@ -45926,6 +46416,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 413226862}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &657421167
 GameObject:
   m_ObjectHideFlags: 0
@@ -45957,6 +46450,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1722990639}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &657421169
 Transform:
   m_ObjectHideFlags: 0
@@ -46018,6 +46514,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1085264053}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &666220425
 GameObject:
   m_ObjectHideFlags: 0
@@ -46049,6 +46548,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 823316187}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &666220427
 Transform:
   m_ObjectHideFlags: 0
@@ -46110,6 +46612,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 497849771}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &672605136
 GameObject:
   m_ObjectHideFlags: 0
@@ -46141,6 +46646,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 482800366}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &672605138
 Transform:
   m_ObjectHideFlags: 0
@@ -54810,6 +55318,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1997341950}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &676265891
 GameObject:
   m_ObjectHideFlags: 0
@@ -54856,6 +55367,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1279475180}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &676976959
 GameObject:
   m_ObjectHideFlags: 0
@@ -54992,6 +55506,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1422998852}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &681204145
 Transform:
   m_ObjectHideFlags: 0
@@ -55085,6 +55602,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1492870537}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &692261175
 GameObject:
   m_ObjectHideFlags: 0
@@ -55131,6 +55651,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 563252705}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &693173781
 GameObject:
   m_ObjectHideFlags: 0
@@ -55177,6 +55700,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1379374809}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &693749283
 GameObject:
   m_ObjectHideFlags: 0
@@ -55223,6 +55749,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1443811474}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &695884940
 GameObject:
   m_ObjectHideFlags: 0
@@ -55286,6 +55815,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1226693204}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &698691210
 Transform:
   m_ObjectHideFlags: 0
@@ -55347,6 +55879,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 616615332}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &700765454
 GameObject:
   m_ObjectHideFlags: 0
@@ -55393,6 +55928,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1565161282}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -55533,6 +56071,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 827174165}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &720577482
 GameObject:
   m_ObjectHideFlags: 0
@@ -55580,6 +56121,9 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 672605137}
   - {fileID: 1565802346}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &720602198
 GameObject:
   m_ObjectHideFlags: 0
@@ -55694,6 +56238,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1607391910}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &722527951
 Transform:
   m_ObjectHideFlags: 0
@@ -55755,6 +56302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 778822261}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &726571596
 GameObject:
   m_ObjectHideFlags: 0
@@ -55786,6 +56336,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 758416155}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &726571598
 Transform:
   m_ObjectHideFlags: 0
@@ -55915,6 +56468,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1417504084}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &730128219
 Transform:
   m_ObjectHideFlags: 0
@@ -55976,6 +56532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 269882977}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &730773304
 Mesh:
   m_ObjectHideFlags: 0
@@ -56187,6 +56746,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1160484166}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!64 &738094385
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56240,6 +56802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 513028715}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &740910465
 Transform:
   m_ObjectHideFlags: 0
@@ -56301,6 +56866,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 711065488}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &749055665
 GameObject:
   m_ObjectHideFlags: 0
@@ -56332,6 +56900,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1892487117}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &749055667
 Transform:
   m_ObjectHideFlags: 0
@@ -56461,6 +57032,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1436681804}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &758416156
 Transform:
   m_ObjectHideFlags: 0
@@ -56508,6 +57082,9 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 2109588294}
   - {fileID: 1832181435}
+  isStopLine: 1
+  currentIsRed: 0
+  redLightModel: {fileID: 612761735}
 --- !u!4 &759892404
 Transform:
   m_ObjectHideFlags: 0
@@ -56517,7 +57094,7 @@ Transform:
   m_GameObject: {fileID: 759892402}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: -361.05, y: -389.74, z: -174.88}
+  m_LocalPosition: {x: -358.63, y: -389.69, z: -175.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56554,6 +57131,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 759892403}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &762575695
 Transform:
   m_ObjectHideFlags: 0
@@ -56615,6 +57195,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2041882470}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &766040092
 GameObject:
   m_ObjectHideFlags: 0
@@ -56646,6 +57229,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 651387851}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &766040094
 Transform:
   m_ObjectHideFlags: 0
@@ -56780,6 +57366,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2135106654}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &769352438
 Transform:
   m_ObjectHideFlags: 0
@@ -56826,6 +57415,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1936603134}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &772286456
 Transform:
   m_ObjectHideFlags: 0
@@ -56970,6 +57562,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1414267801}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &778822259
 GameObject:
   m_ObjectHideFlags: 0
@@ -57016,6 +57611,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 177191378}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &786674132
 GameObject:
   m_ObjectHideFlags: 0
@@ -57061,6 +57659,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes: []
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &794739078
 GameObject:
   m_ObjectHideFlags: 0
@@ -71459,6 +72060,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes: []
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &800564093
 Transform:
   m_ObjectHideFlags: 0
@@ -71520,6 +72124,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 559197138}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &807591776
 GameObject:
   m_ObjectHideFlags: 0
@@ -71634,6 +72241,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 657421168}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &816908009
 Transform:
   m_ObjectHideFlags: 0
@@ -73976,6 +74586,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1313156872}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &823316188
 Transform:
   m_ObjectHideFlags: 0
@@ -74037,6 +74650,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 12805851}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &832857087
 GameObject:
   m_ObjectHideFlags: 0
@@ -74083,6 +74699,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 786674134}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &835600728
 GameObject:
   m_ObjectHideFlags: 0
@@ -74129,6 +74748,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 920942862}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &836629894
 GameObject:
   m_ObjectHideFlags: 0
@@ -74206,6 +74828,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2137513932}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &849105413
 GameObject:
   m_ObjectHideFlags: 0
@@ -83850,6 +84475,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1730958902}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &868364993
 GameObject:
   m_ObjectHideFlags: 0
@@ -83896,6 +84524,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 372739655}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &875137106
 GameObject:
   m_ObjectHideFlags: 0
@@ -83927,6 +84558,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 623337450}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &875137108
 Transform:
   m_ObjectHideFlags: 0
@@ -83988,6 +84622,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1325676091}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &882468864
 GameObject:
   m_ObjectHideFlags: 0
@@ -84034,6 +84671,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1417504084}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &882646775
 GameObject:
   m_ObjectHideFlags: 0
@@ -84112,6 +84752,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1359656148}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &888095063
 GameObject:
   m_ObjectHideFlags: 0
@@ -84143,6 +84786,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1379374809}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &888095065
 Transform:
   m_ObjectHideFlags: 0
@@ -84283,6 +84929,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 12233811}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &896190186
 GameObject:
   m_ObjectHideFlags: 0
@@ -84314,6 +84963,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1328218310}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &896190188
 Transform:
   m_ObjectHideFlags: 0
@@ -84540,6 +85192,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1559294410}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &905117934
 GameObject:
   m_ObjectHideFlags: 0
@@ -84650,6 +85305,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1283628546}
+  isStopLine: 1
+  currentIsRed: 0
+  redLightModel: {fileID: 2059058789}
 --- !u!1 &920942860
 GameObject:
   m_ObjectHideFlags: 0
@@ -84696,6 +85354,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1844807509}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &921802214
 GameObject:
   m_ObjectHideFlags: 0
@@ -84825,6 +85486,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 745175111}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &924840655
 GameObject:
   m_ObjectHideFlags: 0
@@ -84871,6 +85535,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 903568465}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &925505016
 GameObject:
   m_ObjectHideFlags: 0
@@ -87199,6 +87866,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1912835119}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &942721411
 GameObject:
   m_ObjectHideFlags: 0
@@ -87230,6 +87900,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 561561942}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &942721413
 Transform:
   m_ObjectHideFlags: 0
@@ -87441,6 +88114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1227621754}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &949140474
 Transform:
   m_ObjectHideFlags: 0
@@ -87487,6 +88163,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 722527950}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &949218916
 Transform:
   m_ObjectHideFlags: 0
@@ -87549,6 +88228,9 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 2036841826}
   - {fileID: 2096019498}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &962248255
 Mesh:
   m_ObjectHideFlags: 0
@@ -88049,6 +88731,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 567400303}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &987750808
 GameObject:
   m_ObjectHideFlags: 0
@@ -88095,6 +88780,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 591905027}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &995226705
 GameObject:
   m_ObjectHideFlags: 0
@@ -88141,6 +88829,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1226693204}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &995768497
 GameObject:
   m_ObjectHideFlags: 0
@@ -88172,6 +88863,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 469673317}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &995768499
 Transform:
   m_ObjectHideFlags: 0
@@ -88218,6 +88912,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1498044228}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1001829196
 Transform:
   m_ObjectHideFlags: 0
@@ -88279,6 +88976,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1203912411}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &1004858459
 Mesh:
   m_ObjectHideFlags: 0
@@ -88490,6 +89190,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1701750351}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1017529851
 GameObject:
   m_ObjectHideFlags: 0
@@ -88521,6 +89224,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 186787757}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1017529853
 Transform:
   m_ObjectHideFlags: 0
@@ -88599,6 +89305,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1679392369}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1024527559
 Transform:
   m_ObjectHideFlags: 0
@@ -89023,6 +89732,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1676769575}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1047152398
 Transform:
   m_ObjectHideFlags: 0
@@ -89084,6 +89796,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1643221739}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1054892945
 GameObject:
   m_ObjectHideFlags: 0
@@ -89115,6 +89830,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 666220426}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1054892947
 Transform:
   m_ObjectHideFlags: 0
@@ -89176,6 +89894,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1755427029}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1061128643
 GameObject:
   m_ObjectHideFlags: 0
@@ -89222,6 +89943,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1863007847}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1065956272
 GameObject:
   m_ObjectHideFlags: 0
@@ -89268,6 +89992,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 364035593}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1068050115
 GameObject:
   m_ObjectHideFlags: 0
@@ -89314,6 +90041,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 765529646}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1069186671
 GameObject:
   m_ObjectHideFlags: 0
@@ -89345,6 +90075,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 587858433}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1069186673
 Transform:
   m_ObjectHideFlags: 0
@@ -89406,6 +90139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 286955836}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1085264051
 GameObject:
   m_ObjectHideFlags: 0
@@ -89452,6 +90188,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 932536534}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1089893544
 GameObject:
   m_ObjectHideFlags: 0
@@ -89498,6 +90237,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 537940726}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1090982644
 GameObject:
   m_ObjectHideFlags: 0
@@ -89612,6 +90354,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1328218310}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1092564969
 Transform:
   m_ObjectHideFlags: 0
@@ -89673,6 +90418,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 568148540}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1103616507
 GameObject:
   m_ObjectHideFlags: 0
@@ -89704,6 +90452,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1786576891}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1103616509
 Transform:
   m_ObjectHideFlags: 0
@@ -89750,6 +90501,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 458848169}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1106661273
 Transform:
   m_ObjectHideFlags: 0
@@ -89894,6 +90648,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 424646840}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1116965719
 GameObject:
   m_ObjectHideFlags: 0
@@ -89925,6 +90682,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 625583599}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1116965721
 Transform:
   m_ObjectHideFlags: 0
@@ -89966,7 +90726,7 @@ Transform:
   m_GameObject: {fileID: 1120685771}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: -381.01, y: -390, z: -174.09}
+  m_LocalPosition: {x: -382.49, y: -390.03, z: -174.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89986,6 +90746,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1807117831}
+  isStopLine: 1
+  currentIsRed: 0
+  redLightModel: {fileID: 597118356}
 --- !u!1 &1131224177
 GameObject:
   m_ObjectHideFlags: 0
@@ -90032,6 +90795,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1565802346}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1131428415
 GameObject:
   m_ObjectHideFlags: 0
@@ -90078,6 +90844,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 150435211}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1138321522
 GameObject:
   m_ObjectHideFlags: 0
@@ -93512,6 +94281,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2109588294}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1147961908
 GameObject:
   m_ObjectHideFlags: 0
@@ -93543,6 +94315,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 163492160}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1147961910
 Transform:
   m_ObjectHideFlags: 0
@@ -93687,6 +94462,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1170728259}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!28 &1155722819
 Texture2D:
   m_ObjectHideFlags: 0
@@ -93781,6 +94559,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 868364995}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1163583134
 GameObject:
   m_ObjectHideFlags: 0
@@ -93827,6 +94608,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2023844175}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1168699963
 GameObject:
   m_ObjectHideFlags: 0
@@ -93956,6 +94740,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2106948458}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1180675316
 GameObject:
   m_ObjectHideFlags: 1
@@ -94420,6 +95207,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1425639752}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1201962323
 GameObject:
   m_ObjectHideFlags: 0
@@ -94451,6 +95241,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 38706306}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1201962325
 Transform:
   m_ObjectHideFlags: 0
@@ -94512,6 +95305,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 674612987}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1204190604
 GameObject:
   m_ObjectHideFlags: 0
@@ -94543,6 +95339,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1843817469}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1204190606
 Transform:
   m_ObjectHideFlags: 0
@@ -94604,6 +95403,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 7189209}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1209137792
 GameObject:
   m_ObjectHideFlags: 0
@@ -94650,6 +95452,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1152925859}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1213073755
 GameObject:
   m_ObjectHideFlags: 0
@@ -108875,6 +109680,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1631912309}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1215023082
 Transform:
   m_ObjectHideFlags: 0
@@ -108936,6 +109744,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1557187568}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1226693202
 GameObject:
   m_ObjectHideFlags: 0
@@ -108982,6 +109793,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1605081448}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1227322845
 GameObject:
   m_ObjectHideFlags: 0
@@ -109045,6 +109859,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 942721412}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1227621755
 Transform:
   m_ObjectHideFlags: 0
@@ -109106,6 +109923,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 664915528}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1234803193
 GameObject:
   m_ObjectHideFlags: 0
@@ -109152,6 +109972,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 437766906}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1235494029
 GameObject:
   m_ObjectHideFlags: 0
@@ -109657,6 +110480,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1068050117}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1262030400
 GameObject:
   m_ObjectHideFlags: 0
@@ -109703,6 +110529,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1702338172}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1265103796
 GameObject:
   m_ObjectHideFlags: 0
@@ -109749,6 +110578,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1093399010}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1265916661
 GameObject:
   m_ObjectHideFlags: 0
@@ -113627,6 +114459,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1763297751}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1283628544
 GameObject:
   m_ObjectHideFlags: 0
@@ -113653,7 +114488,7 @@ Transform:
   m_GameObject: {fileID: 1283628544}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5139144, y: -0.48252255, z: 0.4964117, w: 0.5065959}
-  m_LocalPosition: {x: -367.52, y: -390.02, z: -180.81}
+  m_LocalPosition: {x: -367.52, y: -390.05, z: -180.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -113674,6 +114509,9 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 1716993432}
   - {fileID: 2028762963}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1284113626
 GameObject:
   m_ObjectHideFlags: 0
@@ -113705,6 +114543,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1001829195}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1284113628
 Transform:
   m_ObjectHideFlags: 0
@@ -113766,6 +114607,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2084599260}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1288711840
 GameObject:
   m_ObjectHideFlags: 0
@@ -125700,6 +126544,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1764260397}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1301397797
 GameObject:
   m_ObjectHideFlags: 1
@@ -125850,6 +126697,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2012983437}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1313156873
 Transform:
   m_ObjectHideFlags: 0
@@ -125994,6 +126844,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2019374670}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1322726713
 GameObject:
   m_ObjectHideFlags: 0
@@ -126025,6 +126878,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 131123735}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1322726715
 Transform:
   m_ObjectHideFlags: 0
@@ -126086,6 +126942,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1971127902}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1328218309
 GameObject:
   m_ObjectHideFlags: 0
@@ -126117,6 +126976,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 390663292}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1328218311
 Transform:
   m_ObjectHideFlags: 0
@@ -126178,6 +127040,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1548349709}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1338687162
 GameObject:
   m_ObjectHideFlags: 0
@@ -126224,6 +127089,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 786674134}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &1343011015
 Mesh:
   m_ObjectHideFlags: 0
@@ -126503,6 +127371,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1975136104}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1345566083
 Transform:
   m_ObjectHideFlags: 0
@@ -126855,6 +127726,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1647323783}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1353391136
 Transform:
   m_ObjectHideFlags: 0
@@ -126916,6 +127790,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1410636020}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1354613303
 GameObject:
   m_ObjectHideFlags: 1
@@ -127066,6 +127943,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 115244559}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1356118401
 Transform:
   m_ObjectHideFlags: 0
@@ -127127,6 +128007,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 538251497}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1363580182
 GameObject:
   m_ObjectHideFlags: 0
@@ -130408,6 +131291,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1440723089}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1370727418
 GameObject:
   m_ObjectHideFlags: 0
@@ -130454,6 +131340,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 693749285}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1377053708
 GameObject:
   m_ObjectHideFlags: 0
@@ -130499,6 +131388,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes: []
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1378858945
 GameObject:
   m_ObjectHideFlags: 0
@@ -138580,6 +139472,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2111209282}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1384096782
 GameObject:
   m_ObjectHideFlags: 0
@@ -138611,6 +139506,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2058088682}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1384096784
 Transform:
   m_ObjectHideFlags: 0
@@ -138791,6 +139689,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1941704762}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1404837259
 GameObject:
   m_ObjectHideFlags: 0
@@ -138837,6 +139738,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1951700507}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &1404896058
 Mesh:
   m_ObjectHideFlags: 0
@@ -139048,6 +139952,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1552824750}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1411732665
 GameObject:
   m_ObjectHideFlags: 0
@@ -139079,6 +139986,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 772286455}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1411732667
 Transform:
   m_ObjectHideFlags: 0
@@ -139125,6 +140035,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1930101606}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1414267802
 Transform:
   m_ObjectHideFlags: 0
@@ -139171,6 +140084,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 726571597}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1416210828
 Transform:
   m_ObjectHideFlags: 0
@@ -139217,6 +140133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 125892227}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1417504085
 Transform:
   m_ObjectHideFlags: 0
@@ -139438,6 +140357,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1989335636}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1420076160
 Transform:
   m_ObjectHideFlags: 0
@@ -139484,6 +140406,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 585840425}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1422998853
 Transform:
   m_ObjectHideFlags: 0
@@ -139545,6 +140470,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2052814669}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1425868816
 GameObject:
   m_ObjectHideFlags: 0
@@ -139674,6 +140602,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 700199682}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1436681802
 GameObject:
   m_ObjectHideFlags: 0
@@ -139720,6 +140651,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1227709565}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1440723087
 GameObject:
   m_ObjectHideFlags: 0
@@ -139768,6 +140702,9 @@ MonoBehaviour:
   - {fileID: 645907422}
   - {fileID: 1089893546}
   - {fileID: 216252350}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1443518229
 GameObject:
   m_ObjectHideFlags: 0
@@ -139846,6 +140783,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1988789490}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1447596881
 GameObject:
   m_ObjectHideFlags: 0
@@ -139892,6 +140832,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 384484091}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1447846494
 GameObject:
   m_ObjectHideFlags: 0
@@ -139938,6 +140881,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 548323658}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1448117074
 GameObject:
   m_ObjectHideFlags: 0
@@ -139969,6 +140915,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1384096783}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1448117076
 Transform:
   m_ObjectHideFlags: 0
@@ -140030,6 +140979,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1481627180}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1457290855
 GameObject:
   m_ObjectHideFlags: 0
@@ -140076,6 +141028,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1898727160}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1462716975
 GameObject:
   m_ObjectHideFlags: 0
@@ -140190,6 +141145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2123045998}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1467337449
 Transform:
   m_ObjectHideFlags: 0
@@ -140250,6 +141208,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes: []
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1476275902
 GameObject:
   m_ObjectHideFlags: 0
@@ -140328,6 +141289,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 447526532}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1486225292
 GameObject:
   m_ObjectHideFlags: 0
@@ -140359,6 +141323,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1322726714}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1486225294
 Transform:
   m_ObjectHideFlags: 0
@@ -140420,6 +141387,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1915269325}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1494050950
 GameObject:
   m_ObjectHideFlags: 0
@@ -140466,6 +141436,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 459935220}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1498044227
 GameObject:
   m_ObjectHideFlags: 0
@@ -140497,6 +141470,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 131972573}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1498044229
 Transform:
   m_ObjectHideFlags: 0
@@ -152637,6 +153613,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1454463510}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1522036020
 GameObject:
   m_ObjectHideFlags: 0
@@ -152668,6 +153647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 523566912}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1522036022
 Transform:
   m_ObjectHideFlags: 0
@@ -152729,6 +153711,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 537940726}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1538071150
 GameObject:
   m_ObjectHideFlags: 0
@@ -152775,6 +153760,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 515605452}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1541340489
 GameObject:
   m_ObjectHideFlags: 0
@@ -152853,6 +153841,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1767833390}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1548349707
 GameObject:
   m_ObjectHideFlags: 0
@@ -152899,6 +153890,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 61187389}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1549012754
 GameObject:
   m_ObjectHideFlags: 0
@@ -152977,6 +153971,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 885567754}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1557187566
 GameObject:
   m_ObjectHideFlags: 0
@@ -153023,6 +154020,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 7163919}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1559294408
 GameObject:
   m_ObjectHideFlags: 0
@@ -153069,6 +154069,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2095731338}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1560887301
 GameObject:
   m_ObjectHideFlags: 0
@@ -153100,6 +154103,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2068267893}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1560887303
 Transform:
   m_ObjectHideFlags: 0
@@ -153244,6 +154250,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1131428417}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1565188635
 GameObject:
   m_ObjectHideFlags: 0
@@ -153290,6 +154299,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 206932514}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1565802344
 GameObject:
   m_ObjectHideFlags: 0
@@ -153336,6 +154348,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1835795379}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1567146653
 GameObject:
   m_ObjectHideFlags: 0
@@ -153465,6 +154480,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 835600730}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1579464281
 GameObject:
   m_ObjectHideFlags: 0
@@ -153511,6 +154529,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1760183609}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1581316555
 GameObject:
   m_ObjectHideFlags: 0
@@ -153557,6 +154578,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1163583136}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1586237778
 GameObject:
   m_ObjectHideFlags: 0
@@ -153588,6 +154612,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1834123842}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1586237780
 Transform:
   m_ObjectHideFlags: 0
@@ -153634,6 +154661,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1640202192}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1586603610
 Transform:
   m_ObjectHideFlags: 0
@@ -153680,6 +154710,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1731073238}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1589707683
 Transform:
   m_ObjectHideFlags: 0
@@ -153726,6 +154759,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1983072088}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1593946312
 Transform:
   m_ObjectHideFlags: 0
@@ -153772,6 +154808,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 949140473}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1602729944
 Transform:
   m_ObjectHideFlags: 0
@@ -153833,6 +154872,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1739841097}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1607391909
 GameObject:
   m_ObjectHideFlags: 0
@@ -153864,6 +154906,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 27916520}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1607391911
 Transform:
   m_ObjectHideFlags: 0
@@ -153910,6 +154955,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2109588294}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1608935580
 Transform:
   m_ObjectHideFlags: 0
@@ -154205,6 +155253,9 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 896190187}
   - {fileID: 267170314}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1623068765
 Transform:
   m_ObjectHideFlags: 0
@@ -154266,6 +155317,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1120685773}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1631912308
 GameObject:
   m_ObjectHideFlags: 0
@@ -154297,6 +155351,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1602729943}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1631912310
 Transform:
   m_ObjectHideFlags: 0
@@ -154312,6 +155369,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 30146498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1632222379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5088243843577927196, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1640202191
 GameObject:
   m_ObjectHideFlags: 0
@@ -154343,6 +155405,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1723846073}
+  isStopLine: 1
+  currentIsRed: 0
+  redLightModel: {fileID: 1632222379}
 --- !u!4 &1640202193
 Transform:
   m_ObjectHideFlags: 0
@@ -154352,7 +155417,7 @@ Transform:
   m_GameObject: {fileID: 1640202191}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: -369.81998, y: -388.43997, z: -154.47}
+  m_LocalPosition: {x: -370.03, y: -389.94, z: -160.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -154389,6 +155454,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1807514030}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1640993410
 Transform:
   m_ObjectHideFlags: 0
@@ -154450,6 +155518,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 918073779}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1646619862
 GameObject:
   m_ObjectHideFlags: 0
@@ -154496,6 +155567,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1688114606}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1647323782
 GameObject:
   m_ObjectHideFlags: 0
@@ -154527,6 +155601,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 398698326}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1647323784
 Transform:
   m_ObjectHideFlags: 0
@@ -154588,6 +155665,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1379374809}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1650975792
 GameObject:
   m_ObjectHideFlags: 0
@@ -154619,6 +155699,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1486225293}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1650975794
 Transform:
   m_ObjectHideFlags: 0
@@ -154680,6 +155763,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 987750810}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1663406303
 GameObject:
   m_ObjectHideFlags: 0
@@ -154711,6 +155797,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1906006509}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1663406305
 Transform:
   m_ObjectHideFlags: 0
@@ -154922,6 +156011,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1204190605}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1669205442
 Transform:
   m_ObjectHideFlags: 0
@@ -154983,6 +156075,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1226631978}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1676018192
 GameObject:
   m_ObjectHideFlags: 0
@@ -155014,6 +156109,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1650975793}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1676018194
 Transform:
   m_ObjectHideFlags: 0
@@ -155060,6 +156158,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 351247785}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1676769576
 Transform:
   m_ObjectHideFlags: 0
@@ -155106,6 +156207,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 345707517}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1678244154
 Transform:
   m_ObjectHideFlags: 0
@@ -155152,6 +156256,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1414267801}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1679392370
 Transform:
   m_ObjectHideFlags: 0
@@ -163248,6 +164355,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 512329427}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1688367213
 GameObject:
   m_ObjectHideFlags: 0
@@ -163279,6 +164389,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 193073707}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1688367215
 Transform:
   m_ObjectHideFlags: 0
@@ -163325,6 +164438,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1411732666}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1691338710
 Transform:
   m_ObjectHideFlags: 0
@@ -163469,6 +164585,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1937503748}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1695283302
 GameObject:
   m_ObjectHideFlags: 0
@@ -163500,6 +164619,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1215023081}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1695283304
 Transform:
   m_ObjectHideFlags: 0
@@ -163712,6 +164834,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1116965720}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1699801539
 Transform:
   m_ObjectHideFlags: 0
@@ -163938,6 +165063,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1993553961}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1702338170
 GameObject:
   m_ObjectHideFlags: 0
@@ -163984,6 +165112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1204695675}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1712859815
 GameObject:
   m_ObjectHideFlags: 0
@@ -164031,6 +165162,9 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 1569577896}
   - {fileID: 1433396770}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1713161583
 GameObject:
   m_ObjectHideFlags: 0
@@ -164062,6 +165196,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1691338709}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1713161585
 Transform:
   m_ObjectHideFlags: 0
@@ -164123,6 +165260,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1049995470}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1715754585
 GameObject:
   m_ObjectHideFlags: 0
@@ -164268,7 +165408,7 @@ Transform:
   m_GameObject: {fileID: 1716993430}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: -366.85, y: -389.92, z: -166.97}
+  m_LocalPosition: {x: -369.11, y: -390.4, z: -166.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -164288,6 +165428,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1808239398}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1721031564
 GameObject:
   m_ObjectHideFlags: 0
@@ -164334,6 +165477,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1771722686}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1722990638
 GameObject:
   m_ObjectHideFlags: 0
@@ -164365,6 +165511,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 609389490}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1722990640
 Transform:
   m_ObjectHideFlags: 0
@@ -164413,6 +165562,9 @@ MonoBehaviour:
   - {fileID: 390663292}
   - {fileID: 1608935579}
   - {fileID: 2079894344}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1723846074
 Transform:
   m_ObjectHideFlags: 0
@@ -164474,6 +165626,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1850498651}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1730958900
 GameObject:
   m_ObjectHideFlags: 0
@@ -164520,6 +165675,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1970045397}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1731073237
 GameObject:
   m_ObjectHideFlags: 0
@@ -164551,6 +165709,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1784411749}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1731073239
 Transform:
   m_ObjectHideFlags: 0
@@ -164612,6 +165773,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1010406796}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1739841095
 GameObject:
   m_ObjectHideFlags: 0
@@ -164658,6 +165822,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 408678850}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1743335971
 GameObject:
   m_ObjectHideFlags: 0
@@ -164704,6 +165871,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2001402517}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &1744177125
 Mesh:
   m_ObjectHideFlags: 0
@@ -164947,6 +166117,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 425530987}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1756855630
 GameObject:
   m_ObjectHideFlags: 0
@@ -164993,6 +166166,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 116139606}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1760183607
 GameObject:
   m_ObjectHideFlags: 0
@@ -165039,6 +166215,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 215780332}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1760248712
 GameObject:
   m_ObjectHideFlags: 0
@@ -165087,6 +166266,9 @@ MonoBehaviour:
   - {fileID: 411959512}
   - {fileID: 437911764}
   - {fileID: 802405278}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!64 &1760630146
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -165155,6 +166337,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1942314973}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1764260395
 GameObject:
   m_ObjectHideFlags: 0
@@ -165201,6 +166386,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 537940726}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1766442780
 GameObject:
   m_ObjectHideFlags: 0
@@ -165232,6 +166420,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 46827362}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1766442782
 Transform:
   m_ObjectHideFlags: 0
@@ -165293,6 +166484,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 101110223}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1770103218
 GameObject:
   m_ObjectHideFlags: 1
@@ -165458,6 +166652,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1773045999}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1773045997
 GameObject:
   m_ObjectHideFlags: 0
@@ -165504,6 +166701,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 482276454}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &1779675959
 Mesh:
   m_ObjectHideFlags: 0
@@ -165819,6 +167019,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 374181211}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1784411750
 Transform:
   m_ObjectHideFlags: 0
@@ -165867,6 +167070,9 @@ MonoBehaviour:
   - {fileID: 1414267801}
   - {fileID: 615634811}
   - {fileID: 740910464}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1786576892
 Transform:
   m_ObjectHideFlags: 0
@@ -165928,6 +167134,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1494050952}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1793387211
 GameObject:
   m_ObjectHideFlags: 0
@@ -166057,6 +167266,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2029186389}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1803706896
 GameObject:
   m_ObjectHideFlags: 0
@@ -166103,6 +167315,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 730502232}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1807117829
 GameObject:
   m_ObjectHideFlags: 0
@@ -166150,6 +167365,9 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 1436681804}
   - {fileID: 1623068764}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1807514029
 GameObject:
   m_ObjectHideFlags: 0
@@ -166181,6 +167399,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1353391135}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1807514031
 Transform:
   m_ObjectHideFlags: 0
@@ -166222,7 +167443,7 @@ Transform:
   m_GameObject: {fileID: 1808239396}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: -366.52, y: -388.34, z: -153.47}
+  m_LocalPosition: {x: -366.49, y: -389.68, z: -153.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -166242,6 +167463,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1815268953}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!28 &1809273853
 Texture2D:
   m_ObjectHideFlags: 0
@@ -166321,6 +167545,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 612669322}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1810389168
 Transform:
   m_ObjectHideFlags: 0
@@ -174500,6 +175727,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes: []
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!64 &1817196436
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -174568,6 +175798,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 295836573}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1824732067
 GameObject:
   m_ObjectHideFlags: 0
@@ -174614,6 +175847,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 438999116}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &1829454315
 Mesh:
   m_ObjectHideFlags: 0
@@ -174810,6 +176046,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 350289859}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1832181436
 Transform:
   m_ObjectHideFlags: 0
@@ -174856,6 +176095,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1047152397}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1833907285
 Transform:
   m_ObjectHideFlags: 0
@@ -174902,6 +176144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2008708289}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1834085510
 Transform:
   m_ObjectHideFlags: 0
@@ -174948,6 +176193,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 104790843}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1834123843
 Transform:
   m_ObjectHideFlags: 0
@@ -175009,6 +176257,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 151415203}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1835795377
 GameObject:
   m_ObjectHideFlags: 0
@@ -175055,6 +176306,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1545042863}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1836001142
 GameObject:
   m_ObjectHideFlags: 0
@@ -175182,6 +176436,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1834085509}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1843817470
 Transform:
   m_ObjectHideFlags: 0
@@ -175228,6 +176485,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 94762640}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1844807510
 Transform:
   m_ObjectHideFlags: 0
@@ -175289,6 +176549,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2141171779}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1848356908
 GameObject:
   m_ObjectHideFlags: 0
@@ -175335,6 +176598,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1834709967}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1850498649
 GameObject:
   m_ObjectHideFlags: 0
@@ -175381,6 +176647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 291313423}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1859304061
 GameObject:
   m_ObjectHideFlags: 1
@@ -175546,6 +176815,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1790998437}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1860654820
 GameObject:
   m_ObjectHideFlags: 0
@@ -175577,6 +176849,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 666220426}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1860654822
 Transform:
   m_ObjectHideFlags: 0
@@ -175638,6 +176913,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 586728797}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1864985866
 GameObject:
   m_ObjectHideFlags: 0
@@ -175752,6 +177030,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1662163968}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1876103965
 GameObject:
   m_ObjectHideFlags: 0
@@ -175783,6 +177064,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1699801538}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1876103967
 Transform:
   m_ObjectHideFlags: 0
@@ -175844,6 +177128,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1931704431}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1879399678
 GameObject:
   m_ObjectHideFlags: 0
@@ -176155,6 +177442,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 9309252}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1892487118
 Transform:
   m_ObjectHideFlags: 0
@@ -176215,6 +177505,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes: []
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1898727158
 GameObject:
   m_ObjectHideFlags: 0
@@ -176263,6 +177556,9 @@ MonoBehaviour:
   - {fileID: 574037546}
   - {fileID: 676265893}
   - {fileID: 923023041}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!43 &1903320556
 Mesh:
   m_ObjectHideFlags: 0
@@ -176578,6 +177874,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1688367214}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1906006510
 Transform:
   m_ObjectHideFlags: 0
@@ -176719,6 +178018,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1875969825}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1915269323
 GameObject:
   m_ObjectHideFlags: 0
@@ -176765,6 +178067,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 381903812}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1930101605
 GameObject:
   m_ObjectHideFlags: 0
@@ -176796,6 +178101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1593946311}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1930101607
 Transform:
   m_ObjectHideFlags: 0
@@ -176857,6 +178165,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1760248714}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1932949737
 GameObject:
   m_ObjectHideFlags: 0
@@ -179185,6 +180496,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 138875819}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1936603135
 Transform:
   m_ObjectHideFlags: 0
@@ -179246,6 +180560,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1147567171}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1941704760
 GameObject:
   m_ObjectHideFlags: 0
@@ -179292,6 +180609,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1370727420}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1942314971
 GameObject:
   m_ObjectHideFlags: 0
@@ -179338,6 +180658,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 297708277}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1947592881
 GameObject:
   m_ObjectHideFlags: 0
@@ -179384,6 +180707,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 586628802}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1951700505
 GameObject:
   m_ObjectHideFlags: 0
@@ -179430,6 +180756,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2008498466}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1970045395
 GameObject:
   m_ObjectHideFlags: 0
@@ -179476,6 +180805,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 894529676}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1971127900
 GameObject:
   m_ObjectHideFlags: 0
@@ -179522,6 +180854,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 488000977}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1973633688
 GameObject:
   m_ObjectHideFlags: 0
@@ -179553,6 +180888,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1103616508}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1973633690
 Transform:
   m_ObjectHideFlags: 0
@@ -179599,6 +180937,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1448117075}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1975136105
 Transform:
   m_ObjectHideFlags: 0
@@ -179659,6 +181000,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes: []
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1978737524
 GameObject:
   m_ObjectHideFlags: 0
@@ -179690,6 +181034,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 995768498}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1978737526
 Transform:
   m_ObjectHideFlags: 0
@@ -179736,6 +181083,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 835600730}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1979757056
 Transform:
   m_ObjectHideFlags: 0
@@ -179865,6 +181215,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 949218915}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1983072089
 Transform:
   m_ObjectHideFlags: 0
@@ -179911,6 +181264,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 438358584}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1988468252
 Transform:
   m_ObjectHideFlags: 0
@@ -179972,6 +181328,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1803706898}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1989335635
 GameObject:
   m_ObjectHideFlags: 0
@@ -180003,6 +181362,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1106661272}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &1989335637
 Transform:
   m_ObjectHideFlags: 0
@@ -180147,6 +181509,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 97243860}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &1997341948
 GameObject:
   m_ObjectHideFlags: 0
@@ -180193,6 +181558,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1798498635}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2001402515
 GameObject:
   m_ObjectHideFlags: 0
@@ -180239,6 +181607,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 623337450}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2003374215
 GameObject:
   m_ObjectHideFlags: 0
@@ -180270,6 +181641,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 76578166}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2003374217
 Transform:
   m_ObjectHideFlags: 0
@@ -180333,6 +181707,9 @@ MonoBehaviour:
   - {fileID: 1226693204}
   - {fileID: 101774314}
   - {fileID: 287663420}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2008708288
 GameObject:
   m_ObjectHideFlags: 0
@@ -180364,6 +181741,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 155478478}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2008708290
 Transform:
   m_ObjectHideFlags: 0
@@ -180574,6 +181954,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes: []
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2012983438
 Transform:
   m_ObjectHideFlags: 0
@@ -180620,6 +182003,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1663406304}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2016271829
 Transform:
   m_ObjectHideFlags: 0
@@ -180713,6 +182099,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1262030402}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2021237018
 GameObject:
   m_ObjectHideFlags: 0
@@ -180830,6 +182219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1947592883}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2024872582
 GameObject:
   m_ObjectHideFlags: 0
@@ -181028,6 +182420,9 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 253728393}
   - {fileID: 1695089886}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2029186387
 GameObject:
   m_ObjectHideFlags: 0
@@ -181074,6 +182469,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 360272849}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2033865531
 GameObject:
   m_ObjectHideFlags: 0
@@ -181188,6 +182586,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 201629446}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2036317831
 Transform:
   m_ObjectHideFlags: 0
@@ -181249,6 +182650,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1835795379}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2037461492
 GameObject:
   m_ObjectHideFlags: 0
@@ -181280,6 +182684,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 126578029}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2037461494
 Transform:
   m_ObjectHideFlags: 0
@@ -181341,6 +182748,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 654984796}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2051442262
 GameObject:
   m_ObjectHideFlags: 0
@@ -181419,6 +182829,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1329665924}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2058088681
 GameObject:
   m_ObjectHideFlags: 0
@@ -181450,6 +182863,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 213249937}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2058088683
 Transform:
   m_ObjectHideFlags: 0
@@ -181522,6 +182938,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+--- !u!1 &2059058789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6233525784670667015, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2068267892
 GameObject:
   m_ObjectHideFlags: 0
@@ -181553,6 +182974,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 197737833}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2068267894
 Transform:
   m_ObjectHideFlags: 0
@@ -181614,6 +183038,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1716993432}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2079894343
 GameObject:
   m_ObjectHideFlags: 0
@@ -181645,6 +183072,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1416210827}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2079894345
 Transform:
   m_ObjectHideFlags: 0
@@ -181691,6 +183121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1678244153}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2083272989
 Transform:
   m_ObjectHideFlags: 0
@@ -181737,6 +183170,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 310640494}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2084089310
 Transform:
   m_ObjectHideFlags: 0
@@ -181798,6 +183234,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 288253683}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2086514329
 GameObject:
   m_ObjectHideFlags: 0
@@ -181959,6 +183398,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 620021335}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2096019496
 GameObject:
   m_ObjectHideFlags: 0
@@ -182005,6 +183447,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1824732069}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2100202895
 GameObject:
   m_ObjectHideFlags: 0
@@ -182051,6 +183496,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 312152467}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2106948456
 GameObject:
   m_ObjectHideFlags: 0
@@ -182097,6 +183545,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1817972531}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2109588293
 GameObject:
   m_ObjectHideFlags: 0
@@ -182128,6 +183579,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1810389167}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2109588295
 Transform:
   m_ObjectHideFlags: 0
@@ -182272,6 +183726,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 513824899}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2122828850
 GameObject:
   m_ObjectHideFlags: 0
@@ -182318,6 +183775,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1065956274}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2123045997
 GameObject:
   m_ObjectHideFlags: 0
@@ -182349,6 +183809,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2037461493}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2123045999
 Transform:
   m_ObjectHideFlags: 0
@@ -187615,6 +189078,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 392410287}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2135106653
 GameObject:
   m_ObjectHideFlags: 0
@@ -187648,6 +189114,9 @@ MonoBehaviour:
   - {fileID: 1345566082}
   - {fileID: 289495120}
   - {fileID: 2084089309}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!4 &2135106655
 Transform:
   m_ObjectHideFlags: 0
@@ -187874,6 +189343,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 90022157}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!64 &2140425805
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -187942,6 +189414,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 136956335}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
 --- !u!1 &2144882569
 GameObject:
   m_ObjectHideFlags: 0

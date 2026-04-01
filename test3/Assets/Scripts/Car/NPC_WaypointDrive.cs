@@ -25,30 +25,46 @@ public class NPC_WaypointDrive : MonoBehaviour
     }
 
     void Update()
-    {
-        if (targetNode == null) return;
-
-        CheckForwardCollision();
-
-        // 抵達目標節點時，向節點「問路」！
-        if (!agent.pathPending && agent.remainingDistance < 2f)
         {
-            TrafficNode nextNode = targetNode.GetNextNode(); // 老闆，下一步去哪？
+            if (targetNode == null) return;
 
-            if (nextNode != null)
+            CheckForwardCollision();
+
+            // 🛑 紅綠燈煞車系統：如果前面的點是「停止線」且「目前是紅燈」
+            if (targetNode.isStopLine && targetNode.currentIsRed)
             {
-                // 如果還有路，就繼續往下一站開
-                targetNode = nextNode;
-                agent.SetDestination(targetNode.transform.position);
+                // 計算車頭到停止線的距離
+                float distanceToNode = Vector3.Distance(transform.position, targetNode.transform.position);
+                
+                // 如果距離停止線小於 4 公尺，強制煞車！
+                if (distanceToNode < 4f)
+                {
+                    agent.isStopped = true; 
+                    return; // 終止這回合的動作，車子乖乖等待
+                }
             }
             else
             {
-                // 🚗 核心魔法：如果 nextNode 是空的 (代表沒路了)
-                // 任務完成，直接把這台車從遊戲中刪除！
-                Destroy(gameObject);
+                // 綠燈，或是普通路段，解除煞車繼續開
+                agent.isStopped = false; 
+            }
+
+            // 🚗 原本的尋路邏輯
+            if (!agent.pathPending && agent.remainingDistance < 2f)
+            {
+                TrafficNode nextNode = targetNode.GetNextNode(); 
+                
+                if (nextNode != null)
+                {
+                    targetNode = nextNode; 
+                    agent.SetDestination(targetNode.transform.position);
+                }
+                else
+                {
+                    Destroy(gameObject); // 沒路了就消失
+                }
             }
         }
-    }
 
     void CheckForwardCollision()
     {
