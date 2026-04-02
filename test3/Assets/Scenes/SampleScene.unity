@@ -84874,6 +84874,7 @@ Transform:
   - {fileID: 918073778}
   - {fileID: 1283628545}
   - {fileID: 2028762962}
+  - {fileID: 1109292260}
   - {fileID: 253728392}
   - {fileID: 1695089885}
   - {fileID: 1937503747}
@@ -90519,6 +90520,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1811751034}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1109292258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1109292260}
+  - component: {fileID: 1109292259}
+  m_Layer: 0
+  m_Name: Node 6 (44)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1109292259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109292258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5304cbbe89143641a1a2bb9c3e8dac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextNodes:
+  - {fileID: 1716993432}
+  isStopLine: 0
+  currentIsRed: 0
+  redLightModel: {fileID: 0}
+--- !u!4 &1109292260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109292258}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5139144, y: -0.48252255, z: 0.4964117, w: 0.5065959}
+  m_LocalPosition: {x: -367.02, y: -389.98, z: -174.92}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 893523151}
+  m_LocalEulerAnglesHint: {x: 91.272, y: -106.02301, z: -18.406006}
 --- !u!1 &1112181949
 GameObject:
   m_ObjectHideFlags: 0
@@ -114507,7 +114557,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes:
-  - {fileID: 1716993432}
   - {fileID: 2028762963}
   isStopLine: 0
   currentIsRed: 0
@@ -126988,7 +127037,7 @@ Transform:
   m_GameObject: {fileID: 1328218309}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: -370.55, y: -389.96, z: -178.92}
+  m_LocalPosition: {x: -370.62, y: -389.96, z: -179.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -165408,7 +165457,7 @@ Transform:
   m_GameObject: {fileID: 1716993430}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: -369.11, y: -390.4, z: -166.69}
+  m_LocalPosition: {x: -366.88, y: -390.36, z: -166.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -165559,9 +165608,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes:
-  - {fileID: 390663292}
   - {fileID: 1608935579}
   - {fileID: 2079894344}
+  - {fileID: 1328218310}
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
@@ -182420,6 +182469,7 @@ MonoBehaviour:
   nextNodes:
   - {fileID: 253728393}
   - {fileID: 1695089886}
+  - {fileID: 1109292259}
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
