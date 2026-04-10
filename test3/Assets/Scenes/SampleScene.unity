@@ -171,6 +171,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &7189207
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 7189207}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: 56.899994, y: -390.49, z: -467.23}
+  m_LocalPosition: {x: 57.47, y: -389.71, z: -467.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -217,9 +220,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1364487828}
-  isStopLine: 0
+  isStopLine: 1
   currentIsRed: 0
-  redLightModel: {fileID: 0}
+  redLightModel: {fileID: 486529612}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Xinsheng_Bade_1
 --- !u!1 &9309251
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +260,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &9309253
 Transform:
   m_ObjectHideFlags: 0
@@ -318,6 +327,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &12233809
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +379,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &12805849
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +431,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &13780724
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +483,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &20037596
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,6 +535,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &27916519
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +572,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &27916521
 Transform:
   m_ObjectHideFlags: 0
@@ -692,6 +719,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &33599396
 Transform:
   m_ObjectHideFlags: 0
@@ -741,6 +771,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &38330407
 Transform:
   m_ObjectHideFlags: 0
@@ -790,6 +823,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &38706307
 Transform:
   m_ObjectHideFlags: 0
@@ -839,6 +875,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &41035365
 Transform:
   m_ObjectHideFlags: 0
@@ -888,6 +927,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &46827363
 Transform:
   m_ObjectHideFlags: 0
@@ -952,6 +994,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &53201590
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,6 +1031,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &53201592
 Transform:
   m_ObjectHideFlags: 0
@@ -1050,6 +1098,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &61187387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,6 +1150,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &62582071
 Mesh:
   m_ObjectHideFlags: 0
@@ -7178,15 +7232,15 @@ MonoBehaviour:
   - Primary Road - Sand Transition
   - Primary Road Coast
   - Primary Road
-  - RA_Road
   - Race Track
+  - RA_Road
+  - road material
   - Secondary Road Decal Blend
   - Secondary Road Detail
   - Secondary Road Double Line
   - Secondary Road
   - Tertiary Road
   - Train Rail
-  - road material
   connectionMaterials:
   - crossing material
   - primary road crossing
@@ -7215,7 +7269,7 @@ MonoBehaviour:
   selectedRoadRightInnerOffset: 0
   selectedCrossingMaterial: 0
   crossingTextureInfoIndex: 0
-  handleSelection: 1
+  handleSelection: -1
   positionHandleSelection: 1
   markerDirXZ: 0
   markerDirXZInt: 0
@@ -7227,11 +7281,11 @@ MonoBehaviour:
   infoTexture: {fileID: 0}
   infoTexture2: {fileID: 0}
   infoTextures: []
-  plusSignTexture: {fileID: 360387993}
-  minSignTexture: {fileID: 1155722819}
-  signPostHeaderBG: {fileID: 1906761756}
-  signPostListBG: {fileID: 234901684}
-  signPostListSelBG: {fileID: 1809273853}
+  plusSignTexture: {fileID: 947105743}
+  minSignTexture: {fileID: 638645802}
+  signPostHeaderBG: {fileID: 1639825613}
+  signPostListBG: {fileID: 476175401}
+  signPostListSelBG: {fileID: 1379506311}
   editorSkin: 0
   showAllPrefabs: 1
   standardPrefabsFlag: 0
@@ -7454,7 +7508,7 @@ MonoBehaviour:
   importRoadPresetsAlert: 1
   importCrossingPresetsAlert: 0
   importSidewalkPresetsAlert: 1
-  updateSideObjectsAlert: 0
+  updateSideObjectsAlert: 1
   updateRoadPresetsAlert: 0
   updateCrossingPresetsAlert: 0
   updateSidewalkPresetsAlert: 0
@@ -7749,6 +7803,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &76578167
 Transform:
   m_ObjectHideFlags: 0
@@ -7815,8 +7872,8 @@ MonoBehaviour:
   - {fileID: 591223045427588598, guid: 9ce1302d1435b6f49bde31b913997edd, type: 3}
   - {fileID: 591223045427588598, guid: cd75fb2b2ebfbf14ebdb174dc15d7a3f, type: 3}
   - {fileID: 591223045427588598, guid: 0158088ea89228545a9c37bc8fe656ba, type: 3}
-  spawnInterval: 2
-  maxCars: 10000
+  spawnInterval: 4
+  maxCars: 100
   startNodes:
   - {fileID: 349269046}
   - {fileID: 2083272988}
@@ -7860,6 +7917,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &83356519
 Transform:
   m_ObjectHideFlags: 0
@@ -7924,6 +7984,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &94762639
 GameObject:
   m_ObjectHideFlags: 0
@@ -7958,6 +8021,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &94762641
 Transform:
   m_ObjectHideFlags: 0
@@ -8022,6 +8088,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &101110221
 GameObject:
   m_ObjectHideFlags: 0
@@ -8071,6 +8140,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &101774313
 GameObject:
   m_ObjectHideFlags: 0
@@ -8105,6 +8177,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &101774315
 Transform:
   m_ObjectHideFlags: 0
@@ -8154,6 +8229,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &104790844
 Transform:
   m_ObjectHideFlags: 0
@@ -8202,6 +8280,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &115244560
 Transform:
   m_ObjectHideFlags: 0
@@ -8266,6 +8347,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &119783969
 GameObject:
   m_ObjectHideFlags: 0
@@ -8349,6 +8433,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &122191705
 GameObject:
   m_ObjectHideFlags: 1
@@ -8502,6 +8589,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &125892228
 Transform:
   m_ObjectHideFlags: 0
@@ -8566,6 +8656,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &126578028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8600,6 +8693,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &126578030
 Transform:
   m_ObjectHideFlags: 0
@@ -8732,6 +8828,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &131123736
 Transform:
   m_ObjectHideFlags: 0
@@ -8781,6 +8880,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &131972574
 Transform:
   m_ObjectHideFlags: 0
@@ -8949,6 +9051,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &133475341
 Transform:
   m_ObjectHideFlags: 0
@@ -9013,6 +9118,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &136956333
 GameObject:
   m_ObjectHideFlags: 0
@@ -9062,6 +9170,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &138580829
 GameObject:
   m_ObjectHideFlags: 0
@@ -9111,6 +9222,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &138875818
 GameObject:
   m_ObjectHideFlags: 0
@@ -9145,6 +9259,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &138875820
 Transform:
   m_ObjectHideFlags: 0
@@ -9324,6 +9441,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &151415201
 GameObject:
   m_ObjectHideFlags: 0
@@ -9373,6 +9493,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &155478477
 GameObject:
   m_ObjectHideFlags: 0
@@ -9407,6 +9530,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &155478479
 Transform:
   m_ObjectHideFlags: 0
@@ -9456,6 +9582,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &163492161
 Transform:
   m_ObjectHideFlags: 0
@@ -9670,6 +9799,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &168515488
 Transform:
   m_ObjectHideFlags: 0
@@ -13917,6 +14049,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &177020165
 Transform:
   m_ObjectHideFlags: 0
@@ -13981,6 +14116,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &178291164
 Mesh:
   m_ObjectHideFlags: 0
@@ -14180,6 +14318,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &182416988
 Transform:
   m_ObjectHideFlags: 0
@@ -14229,6 +14370,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &186787758
 Transform:
   m_ObjectHideFlags: 0
@@ -14278,6 +14422,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &193073708
 Transform:
   m_ObjectHideFlags: 0
@@ -14328,6 +14475,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &197737834
 Transform:
   m_ObjectHideFlags: 0
@@ -14377,6 +14527,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &201629447
 Transform:
   m_ObjectHideFlags: 0
@@ -14441,6 +14594,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &206932512
 GameObject:
   m_ObjectHideFlags: 0
@@ -14490,6 +14646,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &213249936
 GameObject:
   m_ObjectHideFlags: 0
@@ -14524,6 +14683,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &213249938
 Transform:
   m_ObjectHideFlags: 0
@@ -14588,6 +14750,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &215346921
 GameObject:
   m_ObjectHideFlags: 0
@@ -14720,6 +14885,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &216252348
 GameObject:
   m_ObjectHideFlags: 0
@@ -14769,6 +14937,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &217141128
 GameObject:
   m_ObjectHideFlags: 0
@@ -14818,6 +14989,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &220018227
 Mesh:
   m_ObjectHideFlags: 0
@@ -15032,54 +15206,14 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
---- !u!28 &234901684
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
+--- !u!1 &240091211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7695073108848064448, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 2
-  m_Width: 2
-  m_Height: 2
-  m_CompleteImageSize: 20
-  m_MipsStripped: 0
-  m_TextureFormat: 4
-  m_MipCount: 2
-  m_IsReadable: 1
-  m_IsPreProcessed: 0
-  m_IgnoreMipmapLimit: 0
-  m_MipmapLimitGroupName: 
-  m_StreamingMipmaps: 0
-  m_StreamingMipmapsPriority: 0
-  m_VTOnly: 0
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  m_PlatformBlob: 
-  image data: 20
-  _typelessdata: 414141ff414141ff414141ff414141ff414141ff
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &244755899
 GameObject:
   m_ObjectHideFlags: 0
@@ -15177,6 +15311,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &250427485
 Transform:
   m_ObjectHideFlags: 0
@@ -15241,6 +15378,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &260965175
 GameObject:
   m_ObjectHideFlags: 0
@@ -15365,6 +15505,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &268172195
 GameObject:
   m_ObjectHideFlags: 0
@@ -15399,6 +15542,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &268172197
 Transform:
   m_ObjectHideFlags: 0
@@ -15463,6 +15609,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &273638110
 GameObject:
   m_ObjectHideFlags: 0
@@ -15544,6 +15693,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &287663419
 GameObject:
   m_ObjectHideFlags: 0
@@ -15578,6 +15730,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &287663421
 Transform:
   m_ObjectHideFlags: 0
@@ -15642,6 +15797,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &288278368
 GameObject:
   m_ObjectHideFlags: 0
@@ -15676,6 +15834,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &288278370
 Transform:
   m_ObjectHideFlags: 0
@@ -15725,6 +15886,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &289495121
 Transform:
   m_ObjectHideFlags: 0
@@ -15789,6 +15953,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &291313421
 GameObject:
   m_ObjectHideFlags: 0
@@ -15838,6 +16005,55 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
+--- !u!1 &292212736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 292212738}
+  - component: {fileID: 292212737}
+  m_Layer: 0
+  m_Name: HardwareManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &292212737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292212736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6771d5e7ea2b8934d98c3266df4a1b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portName: COM5
+  baudRate: 9600
+--- !u!4 &292212738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292212736}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -155.40294, y: -14.406149, z: 186.65956}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &293757082
 GameObject:
   m_ObjectHideFlags: 0
@@ -18018,6 +18234,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &297708275
 GameObject:
   m_ObjectHideFlags: 0
@@ -18067,6 +18286,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &301254883
 GameObject:
   m_ObjectHideFlags: 0
@@ -18101,6 +18323,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &301254885
 Transform:
   m_ObjectHideFlags: 0
@@ -18165,6 +18390,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &302880744
 GameObject:
   m_ObjectHideFlags: 0
@@ -23797,6 +24025,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &310640495
 Transform:
   m_ObjectHideFlags: 0
@@ -23861,6 +24092,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!64 &317905662
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24048,6 +24282,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &322527724
 GameObject:
   m_ObjectHideFlags: 0
@@ -24527,6 +24764,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &345707518
 Transform:
   m_ObjectHideFlags: 0
@@ -24591,6 +24831,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &348877625
 GameObject:
   m_ObjectHideFlags: 0
@@ -24723,6 +24966,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &350289858
 GameObject:
   m_ObjectHideFlags: 0
@@ -24758,6 +25004,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &350289860
 Transform:
   m_ObjectHideFlags: 0
@@ -24807,6 +25056,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &351247786
 Transform:
   m_ObjectHideFlags: 0
@@ -24986,6 +25238,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &360272847
 GameObject:
   m_ObjectHideFlags: 0
@@ -25035,54 +25290,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
---- !u!28 &360387993
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 2
-  m_Width: 12
-  m_Height: 12
-  m_CompleteImageSize: 760
-  m_MipsStripped: 0
-  m_TextureFormat: 4
-  m_MipCount: 4
-  m_IsReadable: 1
-  m_IsPreProcessed: 0
-  m_IgnoreMipmapLimit: 0
-  m_MipmapLimitGroupName: 
-  m_StreamingMipmaps: 0
-  m_StreamingMipmapsPriority: 0
-  m_VTOnly: 0
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  m_PlatformBlob: 
-  image data: 760
-  _typelessdata: 0000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc0000000000000000000000000000000000000000ffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffcc0000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc000000000000000000000000000000000000000000000000000000007f7f7f667f7f7f66000000000000000000000000000000007f7f7f667f7f7f6600000000000000007f7f7f667f7f7f66bfbfbf99bfbfbf997f7f7f667f7f7f667f7f7f667f7f7f66bfbfbf99bfbfbf997f7f7f667f7f7f6600000000000000007f7f7f667f7f7f66000000000000000000000000000000007f7f7f667f7f7f660000000000000000000000007f7f7f66000000007f7f7f66bfbfbf997f7f7f66000000007f7f7f6600000000bfbfbf99
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &364035591
 GameObject:
   m_ObjectHideFlags: 0
@@ -25133,6 +25343,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &364773756
 Mesh:
   m_ObjectHideFlags: 0
@@ -25379,6 +25592,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &374181210
 GameObject:
   m_ObjectHideFlags: 0
@@ -25413,6 +25629,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &374181212
 Transform:
   m_ObjectHideFlags: 0
@@ -25477,6 +25696,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &384484089
 GameObject:
   m_ObjectHideFlags: 0
@@ -25526,6 +25748,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &387722889
 GameObject:
   m_ObjectHideFlags: 0
@@ -25560,6 +25785,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &387722891
 Transform:
   m_ObjectHideFlags: 0
@@ -25609,6 +25837,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &390663293
 Transform:
   m_ObjectHideFlags: 0
@@ -25673,6 +25904,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &392908070
 GameObject:
   m_ObjectHideFlags: 0
@@ -25722,6 +25956,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &398698325
 GameObject:
   m_ObjectHideFlags: 0
@@ -25756,6 +25993,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &398698327
 Transform:
   m_ObjectHideFlags: 0
@@ -25820,6 +26060,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &411959510
 GameObject:
   m_ObjectHideFlags: 0
@@ -25869,6 +26112,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &413226860
 GameObject:
   m_ObjectHideFlags: 0
@@ -25918,6 +26164,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &414830605
 GameObject:
   m_ObjectHideFlags: 0
@@ -25952,6 +26201,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &414830607
 Transform:
   m_ObjectHideFlags: 0
@@ -26016,6 +26268,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &425530985
 GameObject:
   m_ObjectHideFlags: 0
@@ -26067,6 +26322,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &428677212
 GameObject:
   m_ObjectHideFlags: 0
@@ -26101,6 +26359,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &428677214
 Transform:
   m_ObjectHideFlags: 0
@@ -26362,6 +26623,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &437911762
 GameObject:
   m_ObjectHideFlags: 0
@@ -26411,6 +26675,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &438358583
 GameObject:
   m_ObjectHideFlags: 0
@@ -26445,6 +26712,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &438358585
 Transform:
   m_ObjectHideFlags: 0
@@ -26509,6 +26779,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &447526530
 GameObject:
   m_ObjectHideFlags: 0
@@ -26558,6 +26831,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &451662243
 GameObject:
   m_ObjectHideFlags: 0
@@ -43228,6 +43504,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &458848168
 GameObject:
   m_ObjectHideFlags: 0
@@ -43262,6 +43541,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &458848170
 Transform:
   m_ObjectHideFlags: 0
@@ -43326,6 +43608,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &460973651
 GameObject:
   m_ObjectHideFlags: 0
@@ -43392,6 +43677,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &469673318
 Transform:
   m_ObjectHideFlags: 0
@@ -43456,6 +43744,57 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
+--- !u!28 &476175401
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 2
+  m_Height: 2
+  m_CompleteImageSize: 20
+  m_MipsStripped: 0
+  m_TextureFormat: 4
+  m_MipCount: 2
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  m_PlatformBlob: 
+  image data: 20
+  _typelessdata: 414141ff414141ff414141ff414141ff414141ff
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!43 &478920522
 Mesh:
   m_ObjectHideFlags: 0
@@ -43670,6 +44009,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &482800365
 GameObject:
   m_ObjectHideFlags: 0
@@ -43704,6 +44046,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &482800367
 Transform:
   m_ObjectHideFlags: 0
@@ -43719,6 +44064,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021237019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &486529612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3557107272510885230, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &488000975
 GameObject:
   m_ObjectHideFlags: 0
@@ -43768,6 +44118,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &490290953
 GameObject:
   m_ObjectHideFlags: 0
@@ -43817,6 +44170,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &497849769
 GameObject:
   m_ObjectHideFlags: 0
@@ -43866,6 +44222,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &499070495
 GameObject:
   m_ObjectHideFlags: 0
@@ -43915,6 +44274,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &512329425
 GameObject:
   m_ObjectHideFlags: 0
@@ -43964,6 +44326,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &513028714
 GameObject:
   m_ObjectHideFlags: 0
@@ -43998,6 +44363,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &513028716
 Transform:
   m_ObjectHideFlags: 0
@@ -44062,6 +44430,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &513934324
 GameObject:
   m_ObjectHideFlags: 1
@@ -44232,6 +44603,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &521412820
 GameObject:
   m_ObjectHideFlags: 0
@@ -44364,6 +44738,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &523566911
 GameObject:
   m_ObjectHideFlags: 0
@@ -44398,6 +44775,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &523566913
 Transform:
   m_ObjectHideFlags: 0
@@ -44462,6 +44842,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &538251495
 GameObject:
   m_ObjectHideFlags: 0
@@ -44511,6 +44894,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &543237845
 GameObject:
   m_ObjectHideFlags: 0
@@ -44545,6 +44931,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &543237847
 Transform:
   m_ObjectHideFlags: 0
@@ -44594,6 +44983,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &547552806
 Transform:
   m_ObjectHideFlags: 0
@@ -44658,6 +45050,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &552337876
 GameObject:
   m_ObjectHideFlags: 0
@@ -44707,6 +45102,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &554541416
 GameObject:
   m_ObjectHideFlags: 0
@@ -44820,6 +45218,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &561561941
 GameObject:
   m_ObjectHideFlags: 0
@@ -44854,6 +45255,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &561561943
 Transform:
   m_ObjectHideFlags: 0
@@ -44869,6 +45273,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 30146498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &561959562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 392308472959770658, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &563252703
 GameObject:
   m_ObjectHideFlags: 0
@@ -44918,6 +45327,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &567400301
 GameObject:
   m_ObjectHideFlags: 0
@@ -44967,6 +45379,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &568148538
 GameObject:
   m_ObjectHideFlags: 0
@@ -45016,6 +45431,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &574037544
 GameObject:
   m_ObjectHideFlags: 0
@@ -45065,6 +45483,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &585840424
 GameObject:
   m_ObjectHideFlags: 0
@@ -45099,6 +45520,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &585840426
 Transform:
   m_ObjectHideFlags: 0
@@ -45163,6 +45587,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &586728795
 GameObject:
   m_ObjectHideFlags: 0
@@ -45212,6 +45639,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &587858432
 GameObject:
   m_ObjectHideFlags: 0
@@ -45246,6 +45676,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &587858434
 Transform:
   m_ObjectHideFlags: 0
@@ -45310,6 +45743,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &597118356 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3996854906587344390, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
@@ -45364,6 +45800,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &605839998
 GameObject:
   m_ObjectHideFlags: 0
@@ -45398,6 +45837,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &605840000
 Transform:
   m_ObjectHideFlags: 0
@@ -45449,6 +45891,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &608394205
 Transform:
   m_ObjectHideFlags: 0
@@ -45498,6 +45943,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &609389491
 Transform:
   m_ObjectHideFlags: 0
@@ -45562,6 +46010,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &612669321
 GameObject:
   m_ObjectHideFlags: 0
@@ -45596,6 +46047,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &612669323
 Transform:
   m_ObjectHideFlags: 0
@@ -45650,6 +46104,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &615634812
 Transform:
   m_ObjectHideFlags: 0
@@ -45714,6 +46171,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &619914921
 GameObject:
   m_ObjectHideFlags: 0
@@ -45763,6 +46223,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &620021333
 GameObject:
   m_ObjectHideFlags: 0
@@ -45812,6 +46275,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &622375376
 GameObject:
   m_ObjectHideFlags: 0
@@ -45861,6 +46327,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &622799709
 GameObject:
   m_ObjectHideFlags: 0
@@ -45944,6 +46413,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622799709}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &622988243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 622988245}
+  - component: {fileID: 622988244}
+  m_Layer: 0
+  m_Name: Node 6 (39)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &622988244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622988243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5304cbbe89143641a1a2bb9c3e8dac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextNodes:
+  - {fileID: 625583599}
+  isStopLine: 1
+  currentIsRed: 0
+  redLightModel: {fileID: 1324309214}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Jianguo_Civic_2
+--- !u!4 &622988245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622988243}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
+  m_LocalPosition: {x: -339.5, y: -389.9, z: -500.57}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1811751034}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &623337448
 GameObject:
   m_ObjectHideFlags: 0
@@ -45993,6 +46514,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &625583598
 GameObject:
   m_ObjectHideFlags: 0
@@ -46029,6 +46553,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &625583600
 Transform:
   m_ObjectHideFlags: 0
@@ -46125,6 +46652,57 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
+--- !u!28 &638645802
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 10
+  m_Height: 2
+  m_CompleteImageSize: 112
+  m_MipsStripped: 0
+  m_TextureFormat: 4
+  m_MipCount: 4
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  m_PlatformBlob: 
+  image data: 112
+  _typelessdata: ffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffcc
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &645223868
 GameObject:
   m_ObjectHideFlags: 0
@@ -46159,6 +46737,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &645223870
 Transform:
   m_ObjectHideFlags: 0
@@ -46223,6 +46804,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &645907420
 GameObject:
   m_ObjectHideFlags: 0
@@ -46272,6 +46856,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &649407607
 GameObject:
   m_ObjectHideFlags: 0
@@ -46321,6 +46908,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &651387850
 GameObject:
   m_ObjectHideFlags: 0
@@ -46355,6 +46945,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &651387852
 Transform:
   m_ObjectHideFlags: 0
@@ -46419,6 +47012,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &657421167
 GameObject:
   m_ObjectHideFlags: 0
@@ -46453,6 +47049,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &657421169
 Transform:
   m_ObjectHideFlags: 0
@@ -46517,6 +47116,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &666220425
 GameObject:
   m_ObjectHideFlags: 0
@@ -46551,6 +47153,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &666220427
 Transform:
   m_ObjectHideFlags: 0
@@ -46615,6 +47220,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &672605136
 GameObject:
   m_ObjectHideFlags: 0
@@ -46649,6 +47257,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &672605138
 Transform:
   m_ObjectHideFlags: 0
@@ -55321,6 +55932,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &676265891
 GameObject:
   m_ObjectHideFlags: 0
@@ -55370,6 +55984,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &676976959
 GameObject:
   m_ObjectHideFlags: 0
@@ -55509,6 +56126,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &681204145
 Transform:
   m_ObjectHideFlags: 0
@@ -55605,6 +56225,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &692261175
 GameObject:
   m_ObjectHideFlags: 0
@@ -55654,6 +56277,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &693173781
 GameObject:
   m_ObjectHideFlags: 0
@@ -55703,6 +56329,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &693749283
 GameObject:
   m_ObjectHideFlags: 0
@@ -55752,6 +56381,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &695884940
 GameObject:
   m_ObjectHideFlags: 0
@@ -55818,6 +56450,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &698691210
 Transform:
   m_ObjectHideFlags: 0
@@ -55833,6 +56468,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1811751034}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &699674978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2108179407647240255, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &700199680
 GameObject:
   m_ObjectHideFlags: 0
@@ -55882,6 +56522,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &700765454
 GameObject:
   m_ObjectHideFlags: 0
@@ -55931,6 +56574,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -56074,6 +56720,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &720577482
 GameObject:
   m_ObjectHideFlags: 0
@@ -56124,6 +56773,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &720602198
 GameObject:
   m_ObjectHideFlags: 0
@@ -56241,6 +56893,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &722527951
 Transform:
   m_ObjectHideFlags: 0
@@ -56305,6 +56960,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &726571596
 GameObject:
   m_ObjectHideFlags: 0
@@ -56339,6 +56997,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &726571598
 Transform:
   m_ObjectHideFlags: 0
@@ -56471,6 +57132,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &730128219
 Transform:
   m_ObjectHideFlags: 0
@@ -56535,6 +57199,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &730773304
 Mesh:
   m_ObjectHideFlags: 0
@@ -56749,6 +57416,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!64 &738094385
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56805,6 +57475,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &740910465
 Transform:
   m_ObjectHideFlags: 0
@@ -56869,6 +57542,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &749055665
 GameObject:
   m_ObjectHideFlags: 0
@@ -56903,6 +57579,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &749055667
 Transform:
   m_ObjectHideFlags: 0
@@ -57035,6 +57714,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &758416156
 Transform:
   m_ObjectHideFlags: 0
@@ -57085,6 +57767,9 @@ MonoBehaviour:
   isStopLine: 1
   currentIsRed: 0
   redLightModel: {fileID: 612761735}
+  yellowLightModel: {fileID: 1353996879}
+  greenLightModel: {fileID: 1533490620}
+  hardwareID: Jianguo_Zhongxiao_1
 --- !u!4 &759892404
 Transform:
   m_ObjectHideFlags: 0
@@ -57094,7 +57779,7 @@ Transform:
   m_GameObject: {fileID: 759892402}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: -358.63, y: -389.69, z: -175.07}
+  m_LocalPosition: {x: -358.23, y: -389.68, z: -174.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -57134,6 +57819,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &762575695
 Transform:
   m_ObjectHideFlags: 0
@@ -57198,6 +57886,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &766040092
 GameObject:
   m_ObjectHideFlags: 0
@@ -57232,6 +57923,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &766040094
 Transform:
   m_ObjectHideFlags: 0
@@ -57368,7 +58062,10 @@ MonoBehaviour:
   - {fileID: 2135106654}
   isStopLine: 0
   currentIsRed: 0
-  redLightModel: {fileID: 0}
+  redLightModel: {fileID: 699674978}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Xinsheng_Bade_3
 --- !u!4 &769352438
 Transform:
   m_ObjectHideFlags: 0
@@ -57378,7 +58075,7 @@ Transform:
   m_GameObject: {fileID: 769352436}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: 33.56, y: -390.16, z: -472.41}
+  m_LocalPosition: {x: 32.97, y: -390.17, z: -472.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -57418,6 +58115,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &772286456
 Transform:
   m_ObjectHideFlags: 0
@@ -57565,6 +58265,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &778822259
 GameObject:
   m_ObjectHideFlags: 0
@@ -57614,6 +58317,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &786674132
 GameObject:
   m_ObjectHideFlags: 0
@@ -57662,6 +58368,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &794739078
 GameObject:
   m_ObjectHideFlags: 0
@@ -72063,6 +72772,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &800564093
 Transform:
   m_ObjectHideFlags: 0
@@ -72127,6 +72839,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &807591776
 GameObject:
   m_ObjectHideFlags: 0
@@ -72244,6 +72959,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &816908009
 Transform:
   m_ObjectHideFlags: 0
@@ -74589,6 +75307,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &823316188
 Transform:
   m_ObjectHideFlags: 0
@@ -74653,6 +75374,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &832857087
 GameObject:
   m_ObjectHideFlags: 0
@@ -74702,6 +75426,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &835600728
 GameObject:
   m_ObjectHideFlags: 0
@@ -74751,6 +75478,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &836629894
 GameObject:
   m_ObjectHideFlags: 0
@@ -74831,6 +75561,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &849105413
 GameObject:
   m_ObjectHideFlags: 0
@@ -84478,6 +85211,19 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
+--- !u!1 &854817735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7201150417418456964, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &864860625 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8238895038003088304, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &868364993
 GameObject:
   m_ObjectHideFlags: 0
@@ -84527,6 +85273,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &875137106
 GameObject:
   m_ObjectHideFlags: 0
@@ -84561,6 +85310,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &875137108
 Transform:
   m_ObjectHideFlags: 0
@@ -84625,6 +85377,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &882468864
 GameObject:
   m_ObjectHideFlags: 0
@@ -84674,6 +85429,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &882646775
 GameObject:
   m_ObjectHideFlags: 0
@@ -84755,6 +85513,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &888095063
 GameObject:
   m_ObjectHideFlags: 0
@@ -84789,6 +85550,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &888095065
 Transform:
   m_ObjectHideFlags: 0
@@ -84933,6 +85697,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &896190186
 GameObject:
   m_ObjectHideFlags: 0
@@ -84967,6 +85734,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &896190188
 Transform:
   m_ObjectHideFlags: 0
@@ -85196,6 +85966,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &905117934
 GameObject:
   m_ObjectHideFlags: 0
@@ -85309,6 +86082,9 @@ MonoBehaviour:
   isStopLine: 1
   currentIsRed: 0
   redLightModel: {fileID: 2059058789}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Jianguo_Zhongxiao_4
 --- !u!1 &920942860
 GameObject:
   m_ObjectHideFlags: 0
@@ -85358,6 +86134,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &921802214
 GameObject:
   m_ObjectHideFlags: 0
@@ -85490,6 +86269,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &924840655
 GameObject:
   m_ObjectHideFlags: 0
@@ -85539,6 +86321,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &925505016
 GameObject:
   m_ObjectHideFlags: 0
@@ -87870,6 +88655,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &942721411
 GameObject:
   m_ObjectHideFlags: 0
@@ -87904,6 +88692,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &942721413
 Transform:
   m_ObjectHideFlags: 0
@@ -88084,6 +88875,54 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!28 &947105743
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 12
+  m_Height: 12
+  m_CompleteImageSize: 760
+  m_MipsStripped: 0
+  m_TextureFormat: 4
+  m_MipCount: 4
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  m_PlatformBlob: 
+  image data: 760
+  _typelessdata: 0000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc0000000000000000000000000000000000000000ffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffcc0000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc00000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffccffffffcc000000000000000000000000000000000000000000000000000000007f7f7f667f7f7f66000000000000000000000000000000007f7f7f667f7f7f6600000000000000007f7f7f667f7f7f66bfbfbf99bfbfbf997f7f7f667f7f7f667f7f7f667f7f7f66bfbfbf99bfbfbf997f7f7f667f7f7f6600000000000000007f7f7f667f7f7f66000000000000000000000000000000007f7f7f667f7f7f660000000000000000000000007f7f7f66000000007f7f7f66bfbfbf997f7f7f66000000007f7f7f6600000000bfbfbf99
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &949140472
 GameObject:
   m_ObjectHideFlags: 0
@@ -88118,6 +88957,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &949140474
 Transform:
   m_ObjectHideFlags: 0
@@ -88167,6 +89009,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &949218916
 Transform:
   m_ObjectHideFlags: 0
@@ -88232,6 +89077,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &962248255
 Mesh:
   m_ObjectHideFlags: 0
@@ -88735,6 +89583,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &987750808
 GameObject:
   m_ObjectHideFlags: 0
@@ -88784,6 +89635,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &995226705
 GameObject:
   m_ObjectHideFlags: 0
@@ -88833,6 +89687,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &995768497
 GameObject:
   m_ObjectHideFlags: 0
@@ -88867,6 +89724,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &995768499
 Transform:
   m_ObjectHideFlags: 0
@@ -88916,6 +89776,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1001829196
 Transform:
   m_ObjectHideFlags: 0
@@ -88980,6 +89843,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &1004858459
 Mesh:
   m_ObjectHideFlags: 0
@@ -89194,6 +90060,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1017529851
 GameObject:
   m_ObjectHideFlags: 0
@@ -89228,6 +90097,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1017529853
 Transform:
   m_ObjectHideFlags: 0
@@ -89309,6 +90181,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1024527559
 Transform:
   m_ObjectHideFlags: 0
@@ -89619,6 +90494,11 @@ MonoBehaviour:
   m_Script: {fileID: -1994553136, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1033018284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8004817422808180152, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1045546884
 GameObject:
   m_ObjectHideFlags: 0
@@ -89736,6 +90616,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1047152398
 Transform:
   m_ObjectHideFlags: 0
@@ -89800,6 +90683,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1054892945
 GameObject:
   m_ObjectHideFlags: 0
@@ -89834,6 +90720,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1054892947
 Transform:
   m_ObjectHideFlags: 0
@@ -89898,6 +90787,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1061128643
 GameObject:
   m_ObjectHideFlags: 0
@@ -89947,6 +90839,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1065956272
 GameObject:
   m_ObjectHideFlags: 0
@@ -89973,7 +90868,7 @@ Transform:
   m_GameObject: {fileID: 1065956272}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: 39.2, y: -390, z: -241.37}
+  m_LocalPosition: {x: 37.67, y: -390.03, z: -240.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89993,9 +90888,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 364035593}
-  isStopLine: 0
+  isStopLine: 1
   currentIsRed: 0
-  redLightModel: {fileID: 0}
+  redLightModel: {fileID: 864860625}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Xinsheng_Zhongxiao_3
 --- !u!1 &1068050115
 GameObject:
   m_ObjectHideFlags: 0
@@ -90045,6 +90943,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1069186671
 GameObject:
   m_ObjectHideFlags: 0
@@ -90079,6 +90980,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1069186673
 Transform:
   m_ObjectHideFlags: 0
@@ -90143,6 +91047,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1085264051
 GameObject:
   m_ObjectHideFlags: 0
@@ -90192,6 +91099,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1089893544
 GameObject:
   m_ObjectHideFlags: 0
@@ -90241,6 +91151,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1090982644
 GameObject:
   m_ObjectHideFlags: 0
@@ -90358,6 +91271,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1092564969
 Transform:
   m_ObjectHideFlags: 0
@@ -90422,6 +91338,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1103616507
 GameObject:
   m_ObjectHideFlags: 0
@@ -90453,9 +91372,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1786576891}
-  isStopLine: 0
+  isStopLine: 1
   currentIsRed: 0
-  redLightModel: {fileID: 0}
+  redLightModel: {fileID: 1526309250}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Jianguo_Civic_3
 --- !u!4 &1103616509
 Transform:
   m_ObjectHideFlags: 0
@@ -90505,6 +91427,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1106661273
 Transform:
   m_ObjectHideFlags: 0
@@ -90554,6 +91479,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1109292260
 Transform:
   m_ObjectHideFlags: 0
@@ -90701,6 +91629,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1116965719
 GameObject:
   m_ObjectHideFlags: 0
@@ -90731,10 +91662,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextNodes:
-  - {fileID: 625583599}
+  - {fileID: 622988244}
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1116965721
 Transform:
   m_ObjectHideFlags: 0
@@ -90744,7 +91678,7 @@ Transform:
   m_GameObject: {fileID: 1116965719}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: -339.65997, y: -389.84998, z: -491.17}
+  m_LocalPosition: {x: -339.41, y: -389.82, z: -487.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -90799,6 +91733,9 @@ MonoBehaviour:
   isStopLine: 1
   currentIsRed: 0
   redLightModel: {fileID: 597118356}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Jianguo_Zhongxiao_3
 --- !u!1 &1131224177
 GameObject:
   m_ObjectHideFlags: 0
@@ -90848,6 +91785,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1131428415
 GameObject:
   m_ObjectHideFlags: 0
@@ -90897,6 +91837,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1138321522
 GameObject:
   m_ObjectHideFlags: 0
@@ -94334,6 +95277,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1147961908
 GameObject:
   m_ObjectHideFlags: 0
@@ -94368,6 +95314,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1147961910
 Transform:
   m_ObjectHideFlags: 0
@@ -94515,54 +95464,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
---- !u!28 &1155722819
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 2
-  m_Width: 10
-  m_Height: 2
-  m_CompleteImageSize: 112
-  m_MipsStripped: 0
-  m_TextureFormat: 4
-  m_MipCount: 4
-  m_IsReadable: 1
-  m_IsPreProcessed: 0
-  m_IgnoreMipmapLimit: 0
-  m_MipmapLimitGroupName: 
-  m_StreamingMipmaps: 0
-  m_StreamingMipmapsPriority: 0
-  m_VTOnly: 0
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  m_PlatformBlob: 
-  image data: 112
-  _typelessdata: ffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffccffffffcc
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1160484164
 GameObject:
   m_ObjectHideFlags: 0
@@ -94612,6 +95516,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1163583134
 GameObject:
   m_ObjectHideFlags: 0
@@ -94661,6 +95568,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1168699963
 GameObject:
   m_ObjectHideFlags: 0
@@ -94793,6 +95703,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1180675316
 GameObject:
   m_ObjectHideFlags: 1
@@ -95260,6 +96173,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1201962323
 GameObject:
   m_ObjectHideFlags: 0
@@ -95294,6 +96210,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1201962325
 Transform:
   m_ObjectHideFlags: 0
@@ -95358,6 +96277,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1204190604
 GameObject:
   m_ObjectHideFlags: 0
@@ -95392,6 +96314,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1204190606
 Transform:
   m_ObjectHideFlags: 0
@@ -95456,6 +96381,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1209137792
 GameObject:
   m_ObjectHideFlags: 0
@@ -95505,6 +96433,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1213073755
 GameObject:
   m_ObjectHideFlags: 0
@@ -109733,6 +110664,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1215023082
 Transform:
   m_ObjectHideFlags: 0
@@ -109797,6 +110731,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1226693202
 GameObject:
   m_ObjectHideFlags: 0
@@ -109846,6 +110783,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1227322845
 GameObject:
   m_ObjectHideFlags: 0
@@ -109912,6 +110852,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1227621755
 Transform:
   m_ObjectHideFlags: 0
@@ -109976,6 +110919,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1234803193
 GameObject:
   m_ObjectHideFlags: 0
@@ -110025,6 +110971,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1235494029
 GameObject:
   m_ObjectHideFlags: 0
@@ -110533,6 +111482,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1262030400
 GameObject:
   m_ObjectHideFlags: 0
@@ -110582,6 +111534,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1265103796
 GameObject:
   m_ObjectHideFlags: 0
@@ -110631,6 +111586,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1265916661
 GameObject:
   m_ObjectHideFlags: 0
@@ -114512,6 +115470,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1283628544
 GameObject:
   m_ObjectHideFlags: 0
@@ -114561,6 +115522,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1284113626
 GameObject:
   m_ObjectHideFlags: 0
@@ -114595,6 +115559,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1284113628
 Transform:
   m_ObjectHideFlags: 0
@@ -114659,6 +115626,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1288711840
 GameObject:
   m_ObjectHideFlags: 0
@@ -126596,6 +127566,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1301397797
 GameObject:
   m_ObjectHideFlags: 1
@@ -126749,6 +127722,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1313156873
 Transform:
   m_ObjectHideFlags: 0
@@ -126896,6 +127872,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1322726713
 GameObject:
   m_ObjectHideFlags: 0
@@ -126930,6 +127909,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1322726715
 Transform:
   m_ObjectHideFlags: 0
@@ -126945,6 +127927,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 30146498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1324309214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1725509949755915663, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1325676089
 GameObject:
   m_ObjectHideFlags: 0
@@ -126994,6 +127981,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1328218309
 GameObject:
   m_ObjectHideFlags: 0
@@ -127028,6 +128018,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1328218311
 Transform:
   m_ObjectHideFlags: 0
@@ -127092,6 +128085,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1338687162
 GameObject:
   m_ObjectHideFlags: 0
@@ -127141,6 +128137,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &1343011015
 Mesh:
   m_ObjectHideFlags: 0
@@ -127423,6 +128422,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1345566083
 Transform:
   m_ObjectHideFlags: 0
@@ -127778,6 +128780,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1353391136
 Transform:
   m_ObjectHideFlags: 0
@@ -127793,6 +128798,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 30146498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1353996879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 903144104007497985, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1354500742
 GameObject:
   m_ObjectHideFlags: 0
@@ -127842,6 +128852,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1354613303
 GameObject:
   m_ObjectHideFlags: 1
@@ -127995,6 +129008,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1356118401
 Transform:
   m_ObjectHideFlags: 0
@@ -128059,6 +129075,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1363580182
 GameObject:
   m_ObjectHideFlags: 0
@@ -131343,6 +132362,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1370727418
 GameObject:
   m_ObjectHideFlags: 0
@@ -131392,6 +132414,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1377053708
 GameObject:
   m_ObjectHideFlags: 0
@@ -131440,6 +132465,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1378858945
 GameObject:
   m_ObjectHideFlags: 0
@@ -139524,6 +140552,57 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
+--- !u!28 &1379506311
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 2
+  m_Height: 2
+  m_CompleteImageSize: 20
+  m_MipsStripped: 0
+  m_TextureFormat: 4
+  m_MipCount: 2
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  m_PlatformBlob: 
+  image data: 20
+  _typelessdata: 4d4d4dff4d4d4dff4d4d4dff4d4d4dff4d4d4dff
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &1384096782
 GameObject:
   m_ObjectHideFlags: 0
@@ -139558,6 +140637,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1384096784
 Transform:
   m_ObjectHideFlags: 0
@@ -139741,6 +140823,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1404837259
 GameObject:
   m_ObjectHideFlags: 0
@@ -139790,6 +140875,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &1404896058
 Mesh:
   m_ObjectHideFlags: 0
@@ -140004,6 +141092,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1411732665
 GameObject:
   m_ObjectHideFlags: 0
@@ -140038,6 +141129,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1411732667
 Transform:
   m_ObjectHideFlags: 0
@@ -140087,6 +141181,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1414267802
 Transform:
   m_ObjectHideFlags: 0
@@ -140136,6 +141233,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1416210828
 Transform:
   m_ObjectHideFlags: 0
@@ -140185,6 +141285,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1417504085
 Transform:
   m_ObjectHideFlags: 0
@@ -140409,6 +141512,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1420076160
 Transform:
   m_ObjectHideFlags: 0
@@ -140458,6 +141564,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1422998853
 Transform:
   m_ObjectHideFlags: 0
@@ -140522,6 +141631,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1425868816
 GameObject:
   m_ObjectHideFlags: 0
@@ -140654,6 +141766,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1436681802
 GameObject:
   m_ObjectHideFlags: 0
@@ -140703,6 +141818,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1440723087
 GameObject:
   m_ObjectHideFlags: 0
@@ -140754,6 +141872,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1443518229
 GameObject:
   m_ObjectHideFlags: 0
@@ -140835,6 +141956,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1447596881
 GameObject:
   m_ObjectHideFlags: 0
@@ -140884,6 +142008,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1447846494
 GameObject:
   m_ObjectHideFlags: 0
@@ -140933,6 +142060,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1448117074
 GameObject:
   m_ObjectHideFlags: 0
@@ -140967,6 +142097,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1448117076
 Transform:
   m_ObjectHideFlags: 0
@@ -141031,6 +142164,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1457290855
 GameObject:
   m_ObjectHideFlags: 0
@@ -141057,7 +142193,7 @@ Transform:
   m_GameObject: {fileID: 1457290855}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: 42.62, y: -390.15, z: -457.59}
+  m_LocalPosition: {x: 42.57, y: -390.14, z: -456.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -141077,9 +142213,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1898727160}
-  isStopLine: 0
+  isStopLine: 1
   currentIsRed: 0
-  redLightModel: {fileID: 0}
+  redLightModel: {fileID: 1951656081}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Xinsheng_Bade_2
 --- !u!1 &1462716975
 GameObject:
   m_ObjectHideFlags: 0
@@ -141197,6 +142336,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1467337449
 Transform:
   m_ObjectHideFlags: 0
@@ -141260,6 +142402,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1476275902
 GameObject:
   m_ObjectHideFlags: 0
@@ -141341,6 +142486,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1486225292
 GameObject:
   m_ObjectHideFlags: 0
@@ -141375,6 +142523,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1486225294
 Transform:
   m_ObjectHideFlags: 0
@@ -141439,6 +142590,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1494050950
 GameObject:
   m_ObjectHideFlags: 0
@@ -141488,6 +142642,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1498044227
 GameObject:
   m_ObjectHideFlags: 0
@@ -141522,6 +142679,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1498044229
 Transform:
   m_ObjectHideFlags: 0
@@ -153665,6 +154825,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1522036020
 GameObject:
   m_ObjectHideFlags: 0
@@ -153699,6 +154862,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1522036022
 Transform:
   m_ObjectHideFlags: 0
@@ -153714,6 +154880,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 30146498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1526309250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6594908845086852899, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1531958810
 GameObject:
   m_ObjectHideFlags: 0
@@ -153763,6 +154934,14 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
+--- !u!1 &1533490620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6740742527841855385, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1538071150
 GameObject:
   m_ObjectHideFlags: 0
@@ -153789,7 +154968,7 @@ Transform:
   m_GameObject: {fileID: 1538071150}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: 50.759995, y: -389.07, z: -257.04}
+  m_LocalPosition: {x: 51.22, y: -389.05, z: -254.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -153809,9 +154988,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 515605452}
-  isStopLine: 0
+  isStopLine: 1
   currentIsRed: 0
-  redLightModel: {fileID: 0}
+  redLightModel: {fileID: 561959562}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Xinsheng_Zhongxiao_4
 --- !u!1 &1541340489
 GameObject:
   m_ObjectHideFlags: 0
@@ -153893,6 +155075,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1548349707
 GameObject:
   m_ObjectHideFlags: 0
@@ -153942,6 +155127,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1549012754
 GameObject:
   m_ObjectHideFlags: 0
@@ -154023,6 +155211,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1557187566
 GameObject:
   m_ObjectHideFlags: 0
@@ -154072,6 +155263,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1559294408
 GameObject:
   m_ObjectHideFlags: 0
@@ -154121,6 +155315,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1560887301
 GameObject:
   m_ObjectHideFlags: 0
@@ -154155,6 +155352,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1560887303
 Transform:
   m_ObjectHideFlags: 0
@@ -154302,6 +155502,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1565188635
 GameObject:
   m_ObjectHideFlags: 0
@@ -154351,6 +155554,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1565802344
 GameObject:
   m_ObjectHideFlags: 0
@@ -154400,6 +155606,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1567146653
 GameObject:
   m_ObjectHideFlags: 0
@@ -154532,6 +155741,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1579464281
 GameObject:
   m_ObjectHideFlags: 0
@@ -154581,6 +155793,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1581316555
 GameObject:
   m_ObjectHideFlags: 0
@@ -154630,6 +155845,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1586237778
 GameObject:
   m_ObjectHideFlags: 0
@@ -154664,6 +155882,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1586237780
 Transform:
   m_ObjectHideFlags: 0
@@ -154713,6 +155934,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1586603610
 Transform:
   m_ObjectHideFlags: 0
@@ -154762,6 +155986,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1589707683
 Transform:
   m_ObjectHideFlags: 0
@@ -154811,6 +156038,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1593946312
 Transform:
   m_ObjectHideFlags: 0
@@ -154860,6 +156090,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1602729944
 Transform:
   m_ObjectHideFlags: 0
@@ -154924,6 +156157,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1607391909
 GameObject:
   m_ObjectHideFlags: 0
@@ -154958,6 +156194,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1607391911
 Transform:
   m_ObjectHideFlags: 0
@@ -155007,6 +156246,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1608935580
 Transform:
   m_ObjectHideFlags: 0
@@ -155270,6 +156512,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612466400}
   m_Mesh: {fileID: 4300000, guid: ca24d58fab4bda2489746a85abef0adc, type: 3}
+--- !u!1 &1618481264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9125342707760839052, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1623068763
 GameObject:
   m_ObjectHideFlags: 0
@@ -155305,6 +156552,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1623068765
 Transform:
   m_ObjectHideFlags: 0
@@ -155369,6 +156619,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1631912308
 GameObject:
   m_ObjectHideFlags: 0
@@ -155403,6 +156656,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1631912310
 Transform:
   m_ObjectHideFlags: 0
@@ -155423,6 +156679,54 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5088243843577927196, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
   m_PrefabInstance: {fileID: 2059058788}
   m_PrefabAsset: {fileID: 0}
+--- !u!28 &1639825613
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 2
+  m_Height: 2
+  m_CompleteImageSize: 20
+  m_MipsStripped: 0
+  m_TextureFormat: 4
+  m_MipCount: 2
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  m_PlatformBlob: 
+  image data: 20
+  _typelessdata: 383838ff383838ff383838ff383838ff383838ff
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &1640202191
 GameObject:
   m_ObjectHideFlags: 0
@@ -155457,6 +156761,9 @@ MonoBehaviour:
   isStopLine: 1
   currentIsRed: 0
   redLightModel: {fileID: 1632222379}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Jianguo_Zhongxiao_2
 --- !u!4 &1640202193
 Transform:
   m_ObjectHideFlags: 0
@@ -155466,7 +156773,7 @@ Transform:
   m_GameObject: {fileID: 1640202191}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: -370.03, y: -389.94, z: -160.83}
+  m_LocalPosition: {x: -370.03, y: -389.94, z: -160.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -155506,6 +156813,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1640993410
 Transform:
   m_ObjectHideFlags: 0
@@ -155570,6 +156880,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1646619862
 GameObject:
   m_ObjectHideFlags: 0
@@ -155619,6 +156932,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1647323782
 GameObject:
   m_ObjectHideFlags: 0
@@ -155653,6 +156969,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1647323784
 Transform:
   m_ObjectHideFlags: 0
@@ -155717,6 +157036,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1650975792
 GameObject:
   m_ObjectHideFlags: 0
@@ -155751,6 +157073,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1650975794
 Transform:
   m_ObjectHideFlags: 0
@@ -155815,6 +157140,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1663406303
 GameObject:
   m_ObjectHideFlags: 0
@@ -155849,6 +157177,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1663406305
 Transform:
   m_ObjectHideFlags: 0
@@ -156063,6 +157394,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1669205442
 Transform:
   m_ObjectHideFlags: 0
@@ -156127,6 +157461,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1676018192
 GameObject:
   m_ObjectHideFlags: 0
@@ -156161,6 +157498,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1676018194
 Transform:
   m_ObjectHideFlags: 0
@@ -156210,6 +157550,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1676769576
 Transform:
   m_ObjectHideFlags: 0
@@ -156259,6 +157602,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1678244154
 Transform:
   m_ObjectHideFlags: 0
@@ -156308,6 +157654,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1679392370
 Transform:
   m_ObjectHideFlags: 0
@@ -164407,6 +165756,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1688367213
 GameObject:
   m_ObjectHideFlags: 0
@@ -164441,6 +165793,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1688367215
 Transform:
   m_ObjectHideFlags: 0
@@ -164490,6 +165845,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1691338710
 Transform:
   m_ObjectHideFlags: 0
@@ -164637,6 +165995,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1695283302
 GameObject:
   m_ObjectHideFlags: 0
@@ -164671,6 +166032,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1695283304
 Transform:
   m_ObjectHideFlags: 0
@@ -164886,6 +166250,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1699801539
 Transform:
   m_ObjectHideFlags: 0
@@ -165115,6 +166482,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1702338170
 GameObject:
   m_ObjectHideFlags: 0
@@ -165164,6 +166534,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1712859815
 GameObject:
   m_ObjectHideFlags: 0
@@ -165214,6 +166587,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1713161583
 GameObject:
   m_ObjectHideFlags: 0
@@ -165248,6 +166624,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1713161585
 Transform:
   m_ObjectHideFlags: 0
@@ -165312,6 +166691,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1715754585
 GameObject:
   m_ObjectHideFlags: 0
@@ -165480,6 +166862,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1721031564
 GameObject:
   m_ObjectHideFlags: 0
@@ -165529,6 +166914,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1722990638
 GameObject:
   m_ObjectHideFlags: 0
@@ -165563,6 +166951,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1722990640
 Transform:
   m_ObjectHideFlags: 0
@@ -165614,6 +167005,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1723846074
 Transform:
   m_ObjectHideFlags: 0
@@ -165678,6 +167072,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1730958900
 GameObject:
   m_ObjectHideFlags: 0
@@ -165727,6 +167124,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1731073237
 GameObject:
   m_ObjectHideFlags: 0
@@ -165761,6 +167161,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1731073239
 Transform:
   m_ObjectHideFlags: 0
@@ -165825,6 +167228,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1739841095
 GameObject:
   m_ObjectHideFlags: 0
@@ -165874,6 +167280,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1743335971
 GameObject:
   m_ObjectHideFlags: 0
@@ -165923,6 +167332,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &1744177125
 Mesh:
   m_ObjectHideFlags: 0
@@ -166166,9 +167578,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 425530987}
-  isStopLine: 0
+  isStopLine: 1
   currentIsRed: 0
-  redLightModel: {fileID: 0}
+  redLightModel: {fileID: 1033018284}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Xinsheng_Bade_4
 --- !u!1 &1756855630
 GameObject:
   m_ObjectHideFlags: 0
@@ -166218,6 +167633,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1760183607
 GameObject:
   m_ObjectHideFlags: 0
@@ -166267,6 +167685,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1760248712
 GameObject:
   m_ObjectHideFlags: 0
@@ -166318,6 +167739,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!64 &1760630146
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -166389,6 +167813,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1764260395
 GameObject:
   m_ObjectHideFlags: 0
@@ -166438,6 +167865,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1766442780
 GameObject:
   m_ObjectHideFlags: 0
@@ -166472,6 +167902,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1766442782
 Transform:
   m_ObjectHideFlags: 0
@@ -166536,6 +167969,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1770103218
 GameObject:
   m_ObjectHideFlags: 1
@@ -166704,6 +168140,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1773045997
 GameObject:
   m_ObjectHideFlags: 0
@@ -166730,7 +168169,7 @@ Transform:
   m_GameObject: {fileID: 1773045997}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: 47.72, y: -390.23, z: -231.81}
+  m_LocalPosition: {x: 47.91, y: -390.22, z: -230.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -166750,9 +168189,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 482276454}
-  isStopLine: 0
+  isStopLine: 1
   currentIsRed: 0
-  redLightModel: {fileID: 0}
+  redLightModel: {fileID: 854817735}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Xinsheng_Zhongxia_2
 --- !u!43 &1779675959
 Mesh:
   m_ObjectHideFlags: 0
@@ -167071,6 +168513,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1784411750
 Transform:
   m_ObjectHideFlags: 0
@@ -167122,6 +168567,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1786576892
 Transform:
   m_ObjectHideFlags: 0
@@ -167186,6 +168634,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1793387211
 GameObject:
   m_ObjectHideFlags: 0
@@ -167318,6 +168769,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1803706896
 GameObject:
   m_ObjectHideFlags: 0
@@ -167367,6 +168821,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1807117829
 GameObject:
   m_ObjectHideFlags: 0
@@ -167417,6 +168874,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1807514029
 GameObject:
   m_ObjectHideFlags: 0
@@ -167451,6 +168911,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1807514031
 Transform:
   m_ObjectHideFlags: 0
@@ -167515,54 +168978,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
---- !u!28 &1809273853
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 2
-  m_Width: 2
-  m_Height: 2
-  m_CompleteImageSize: 20
-  m_MipsStripped: 0
-  m_TextureFormat: 4
-  m_MipCount: 2
-  m_IsReadable: 1
-  m_IsPreProcessed: 0
-  m_IgnoreMipmapLimit: 0
-  m_MipmapLimitGroupName: 
-  m_StreamingMipmaps: 0
-  m_StreamingMipmapsPriority: 0
-  m_VTOnly: 0
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  m_PlatformBlob: 
-  image data: 20
-  _typelessdata: 4d4d4dff4d4d4dff4d4d4dff4d4d4dff4d4d4dff
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1810389166
 GameObject:
   m_ObjectHideFlags: 0
@@ -167597,6 +169015,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1810389168
 Transform:
   m_ObjectHideFlags: 0
@@ -175686,6 +177107,7 @@ Transform:
   - {fileID: 1024527559}
   - {fileID: 1679392370}
   - {fileID: 1116965721}
+  - {fileID: 622988245}
   - {fileID: 1699801539}
   - {fileID: 1876103967}
   - {fileID: 131972574}
@@ -175779,6 +177201,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!64 &1817196436
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -175850,6 +177275,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1824732067
 GameObject:
   m_ObjectHideFlags: 0
@@ -175899,6 +177327,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &1829454315
 Mesh:
   m_ObjectHideFlags: 0
@@ -176098,6 +177529,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1832181436
 Transform:
   m_ObjectHideFlags: 0
@@ -176147,6 +177581,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1833907285
 Transform:
   m_ObjectHideFlags: 0
@@ -176196,6 +177633,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1834085510
 Transform:
   m_ObjectHideFlags: 0
@@ -176245,6 +177685,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1834123843
 Transform:
   m_ObjectHideFlags: 0
@@ -176309,6 +177752,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1835795377
 GameObject:
   m_ObjectHideFlags: 0
@@ -176358,6 +177804,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1836001142
 GameObject:
   m_ObjectHideFlags: 0
@@ -176488,6 +177937,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1843817470
 Transform:
   m_ObjectHideFlags: 0
@@ -176537,6 +177989,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1844807510
 Transform:
   m_ObjectHideFlags: 0
@@ -176601,6 +178056,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1848356908
 GameObject:
   m_ObjectHideFlags: 0
@@ -176650,6 +178108,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1850498649
 GameObject:
   m_ObjectHideFlags: 0
@@ -176699,6 +178160,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1859304061
 GameObject:
   m_ObjectHideFlags: 1
@@ -176867,6 +178331,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1860654820
 GameObject:
   m_ObjectHideFlags: 0
@@ -176901,6 +178368,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1860654822
 Transform:
   m_ObjectHideFlags: 0
@@ -176965,6 +178435,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1864985866
 GameObject:
   m_ObjectHideFlags: 0
@@ -177082,6 +178555,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1876103965
 GameObject:
   m_ObjectHideFlags: 0
@@ -177116,6 +178592,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1876103967
 Transform:
   m_ObjectHideFlags: 0
@@ -177180,6 +178659,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1879399678
 GameObject:
   m_ObjectHideFlags: 0
@@ -177494,6 +178976,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1892487118
 Transform:
   m_ObjectHideFlags: 0
@@ -177557,6 +179042,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1898727158
 GameObject:
   m_ObjectHideFlags: 0
@@ -177608,6 +179096,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!43 &1903320556
 Mesh:
   m_ObjectHideFlags: 0
@@ -177926,6 +179417,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1906006510
 Transform:
   m_ObjectHideFlags: 0
@@ -177941,54 +179435,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 30146498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!28 &1906761756
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 2
-  m_Width: 2
-  m_Height: 2
-  m_CompleteImageSize: 20
-  m_MipsStripped: 0
-  m_TextureFormat: 4
-  m_MipCount: 2
-  m_IsReadable: 1
-  m_IsPreProcessed: 0
-  m_IgnoreMipmapLimit: 0
-  m_MipmapLimitGroupName: 
-  m_StreamingMipmaps: 0
-  m_StreamingMipmapsPriority: 0
-  m_VTOnly: 0
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  m_PlatformBlob: 
-  image data: 20
-  _typelessdata: 383838ff383838ff383838ff383838ff383838ff
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1910060372
 GameObject:
   m_ObjectHideFlags: 0
@@ -178070,6 +179516,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1915269323
 GameObject:
   m_ObjectHideFlags: 0
@@ -178119,6 +179568,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1930101605
 GameObject:
   m_ObjectHideFlags: 0
@@ -178153,6 +179605,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1930101607
 Transform:
   m_ObjectHideFlags: 0
@@ -178194,7 +179649,7 @@ Transform:
   m_GameObject: {fileID: 1931704429}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: -337.27, y: -389.99, z: -525.62}
+  m_LocalPosition: {x: -337.21, y: -389.99, z: -525.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -178214,9 +179669,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 1760248714}
-  isStopLine: 0
+  isStopLine: 1
   currentIsRed: 0
-  redLightModel: {fileID: 0}
+  redLightModel: {fileID: 1989237957}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Jianguo_Civic_4
 --- !u!1 &1932949737
 GameObject:
   m_ObjectHideFlags: 0
@@ -180548,6 +182006,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1936603135
 Transform:
   m_ObjectHideFlags: 0
@@ -180612,6 +182073,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1941704760
 GameObject:
   m_ObjectHideFlags: 0
@@ -180661,6 +182125,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1942314971
 GameObject:
   m_ObjectHideFlags: 0
@@ -180710,6 +182177,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1947592881
 GameObject:
   m_ObjectHideFlags: 0
@@ -180759,6 +182229,14 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
+--- !u!1 &1951656081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2785252502978418848, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1951700505
 GameObject:
   m_ObjectHideFlags: 0
@@ -180805,9 +182283,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 2008498466}
-  isStopLine: 0
+  isStopLine: 1
   currentIsRed: 0
-  redLightModel: {fileID: 0}
+  redLightModel: {fileID: 1618481264}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Jianguo_Civic_1
 --- !u!1 &1970045395
 GameObject:
   m_ObjectHideFlags: 0
@@ -180857,6 +182338,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1971127900
 GameObject:
   m_ObjectHideFlags: 0
@@ -180906,6 +182390,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1973633688
 GameObject:
   m_ObjectHideFlags: 0
@@ -180940,6 +182427,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1973633690
 Transform:
   m_ObjectHideFlags: 0
@@ -180989,6 +182479,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1975136105
 Transform:
   m_ObjectHideFlags: 0
@@ -181052,6 +182545,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1978737524
 GameObject:
   m_ObjectHideFlags: 0
@@ -181086,6 +182582,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1978737526
 Transform:
   m_ObjectHideFlags: 0
@@ -181135,6 +182634,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1979757056
 Transform:
   m_ObjectHideFlags: 0
@@ -181267,6 +182769,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1983072089
 Transform:
   m_ObjectHideFlags: 0
@@ -181316,6 +182821,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1988468252
 Transform:
   m_ObjectHideFlags: 0
@@ -181380,6 +182888,14 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
+--- !u!1 &1989237957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2010786938037579472, guid: 2d23dabb7d0ff224a960c88617174fde, type: 3}
+  m_PrefabInstance: {fileID: 2059058788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1989335635
 GameObject:
   m_ObjectHideFlags: 0
@@ -181414,6 +182930,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &1989335637
 Transform:
   m_ObjectHideFlags: 0
@@ -181561,6 +183080,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &1997341948
 GameObject:
   m_ObjectHideFlags: 0
@@ -181610,6 +183132,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2001402515
 GameObject:
   m_ObjectHideFlags: 0
@@ -181659,6 +183184,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2003374215
 GameObject:
   m_ObjectHideFlags: 0
@@ -181693,6 +183221,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2003374217
 Transform:
   m_ObjectHideFlags: 0
@@ -181759,6 +183290,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2008708288
 GameObject:
   m_ObjectHideFlags: 0
@@ -181793,6 +183327,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2008708290
 Transform:
   m_ObjectHideFlags: 0
@@ -182006,6 +183543,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2012983438
 Transform:
   m_ObjectHideFlags: 0
@@ -182055,6 +183595,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2016271829
 Transform:
   m_ObjectHideFlags: 0
@@ -182151,6 +183694,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2021237018
 GameObject:
   m_ObjectHideFlags: 0
@@ -182271,6 +183817,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2024872582
 GameObject:
   m_ObjectHideFlags: 0
@@ -182473,6 +184022,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2029186387
 GameObject:
   m_ObjectHideFlags: 0
@@ -182522,6 +184074,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2033865531
 GameObject:
   m_ObjectHideFlags: 0
@@ -182639,6 +184194,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2036317831
 Transform:
   m_ObjectHideFlags: 0
@@ -182703,6 +184261,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2037461492
 GameObject:
   m_ObjectHideFlags: 0
@@ -182737,6 +184298,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2037461494
 Transform:
   m_ObjectHideFlags: 0
@@ -182801,6 +184365,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2051442262
 GameObject:
   m_ObjectHideFlags: 0
@@ -182882,6 +184449,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2058088681
 GameObject:
   m_ObjectHideFlags: 0
@@ -182916,6 +184486,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2058088683
 Transform:
   m_ObjectHideFlags: 0
@@ -183024,9 +184597,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNodes:
   - {fileID: 197737833}
-  isStopLine: 0
+  isStopLine: 1
   currentIsRed: 0
-  redLightModel: {fileID: 0}
+  redLightModel: {fileID: 240091211}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: Xinsheng_Zhongxiao_1
 --- !u!4 &2068267894
 Transform:
   m_ObjectHideFlags: 0
@@ -183036,7 +184612,7 @@ Transform:
   m_GameObject: {fileID: 2068267892}
   serializedVersion: 2
   m_LocalRotation: {x: 0.430143, y: -0.55849177, z: 0.5710319, w: 0.42069778}
-  m_LocalPosition: {x: 63.86, y: -389.69, z: -241.15}
+  m_LocalPosition: {x: 64.49, y: -389.68, z: -241.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -183091,6 +184667,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2079894343
 GameObject:
   m_ObjectHideFlags: 0
@@ -183125,6 +184704,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2079894345
 Transform:
   m_ObjectHideFlags: 0
@@ -183174,6 +184756,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2083272989
 Transform:
   m_ObjectHideFlags: 0
@@ -183223,6 +184808,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2084089310
 Transform:
   m_ObjectHideFlags: 0
@@ -183287,6 +184875,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2086514329
 GameObject:
   m_ObjectHideFlags: 0
@@ -183451,6 +185042,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2096019496
 GameObject:
   m_ObjectHideFlags: 0
@@ -183500,6 +185094,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2100202895
 GameObject:
   m_ObjectHideFlags: 0
@@ -183549,6 +185146,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2106948456
 GameObject:
   m_ObjectHideFlags: 0
@@ -183598,6 +185198,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2109588293
 GameObject:
   m_ObjectHideFlags: 0
@@ -183632,6 +185235,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2109588295
 Transform:
   m_ObjectHideFlags: 0
@@ -183779,6 +185385,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2122828850
 GameObject:
   m_ObjectHideFlags: 0
@@ -183828,6 +185437,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2123045997
 GameObject:
   m_ObjectHideFlags: 0
@@ -183862,6 +185474,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2123045999
 Transform:
   m_ObjectHideFlags: 0
@@ -189131,6 +190746,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2135106653
 GameObject:
   m_ObjectHideFlags: 0
@@ -189167,6 +190785,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!4 &2135106655
 Transform:
   m_ObjectHideFlags: 0
@@ -189396,6 +191017,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!64 &2140425805
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -189467,6 +191091,9 @@ MonoBehaviour:
   isStopLine: 0
   currentIsRed: 0
   redLightModel: {fileID: 0}
+  yellowLightModel: {fileID: 0}
+  greenLightModel: {fileID: 0}
+  hardwareID: L1
 --- !u!1 &2144882569
 GameObject:
   m_ObjectHideFlags: 0
@@ -195799,3 +197426,4 @@ SceneRoots:
   - {fileID: 1186191300}
   - {fileID: 77086543}
   - {fileID: 2059058788}
+  - {fileID: 292212738}
