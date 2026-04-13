@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor; // 確保有引用這個命名空間
 
 namespace UnityEditor.PostProcessing
 {
@@ -166,7 +167,6 @@ namespace UnityEditor.PostProcessing
 
         public void Add(SerializedProperty curve, CurveState state)
         {
-            // Make sure the property is in fact an AnimationCurve
             var animCurve = curve.animationCurveValue;
             if (animCurve == null)
                 throw new ArgumentException("curve");
@@ -229,6 +229,7 @@ namespace UnityEditor.PostProcessing
 
         public bool OnGUI(Rect rect)
         {
+            // ✅ 修改：repaint -> Repaint
             if (Event.current.type == EventType.Repaint)
                 m_Dirty = false;
 
@@ -253,7 +254,6 @@ namespace UnityEditor.PostProcessing
 
         void OnCurveGUI(Rect rect, SerializedProperty curve, CurveState state)
         {
-            // Discard invisible curves
             if (!state.visible)
                 return;
 
@@ -261,8 +261,6 @@ namespace UnityEditor.PostProcessing
             var keys = animCurve.keys;
             var length = keys.Length;
 
-            // Curve drawing
-            // Slightly dim non-editable curves
             var color = state.color;
             if (!state.editable)
                 color.a *= 0.5f;
@@ -300,7 +298,6 @@ namespace UnityEditor.PostProcessing
                     prevKey = key;
                 }
 
-                // Curve extents & loops
                 if (keys[0].time > bounds.xMin)
                 {
                     if (state.loopInBounds)
@@ -350,13 +347,11 @@ namespace UnityEditor.PostProcessing
                 }
             }
 
-            // Make sure selection is correct (undo can break it)
             bool isCurrentlySelectedCurve = curve == m_SelectedCurve;
 
             if (isCurrentlySelectedCurve && m_SelectedKeyframeIndex >= length)
                 m_SelectedKeyframeIndex = -1;
 
-            // Handles & keys
             for (int k = 0; k < length; k++)
             {
                 bool isCurrentlySelectedKeyframe = k == m_SelectedKeyframeIndex;
@@ -373,19 +368,17 @@ namespace UnityEditor.PostProcessing
                 var inTangentHitRect = new Rect(inTangent.x - 7f, inTangent.y - 7f, 14f, 14f);
                 var outTangentHitrect = new Rect(outTangent.x - 7f, outTangent.y - 7f, 14f, 14f);
 
-                // Draw
                 if (state.showNonEditableHandles)
                 {
-                    if (e.type == EventType.repaint)
+                    // ✅ 修改：repaint -> Repaint
+                    if (e.type == EventType.Repaint)
                     {
                         var selectedColor = (isCurrentlySelectedCurve && isCurrentlySelectedKeyframe)
                             ? settings.selectionColor
                             : state.color;
 
-                        // Keyframe
                         EditorGUI.DrawRect(offset.Remove(hitRect), selectedColor);
 
-                        // Tangents
                         if (isCurrentlySelectedCurve && (!state.onlyShowHandlesOnSelection || (state.onlyShowHandlesOnSelection && isCurrentlySelectedKeyframe)))
                         {
                             Handles.color = selectedColor;
@@ -405,24 +398,21 @@ namespace UnityEditor.PostProcessing
                     }
                 }
 
-                // Events
                 if (state.editable)
                 {
-                    // Keyframe move
                     if (m_EditMode == EditMode.Moving && e.type == EventType.MouseDrag && isCurrentlySelectedCurve && isCurrentlySelectedKeyframe)
                     {
                         EditMoveKeyframe(animCurve, keys, k);
                     }
 
-                    // Tangent editing
                     if (m_EditMode == EditMode.TangentEdit && e.type == EventType.MouseDrag && isCurrentlySelectedCurve && isCurrentlySelectedKeyframe)
                     {
                         bool alreadyBroken = !(Mathf.Approximately(keys[k].inTangent, keys[k].outTangent) || (float.IsInfinity(keys[k].inTangent) && float.IsInfinity(keys[k].outTangent)));
                         EditMoveTangent(animCurve, keys, k, m_TangentEditMode, e.shift || !(alreadyBroken || e.control));
                     }
 
-                    // Keyframe selection & context menu
-                    if (e.type == EventType.mouseDown && rect.Contains(e.mousePosition))
+                    // ✅ 修改：mouseDown -> MouseDown
+                    if (e.type == EventType.MouseDown && rect.Contains(e.mousePosition))
                     {
                         if (hitRect.Contains(e.mousePosition))
                         {
@@ -434,7 +424,6 @@ namespace UnityEditor.PostProcessing
                             }
                             else if (e.button == 1)
                             {
-                                // Keyframe context menu
                                 var menu = new GenericMenu();
                                 menu.AddItem(new GUIContent("Delete Key"), false, (x) =>
                                 {
@@ -452,8 +441,8 @@ namespace UnityEditor.PostProcessing
                         }
                     }
 
-                    // Tangent selection & edit mode
-                    if (e.type == EventType.mouseDown && rect.Contains(e.mousePosition))
+                    // ✅ 修改：mouseDown -> MouseDown
+                    if (e.type == EventType.MouseDown && rect.Contains(e.mousePosition))
                     {
                         if (inTangentHitRect.Contains(e.mousePosition) && (k > 0 || state.loopInBounds))
                         {
@@ -471,13 +460,12 @@ namespace UnityEditor.PostProcessing
                         }
                     }
 
-                    // Mouse up - clean up states
+                    // ✅ 修改：mouseUp -> MouseUp
                     if (e.rawType == EventType.MouseUp && m_EditMode != EditMode.None)
                     {
                         m_EditMode = EditMode.None;
                     }
 
-                    // Set cursors
                     {
                         EditorGUIUtility.AddCursorRect(hitRect, MouseCursor.MoveArrow);
 
@@ -498,8 +486,8 @@ namespace UnityEditor.PostProcessing
         {
             var e = Event.current;
 
-            // Selection
-            if (e.type == EventType.mouseDown)
+            // ✅ 修改：mouseDown -> MouseDown
+            if (e.type == EventType.MouseDown)
             {
                 GUI.FocusControl(null);
                 m_SelectedCurve = null;
@@ -509,7 +497,6 @@ namespace UnityEditor.PostProcessing
                 var hit = CanvasToCurve(e.mousePosition);
                 float curvePickValue = CurveToCanvas(hit).y;
 
-                // Try and select a curve
                 foreach (var curve in m_Curves)
                 {
                     if (!curve.Value.editable || !curve.Value.visible)
@@ -530,13 +517,11 @@ namespace UnityEditor.PostProcessing
 
                         if (e.clickCount == 2 && e.button == 0)
                         {
-                            // Create a keyframe on double-click on this curve
                             EditCreateKeyframe(animCurve, hit, true, state.zeroKeyConstantValue);
                             SaveCurve(prop, animCurve);
                         }
                         else if (e.button == 1)
                         {
-                            // Curve context menu
                             var menu = new GenericMenu();
                             menu.AddItem(new GUIContent("Add Key"), false, (x) =>
                             {
@@ -556,7 +541,6 @@ namespace UnityEditor.PostProcessing
 
                 if (e.clickCount == 2 && e.button == 0 && m_SelectedCurve == null)
                 {
-                    // Create a keyframe on every curve on double-click
                     foreach (var curve in m_Curves)
                     {
                         if (!curve.Value.editable || !curve.Value.visible)
@@ -571,7 +555,6 @@ namespace UnityEditor.PostProcessing
                 }
                 else if (!used && e.button == 1)
                 {
-                    // Global context menu
                     var menu = new GenericMenu();
                     menu.AddItem(new GUIContent("Add Key At Position"), false, () => ContextMenuAddKey(hit, false));
                     menu.AddItem(new GUIContent("Add Key On Curves"), false, () => ContextMenuAddKey(hit, true));
@@ -581,8 +564,8 @@ namespace UnityEditor.PostProcessing
                 e.Use();
             }
 
-            // Delete selected key(s)
-            if (e.type == EventType.keyDown && (e.keyCode == KeyCode.Delete || e.keyCode == KeyCode.Backspace))
+            // ✅ 修改：keyDown -> KeyDown
+            if (e.type == EventType.KeyDown && (e.keyCode == KeyCode.Delete || e.keyCode == KeyCode.Backspace))
             {
                 if (m_SelectedKeyframeIndex != -1 && m_SelectedCurve != null)
                 {

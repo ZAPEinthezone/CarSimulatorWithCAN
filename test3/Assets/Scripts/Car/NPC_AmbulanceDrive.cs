@@ -1,28 +1,34 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Reflection; 
 
 public class NPC_AmbulanceDrive : NPC_WaypointDrive
 {
     [Header("緊急狀態控制")]
     public bool isEmergency = false; 
 
+    [Header("物理漂移設定")]
+    [Tooltip("緊急模式的速度，越高噴越遠")]
+    public float emergencySpeed = 11.0f; 
+    [Tooltip("判定轉彎太急的門檻 (0到1，越大越敏感)")]
+    public float driftThreshold = 0.75f; 
+    [Tooltip("打滑時轉向力剩餘多少 (0.1代表轉很慢，會噴出去)")]
+    public float driftSteerFactor = 0.2f;
+
     [Header("救護車特效組件")]
     public GameObject sirenLights;   
     public AudioSource sirenAudio;   
 
     private float normalSpeed;
+    private float normalAngularSpeed;
 
     void Awake()
     {
-        // 確保在 Start 之前抓到 agent
         agent = GetComponent<NavMeshAgent>();
-        if (agent != null) normalSpeed = agent.speed;
-
-        // 初始設定：先關閉音效與燈光
-        if (sirenLights != null) sirenLights.SetActive(false);
-        if (sirenAudio != null) {
-            sirenAudio.loop = true; // 救護車音效通常要循環
-            sirenAudio.Stop();
+        if (agent != null) 
+        {
+            normalSpeed = agent.speed;
+            normalAngularSpeed = agent.angularSpeed; // 紀錄原本轉向速度
         }
     }
 
@@ -30,77 +36,98 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
     {
         if (targetNode == null || agent == null) return;
 
-        // 🚑 處理緊急狀態的邏輯切換
-        HandleEmergencyEffects();
+        HandleEffects();
 
         if (isEmergency) 
         {
-            // 🚨 強制加速
-            agent.speed = normalSpeed * 2.0f; 
-
-            // 🚨 執行避撞檢查
-            CheckForwardCollision();
-
-            // 🚨 重要：無視紅綠燈邏輯
-            if (!IsPathBlockedByCar()) 
-            {
-                agent.isStopped = false; 
-            }
+            // 執行緊急模式邏輯
+            RunEmergencyPhysics();
         } 
         else 
         {
-            // 🏠 一般模式：變回普通車，執行基類的紅綠燈判斷
+            // 普通模式：恢復原始速度與轉向
             agent.speed = normalSpeed;
+            agent.angularSpeed = normalAngularSpeed;
             base.Update(); 
-            return; 
+            return;
         }
 
-        // --- 緊急模式下的尋路 ---
+        // 到達節點換下一個 (緊急模式)
         if (!agent.isStopped && !agent.pathPending && agent.remainingDistance < 2f) 
         {
             TrafficNode nextNode = targetNode.GetNextNode(); 
-            if (nextNode != null) 
-            {
+            if (nextNode != null) {
                 targetNode = nextNode; 
                 agent.SetDestination(targetNode.transform.position);
-            }
-            else 
-            {
+            } else {
                 Destroy(gameObject);
             }
         }
     }
 
-    // 🔊 新增：獨立處理音效與燈光的邏輯
-    private void HandleEmergencyEffects()
+    private void RunEmergencyPhysics()
     {
-        if (isEmergency)
-        {
-            // 開啟燈光
-            if (sirenLights != null && !sirenLights.activeSelf) 
-                sirenLights.SetActive(true);
+        // 1. 設定高速
+        agent.speed = emergencySpeed;
 
-            // 播放音效
-            if (sirenAudio != null && !sirenAudio.isPlaying) 
-                sirenAudio.Play();
+        // 2. 檢測轉彎急促程度
+        // steeringTarget 是 Agent 目前想去的路徑轉折點
+        Vector3 moveDir = agent.velocity.normalized;
+        Vector3 targetDir = (agent.steeringTarget - transform.position).normalized;
+        
+        // 計算當前前進方向與目標方向的重合度 (1=直線, 0=90度彎)
+        float turnMatch = Vector3.Dot(transform.forward, targetDir);
+
+        if (turnMatch < driftThreshold && agent.velocity.magnitude > 5f)
+        {
+            // 【噴出去的關鍵】大幅降低轉向速度，讓它轉不過來
+            agent.angularSpeed = normalAngularSpeed * driftSteerFactor;
+            // 甚至可以稍微加快一點點線速度，增加失控感
+            agent.speed = emergencySpeed * 1.1f;
         }
         else
         {
-            // 關閉燈光
-            if (sirenLights != null && sirenLights.activeSelf) 
-                sirenLights.SetActive(false);
+            // 直線或小彎，恢復正常轉向
+            agent.angularSpeed = normalAngularSpeed;
+        }
 
-            // 停止音效
-            if (sirenAudio != null && sirenAudio.isPlaying) 
-                sirenAudio.Stop();
+        // 3. 障礙物偵測
+        CheckForwardCollision();
+        if (!IsPathBlockedByCar()) agent.isStopped = false; 
+    }
+
+    private void HandleEffects()
+    {
+        if (sirenLights != null) 
+        {
+            if (sirenLights.activeSelf != isEmergency) sirenLights.SetActive(isEmergency);
+
+            if (isEmergency)
+            {
+                LightManager manager = sirenLights.GetComponent<LightManager>();
+                if (manager != null)
+                {
+                    FieldInfo field = typeof(LightManager).GetField("sirenMode", BindingFlags.NonPublic | BindingFlags.Instance);
+                    if (field != null) field.SetValue(manager, 2); 
+
+                    Light[] allLights = sirenLights.GetComponentsInChildren<Light>(true);
+                    foreach (Light l in allLights) l.enabled = true;
+                }
+            }
+        }
+        
+        if (sirenAudio != null) 
+        {
+            if (isEmergency && !sirenAudio.isPlaying) sirenAudio.Play();
+            else if (!isEmergency && sirenAudio.isPlaying) sirenAudio.Stop();
         }
     }
 
     private bool IsPathBlockedByCar() 
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.TransformPoint(sensorOffset), transform.forward, out hit, sensorLength)) 
-        {
+        Vector3 sensorPos = transform.TransformPoint(sensorOffset);
+        if (Physics.Raycast(sensorPos, transform.forward, out hit, sensorLength)) {
             if (hit.collider.CompareTag("Car")) return true;
         }
         return false;

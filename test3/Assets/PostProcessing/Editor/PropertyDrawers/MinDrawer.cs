@@ -3,12 +3,14 @@ using UnityEngine.PostProcessing;
 
 namespace UnityEditor.PostProcessing
 {
-    [CustomPropertyDrawer(typeof(MinAttribute))]
+    // 將 typeof(MinAttribute) 改為完整的命名空間路徑
+    [CustomPropertyDrawer(typeof(UnityEngine.PostProcessing.MinAttribute))]
     sealed class MinDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            MinAttribute attribute = (MinAttribute)base.attribute;
+            // 將這裡的轉型也改為完整的命名空間路徑
+            UnityEngine.PostProcessing.MinAttribute attribute = (UnityEngine.PostProcessing.MinAttribute)base.attribute;
 
             if (property.propertyType == SerializedPropertyType.Integer)
             {
