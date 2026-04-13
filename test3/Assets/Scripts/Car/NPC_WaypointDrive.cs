@@ -4,82 +4,86 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class NPC_WaypointDrive : MonoBehaviour
 {
-    private NavMeshAgent agent;
+    protected NavMeshAgent agent;
 
     [Header("目前的導航目標")]
-    public TrafficNode targetNode; // 現在只要記住「下一個點」是誰就好了！
+    public TrafficNode targetNode; 
 
     [Header("防撞雷達")]
     public float sensorLength = 6f;
-    public Vector3 sensorOffset = new Vector3(0, 0.5f, 0.5f);
+    public Vector3 sensorOffset = new Vector3(0, 0.5f, 2.5f); // Z 預設調大，防止自撞
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
         if (targetNode != null)
         {
-            agent.Warp(transform.position);
             agent.SetDestination(targetNode.transform.position);
         }
     }
 
-    void Update()
+    protected virtual void Update()
+    {
+        if (targetNode == null) return;
+
+        CheckForwardCollision();
+
+        // 如果雷達叫我停，後面紅綠燈就不用看了
+        if (agent.isStopped) return;
+
+        // 🛑 紅綠燈判斷
+        if (targetNode.isStopLine && targetNode.currentIsRed)
         {
-            if (targetNode == null) return;
-
-            CheckForwardCollision();
-
-            // 🛑 紅綠燈煞車系統：如果前面的點是「停止線」且「目前是紅燈」
-            if (targetNode.isStopLine && targetNode.currentIsRed)
+            float distanceToNode = Vector3.Distance(transform.position, targetNode.transform.position);
+            if (distanceToNode < 5f)
             {
-                // 計算車頭到停止線的距離
-                float distanceToNode = Vector3.Distance(transform.position, targetNode.transform.position);
-                
-                // 如果距離停止線小於 4 公尺，強制煞車！
-                if (distanceToNode < 4f)
-                {
-                    agent.isStopped = true; 
-                    return; // 終止這回合的動作，車子乖乖等待
-                }
+                agent.isStopped = true; 
+                return; 
+            }
+        }
+        else
+        {
+            agent.isStopped = false; 
+        }
+
+        // 🚗 尋路切換點
+        if (!agent.isStopped && !agent.pathPending && agent.remainingDistance < 2f)
+        {
+            TrafficNode nextNode = targetNode.GetNextNode(); 
+            if (nextNode != null)
+            {
+                targetNode = nextNode; 
+                agent.SetDestination(targetNode.transform.position);
             }
             else
             {
-                // 綠燈，或是普通路段，解除煞車繼續開
-                agent.isStopped = false; 
-            }
-
-            // 🚗 原本的尋路邏輯
-            if (!agent.pathPending && agent.remainingDistance < 2f)
-            {
-                TrafficNode nextNode = targetNode.GetNextNode(); 
-                
-                if (nextNode != null)
-                {
-                    targetNode = nextNode; 
-                    agent.SetDestination(targetNode.transform.position);
-                }
-                else
-                {
-                    Destroy(gameObject); // 沒路了就消失
-                }
+                Destroy(gameObject);
             }
         }
+    }
 
-    void CheckForwardCollision()
+    protected virtual void CheckForwardCollision()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.TransformPoint(sensorOffset), transform.forward, out hit, sensorLength))
         {
             if (hit.collider.CompareTag("Car"))
             {
-                agent.isStopped = true; // 遇到前車乖乖煞車
+                // 🚑 關鍵：偵測到前方如果是「緊急模式」的救護車，立刻停讓
+                NPC_AmbulanceDrive amb = hit.collider.GetComponentInParent<NPC_AmbulanceDrive>();
+                if (amb != null && amb.isEmergency)
+                {
+                    agent.isStopped = true;
+                    Debug.DrawLine(transform.position, hit.point, Color.yellow);
+                    return;
+                }
+
+                agent.isStopped = true;
                 Debug.DrawLine(transform.position, hit.point, Color.red);
                 return;
             }
         }
-
         agent.isStopped = false;
-        Debug.DrawLine(transform.position, transform.position + transform.forward * sensorLength, Color.green);
+        Debug.DrawRay(transform.TransformPoint(sensorOffset), transform.forward * sensorLength, Color.green);
     }
 }
