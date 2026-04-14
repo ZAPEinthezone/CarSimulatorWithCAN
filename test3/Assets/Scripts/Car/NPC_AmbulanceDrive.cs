@@ -1,63 +1,51 @@
 using UnityEngine;
 using UnityEngine.AI;
-using System.Reflection; 
+using System.Reflection;
 
 public class NPC_AmbulanceDrive : NPC_WaypointDrive
 {
     [Header("緊急狀態控制")]
     public bool isEmergency = false; 
+    public float emergencySpeed = 15.0f;
+    public float detectRadius = 25f;   // 周圍偵測半徑
+    public float intersectionDist = 50f; // 前方路口偵測距離
 
-    [Header("物理漂移設定")]
-    [Tooltip("緊急模式的速度，越高噴越遠")]
-    public float emergencySpeed = 11.0f; 
-    [Tooltip("判定轉彎太急的門檻 (0到1，越大越敏感)")]
-    public float driftThreshold = 0.75f; 
-    [Tooltip("打滑時轉向力剩餘多少 (0.1代表轉很慢，會噴出去)")]
-    public float driftSteerFactor = 0.2f;
-
-    [Header("救護車特效組件")]
+    [Header("特效組件")]
     public GameObject sirenLights;   
     public AudioSource sirenAudio;   
 
     private float normalSpeed;
-    private float normalAngularSpeed;
 
-    void Awake()
-    {
+    void Awake() {
         agent = GetComponent<NavMeshAgent>();
-        if (agent != null) 
-        {
-            normalSpeed = agent.speed;
-            normalAngularSpeed = agent.angularSpeed; // 紀錄原本轉向速度
-        }
+        if (agent != null) normalSpeed = agent.speed;
     }
 
-    protected override void Update()
-    {
+    protected override void Update() {
         if (targetNode == null || agent == null) return;
-
         HandleEffects();
 
-        if (isEmergency) 
-        {
-            // 執行緊急模式邏輯
-            RunEmergencyPhysics();
-        } 
-        else 
-        {
-            // 普通模式：恢復原始速度與轉向
+        if (isEmergency) {
+            agent.speed = emergencySpeed;
+            agent.angularSpeed = 1000f; // 轉向極高，確保走在軌道上
+            agent.acceleration = 30f;  
+
+            // 執行避讓廣播
+            NotifyNearbyCars();
+            
+            // 防撞偵測：緊急模式下距離調短，避免誤停
+            CheckForwardCollisionCustom(3.5f); 
+        } else {
             agent.speed = normalSpeed;
-            agent.angularSpeed = normalAngularSpeed;
             base.Update(); 
             return;
         }
 
-        // 到達節點換下一個 (緊急模式)
-        if (!agent.isStopped && !agent.pathPending && agent.remainingDistance < 2f) 
-        {
+        // 導航邏輯
+        if (!agent.isStopped && !agent.pathPending && agent.remainingDistance < 2f) {
             TrafficNode nextNode = targetNode.GetNextNode(); 
             if (nextNode != null) {
-                targetNode = nextNode; 
+                targetNode = nextNode;
                 agent.SetDestination(targetNode.transform.position);
             } else {
                 Destroy(gameObject);
@@ -65,71 +53,54 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
         }
     }
 
-    private void RunEmergencyPhysics()
-    {
-        // 1. 設定高速
-        agent.speed = emergencySpeed;
-
-        // 2. 檢測轉彎急促程度
-        // steeringTarget 是 Agent 目前想去的路徑轉折點
-        Vector3 moveDir = agent.velocity.normalized;
-        Vector3 targetDir = (agent.steeringTarget - transform.position).normalized;
-        
-        // 計算當前前進方向與目標方向的重合度 (1=直線, 0=90度彎)
-        float turnMatch = Vector3.Dot(transform.forward, targetDir);
-
-        if (turnMatch < driftThreshold && agent.velocity.magnitude > 5f)
-        {
-            // 【噴出去的關鍵】大幅降低轉向速度，讓它轉不過來
-            agent.angularSpeed = normalAngularSpeed * driftSteerFactor;
-            // 甚至可以稍微加快一點點線速度，增加失控感
-            agent.speed = emergencySpeed * 1.1f;
-        }
-        else
-        {
-            // 直線或小彎，恢復正常轉向
-            agent.angularSpeed = normalAngularSpeed;
-        }
-
-        // 3. 障礙物偵測
-        CheckForwardCollision();
-        if (!IsPathBlockedByCar()) agent.isStopped = false; 
-    }
-
-    private void HandleEffects()
-    {
-        if (sirenLights != null) 
-        {
-            if (sirenLights.activeSelf != isEmergency) sirenLights.SetActive(isEmergency);
-
-            if (isEmergency)
-            {
-                LightManager manager = sirenLights.GetComponent<LightManager>();
-                if (manager != null)
-                {
-                    FieldInfo field = typeof(LightManager).GetField("sirenMode", BindingFlags.NonPublic | BindingFlags.Instance);
-                    if (field != null) field.SetValue(manager, 2); 
-
-                    Light[] allLights = sirenLights.GetComponentsInChildren<Light>(true);
-                    foreach (Light l in allLights) l.enabled = true;
+    private void NotifyNearbyCars() {
+        // 1. 周圍同向車輛靠右避讓
+        Collider[] nearby = Physics.OverlapSphere(transform.position, detectRadius);
+        foreach (var col in nearby) {
+            if (col.CompareTag("Car") && col.gameObject != gameObject) {
+                float directionMatch = Vector3.Dot(transform.forward, col.transform.forward);
+                if (directionMatch > 0.5f) { // 確保是順向車
+                    col.SendMessage("YieldForAmbulance", transform.position, SendMessageOptions.DontRequireReceiver);
                 }
             }
         }
-        
-        if (sirenAudio != null) 
-        {
-            if (isEmergency && !sirenAudio.isPlaying) sirenAudio.Play();
-            else if (!isEmergency && sirenAudio.isPlaying) sirenAudio.Stop();
+
+        // 2. 前方遠處路口車輛原地煞停 (清空路口)
+        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 6f, transform.forward, intersectionDist);
+        foreach (var hit in hits) {
+            if (hit.collider.CompareTag("Car") && hit.collider.gameObject != gameObject) {
+                hit.collider.SendMessage("IntersectionYield", SendMessageOptions.DontRequireReceiver);
+            }
         }
     }
 
-    private bool IsPathBlockedByCar() 
-    {
+    protected void CheckForwardCollisionCustom(float dist) {
         RaycastHit hit;
-        Vector3 sensorPos = transform.TransformPoint(sensorOffset);
-        if (Physics.Raycast(sensorPos, transform.forward, out hit, sensorLength)) {
-            if (hit.collider.CompareTag("Car")) return true;
+        if (Physics.Raycast(transform.TransformPoint(sensorOffset), transform.forward, out hit, dist)) {
+            if (hit.collider.CompareTag("Car")) {
+                agent.isStopped = true;
+                return;
+            }
         }
-        return false;
+        agent.isStopped = false;
+    }
+
+    private void HandleEffects() {
+        if (sirenLights != null && sirenLights.activeSelf != isEmergency)
+            sirenLights.SetActive(isEmergency);
+        
+        if (isEmergency && sirenLights != null) {
+            LightManager manager = sirenLights.GetComponent<LightManager>();
+            if (manager != null) {
+                FieldInfo field = typeof(LightManager).GetField("sirenMode", BindingFlags.NonPublic | BindingFlags.Instance);
+                if (field != null) field.SetValue(manager, 2); 
+                Light[] lights = sirenLights.GetComponentsInChildren<Light>(true);
+                foreach (Light l in lights) l.enabled = true;
+            }
+        }
+        if (sirenAudio != null) {
+            if (isEmergency && !sirenAudio.isPlaying) sirenAudio.Play();
+            else if (!isEmergency && sirenAudio.isPlaying) sirenAudio.Stop();
+        }
     }
 }
