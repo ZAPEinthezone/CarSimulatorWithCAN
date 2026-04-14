@@ -4,82 +4,97 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class NPC_WaypointDrive : MonoBehaviour
 {
-    private NavMeshAgent agent;
-
-    [Header("目前的導航目標")]
-    public TrafficNode targetNode; // 現在只要記住「下一個點」是誰就好了！
+    protected NavMeshAgent agent;
+    public TrafficNode targetNode; 
 
     [Header("防撞雷達")]
     public float sensorLength = 6f;
-    public Vector3 sensorOffset = new Vector3(0, 0.5f, 0.5f);
+    public Vector3 sensorOffset = new Vector3(0, 0.5f, 2.5f);
 
-    void Start()
-    {
+    protected bool isYielding = false;
+    protected float originalSpeed;
+
+    void Start() {
         agent = GetComponent<NavMeshAgent>();
+        if (agent != null) originalSpeed = agent.speed;
+        if (targetNode != null) agent.SetDestination(targetNode.transform.position);
+    }
 
-        if (targetNode != null)
-        {
-            agent.Warp(transform.position);
-            agent.SetDestination(targetNode.transform.position);
+    // 🚑 救護車呼叫：順向避讓 (靠右)
+    public void YieldForAmbulance(Vector3 ambulancePos) {
+        if (isYielding) return;
+        isYielding = true;
+        
+        // 往右偏 1.2 米 (半個車道)
+        Vector3 sidePos = transform.position + (transform.right * 1.2f);
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(sidePos, out hit, 2.0f, NavMesh.AllAreas)) {
+            agent.SetDestination(hit.position);
+        }
+
+        agent.speed = originalSpeed * 0.5f; 
+        CancelInvoke("ReturnToTrack");
+        Invoke("ReturnToTrack", 4.0f);
+    }
+
+    // 🚑 救護車呼叫：遠處路口煞停
+    public void IntersectionYield() {
+        if (isYielding) return;
+        isYielding = true;
+        agent.isStopped = true;
+        
+        CancelInvoke("ReturnToTrack");
+        Invoke("ReturnToTrack", 5.0f);
+    }
+
+    void ReturnToTrack() {
+        isYielding = false;
+        agent.isStopped = false;
+        agent.speed = originalSpeed;
+        if (targetNode != null) agent.SetDestination(targetNode.transform.position);
+    }
+
+    protected virtual void Update() {
+        if (targetNode == null || agent == null) return;
+
+        if (isYielding) {
+            // 如果是在路邊避讓，到點後停下
+            if (!agent.isStopped && agent.remainingDistance < 0.5f) agent.isStopped = true;
+            return;
+        }
+
+        CheckForwardCollision();
+        if (agent.isStopped) return;
+
+        // 紅綠燈判斷
+        if (targetNode.isStopLine && targetNode.currentIsRed) {
+            if (Vector3.Distance(transform.position, targetNode.transform.position) < 5f) {
+                agent.isStopped = true; return; 
+            }
+        } else {
+            agent.isStopped = false; 
+        }
+
+        // 尋路邏輯
+        if (!agent.isStopped && !agent.pathPending && agent.remainingDistance < 2f) {
+            TrafficNode nextNode = targetNode.GetNextNode(); 
+            if (nextNode != null) {
+                targetNode = nextNode;
+                agent.SetDestination(targetNode.transform.position);
+            } else {
+                Destroy(gameObject);
+            }
         }
     }
 
-    void Update()
-        {
-            if (targetNode == null) return;
-
-            CheckForwardCollision();
-
-            // 🛑 紅綠燈煞車系統：如果前面的點是「停止線」且「目前是紅燈」
-            if (targetNode.isStopLine && targetNode.currentIsRed)
-            {
-                // 計算車頭到停止線的距離
-                float distanceToNode = Vector3.Distance(transform.position, targetNode.transform.position);
-                
-                // 如果距離停止線小於 4 公尺，強制煞車！
-                if (distanceToNode < 4f)
-                {
-                    agent.isStopped = true; 
-                    return; // 終止這回合的動作，車子乖乖等待
-                }
-            }
-            else
-            {
-                // 綠燈，或是普通路段，解除煞車繼續開
-                agent.isStopped = false; 
-            }
-
-            // 🚗 原本的尋路邏輯
-            if (!agent.pathPending && agent.remainingDistance < 2f)
-            {
-                TrafficNode nextNode = targetNode.GetNextNode(); 
-                
-                if (nextNode != null)
-                {
-                    targetNode = nextNode; 
-                    agent.SetDestination(targetNode.transform.position);
-                }
-                else
-                {
-                    Destroy(gameObject); // 沒路了就消失
-                }
-            }
-        }
-
-    void CheckForwardCollision()
-    {
+    protected virtual void CheckForwardCollision() {
         RaycastHit hit;
-        if (Physics.Raycast(transform.TransformPoint(sensorOffset), transform.forward, out hit, sensorLength))
-        {
-            if (hit.collider.CompareTag("Car"))
-            {
-                agent.isStopped = true; // 遇到前車乖乖煞車
-                Debug.DrawLine(transform.position, hit.point, Color.red);
+        if (Physics.Raycast(transform.TransformPoint(sensorOffset), transform.forward, out hit, sensorLength)) {
+            if (hit.collider.CompareTag("Car")) {
+                agent.isStopped = true;
                 return;
             }
         }
-
         agent.isStopped = false;
-        Debug.DrawLine(transform.position, transform.position + transform.forward * sensorLength, Color.green);
     }
 }
