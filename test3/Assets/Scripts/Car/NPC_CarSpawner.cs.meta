@@ -3,7 +3,10 @@ guid: 3446e7830b5ac4b0dbe30fe4ac09ed39
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ambulancePrefab: {fileID: 7889756511366531041, guid: 191bfd133fcd44c96b09b68eccba2856, type: 3}
+  - ambulanceStartNode: {instanceID: 0}
+  - cameraFollowScript: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

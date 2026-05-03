@@ -43,6 +43,26 @@ public class NPC_CarSpawner : MonoBehaviour
 
     IEnumerator SpawnRoutine()
     {
+
+        // --- 【新增】在生成普通車之前，先強行生成一台救護車 ---
+        if (!hasAmbulanceSpawned && ambulancePrefab != null && startNodes.Count > 0)
+        {
+            // 決定出生點：有指定就用指定的，沒指定就用第一個 StartNode
+            TrafficNode spawnNode = (ambulanceStartNode != null) ? ambulanceStartNode : startNodes[0];
+
+            GameObject newAmb = Instantiate(ambulancePrefab, spawnNode.transform.position, spawnNode.transform.rotation);
+            newAmb.tag = "Car";
+            newAmb.name = "Ambulance(Clone)";
+
+            NPC_AmbulanceDrive drive = newAmb.GetComponent<NPC_AmbulanceDrive>();
+            if (drive != null) drive.targetNode = spawnNode;
+
+            if (cameraFollowScript != null) cameraFollowScript.SetTarget(newAmb.transform);
+
+            hasAmbulanceSpawned = true;
+            Debug.Log("🚑 救護車已優先生成在: " + spawnNode.name);
+        }
+        
         while (true)
         {
             GameObject[] currentCars = GameObject.FindGameObjectsWithTag("Car");

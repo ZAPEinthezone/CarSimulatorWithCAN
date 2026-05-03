@@ -306,10 +306,10 @@ NavMeshAgent:
   m_GameObject: {fileID: 7889756511366531041}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Speed: 7
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 0
   m_AngularSpeed: 600
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -357,10 +357,12 @@ MonoBehaviour:
   sensorOffset: {x: 0, y: 0.5, z: 0.5}
   isEmergency: 0
   emergencySpeed: 15
-  detectRadius: 25
+  detectRadius: 60
   intersectionDist: 50
+  useSmartNavigation: 1
+  nodesToGoStraight: 1
   sirenLights: {fileID: 3922672877754541236}
-  sirenAudio: {fileID: 3985756057735405982}
+  sirenAudio: {fileID: 4303493472629559925}
 --- !u!82 &4303493472629559925
 AudioSource:
   m_ObjectHideFlags: 0
@@ -368,7 +370,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7889756511366531041}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 17691f8d729bffb4eba16efef159cdb4, type: 3}
@@ -538,11 +540,6 @@ GameObject:
 --- !u!4 &3926111428591829888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4416131952203316, guid: 86269d0cd66e7cb4d8aaa184a965008c, type: 3}
-  m_PrefabInstance: {fileID: 3923736952294839732}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &3985756057735405982 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 82096120153879594, guid: 86269d0cd66e7cb4d8aaa184a965008c, type: 3}
   m_PrefabInstance: {fileID: 3923736952294839732}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7588487282795387809
