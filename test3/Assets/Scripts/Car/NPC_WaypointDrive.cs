@@ -4,114 +4,170 @@ using System.Collections;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class NPC_WaypointDrive : MonoBehaviour
-{
-    protected NavMeshAgent agent;
-    public TrafficNode targetNode; 
+    {
+        protected NavMeshAgent agent;
+        public TrafficNode targetNode; 
 
-    [Header("行車與雷達")]
-    public float sensorLength = 10f;
-    public Vector3 sensorOffset = new Vector3(0, 0.5f, 2.5f);
+        [Header("行車與雷達")]
+        public float sensorLength = 10f;
+        public Vector3 sensorOffset = new Vector3(0, 0.5f, 2.5f);
 
-    protected bool isYielding = false;
-    protected float originalSpeed;
+        protected bool isYielding = false;
+        protected float originalSpeed;
+        public bool IsYielding => isYielding;
 
-    private enum YieldState { None, MovingToSide, AligningForward }
-    private YieldState currentYieldState = YieldState.None;
+        private enum YieldState { None, MovingToSide, AligningForward }
+        private YieldState currentYieldState = YieldState.None;
 
-    protected virtual void Awake() {
-        agent = GetComponent<NavMeshAgent>();
-    }
-
-    protected virtual void Start() {
-        if (agent != null) {
-            originalSpeed = agent.speed;
-            if (targetNode != null) agent.SetDestination(targetNode.transform.position);
+        protected virtual void Awake() {
+            agent = GetComponent<NavMeshAgent>();
         }
-    }
 
-    // 🚑 救護車呼叫：S 型避讓邏輯
-    public void YieldForAmbulance(Vector3 ambulancePos, Vector3 ambulanceForward) {
-        if (currentYieldState != YieldState.None) return;
+        protected virtual void Start() {
+            if (agent != null) {
+                originalSpeed = agent.speed;
+                if (targetNode != null) agent.SetDestination(targetNode.transform.position);
+            }
+        }
 
-        // 1. 【嚴格過濾】
-        // Dot > 0.4 代表同向；Dot < 0 代表對向或橫向。
-        // 這樣對向車道就「絕對不會」停下來。
-        float directionMatch = Vector3.Dot(transform.forward, ambulanceForward);
-        if (directionMatch < 0.5f) return; 
+   public void YieldForAmbulance(Vector3 ambulancePos, Vector3 ambulanceForward) {
+        // 如果已經在閃了，就不要理會
+        if (isYielding || currentYieldState != YieldState.None) return;
 
-        // 2. 開始執行避讓
+        // 距離與方向過濾
+        float dist = Vector3.Distance(transform.position, ambulancePos);
+        if (dist > 35f) return;
+        if (Vector3.Dot(transform.forward, ambulanceForward) < 0.5f) return;
+
+        // 💡 關鍵：啟動 S 型避讓
         StartCoroutine(S_CurveYieldRoutine());
     }
 
-    private IEnumerator S_CurveYieldRoutine() {
-        agent.isStopped = false; 
-        isYielding = true;
-        currentYieldState = YieldState.MovingToSide;
-        
-        agent.speed = originalSpeed * 1.5f; 
-        agent.acceleration = 120f; 
+private IEnumerator S_CurveYieldRoutine() {
+    isYielding = true;
+    currentYieldState = YieldState.MovingToSide;
+    
+    agent.isStopped = false; 
+    agent.speed = originalSpeed * 1.2f; 
+    
+    // 💡 降低加速度與轉向速度，這是徹底防止「原地繞圈、神經質抽動」的關鍵
+    agent.acceleration = 60f; 
+    agent.angularSpeed = 750f; 
 
-        // 💡 智慧邊界探測：從車中心往右量 1.5 米
-        float desiredRight = 0.6f; 
-        NavMeshHit nmHit;
-        
-        // 如果右邊 1.5 米內有任何 NavMesh 邊界 (邊緣)
-        if (agent.Raycast(transform.position + transform.right * desiredRight, out nmHit)) {
-            // 抓到邊界了！將偏移量縮減為邊界距離的 60%，留出 40% 的緩衝區給車身
-            // 這能保證車體絕對不會「蹭」上人行道
-            desiredRight = nmHit.distance * 0.2f;
-        }
-
-        // 計算目標點
-        Vector3 sideTarget = transform.position + (transform.right * desiredRight) + (transform.forward * 10.0f);
-        
-        // 確保點是在路面上
-        if (NavMesh.SamplePosition(sideTarget, out nmHit, 2.0f, NavMesh.AllAreas)) {
-            sideTarget = nmHit.position;
-        }
-
-        agent.SetDestination(sideTarget);
-
-        // 平滑切換 (預判轉正)
-        while (agent.remainingDistance > 3.5f && currentYieldState == YieldState.MovingToSide) {
-            yield return null;
-        }
-
-        currentYieldState = YieldState.AligningForward;
-        agent.SetDestination(transform.position + (transform.forward * 25.0f));
-        agent.speed = originalSpeed * 0.5f; 
-
-        yield return new WaitForSeconds(3.0f);
-        ReturnToTrack();
+    // 1. 探測極限偏移量 (確保不撞牆)
+    float targetOffset = 3.8f; // 目標偏移 3 米 (約一個車道)
+    NavMeshHit nmHit;
+    if (agent.Raycast(transform.position + transform.right * targetOffset, out nmHit)) {
+        targetOffset = Mathf.Max(0.5f, nmHit.distance - 0.8f);
     }
 
+    float currentOffset = 0f;
+    float timer = 0f;
+    float yieldDuration = 6.0f; // 避讓總時間
+
+    // 2. 進入動態避讓循環
+    while (timer < yieldDuration) {
+        timer += Time.deltaTime;
+
+        if (targetNode != null) {
+            // 💡 【防繞圈機制】
+            // 如果距離 Node 小於 5 米，或者 Node 已經在車子側面/後方 (Dot < 0.2)
+            // 就立刻提早切換到下一個 Node，絕對不讓車子有機會回頭找點
+            Vector3 toNode = targetNode.transform.position - transform.position;
+            if (toNode.magnitude < 5.0f || Vector3.Dot(transform.forward, toNode.normalized) < 0.2f) {
+                TrafficNode next = targetNode.GetNextNode();
+                if (next != null) {
+                    targetNode = next;
+                    toNode = targetNode.transform.position - transform.position; // 更新方向
+                }
+            }
+
+            // 💡 【弧度跟隨機制】
+            // 計算目前這段路 (從車子到 Node) 的絕對右側
+            Vector3 roadDir = toNode.normalized;
+            Vector3 roadRight = Vector3.Cross(Vector3.up, roadDir).normalized;
+
+            // 💡 【完美 S 型核心：Lerp 平滑過渡】
+            // 讓 currentOffset 像踩油門一樣，平滑地從 0 逐漸增加到 targetOffset
+            currentOffset = Mathf.Lerp(currentOffset, targetOffset, Time.deltaTime * 4.0f);
+
+            // 最終目的地 = 目標 Node 本身的位置 + 往右偏移
+            // 因為 targetNode 會沿著道路彎曲，所以這個偏移點也會完美貼合道路弧度！
+            Vector3 dynamicTarget = targetNode.transform.position + (roadRight * currentOffset);
+            
+            // 每幀微調目的地，Agent 就會畫出一條極其柔順的曲線
+            agent.SetDestination(dynamicTarget);
+        }
+        
+        // 避讓中期 (2秒後)，開始平滑降速讓救護車通過
+        if (timer > 2.0f) {
+            agent.speed = Mathf.Lerp(agent.speed, originalSpeed * 0.4f, Time.deltaTime);
+        }
+
+        yield return null;
+    }
+
+    ReturnToTrack();
+}
+
+protected virtual void ReturnToTrack() {
+    
+    currentYieldState = YieldState.None;
+    isYielding = false;
+    
+    agent.isStopped = false;
+    agent.speed = originalSpeed;
+    agent.acceleration = 12f; // 恢復時稍微加速
+
+    if (targetNode != null) {
+        // 💡 核心：如果目前的點已經在屁股後面，就跳到下一個
+        int safety = 0;
+        while (safety < 5) {
+            Vector3 toNode = targetNode.transform.position - transform.position;
+            // 只要 Dot < 0.2 代表點已經在側面或後方，直接放棄追這個點
+            if (Vector3.Dot(transform.forward, toNode.normalized) < 0.2f || toNode.magnitude < 5.0f) {
+                TrafficNode next = targetNode.GetNextNode();
+                if (next != null) {
+                    targetNode = next;
+                    safety++;
+                } else break;
+            } else break;
+        }
+        
+        agent.ResetPath(); // 徹底清除舊的 S 型路徑殘留
+        agent.SetDestination(targetNode.transform.position);
+    }
+}
     // 🚑 救護車呼叫：路口強制清空 (救護車靠近中)
     // 請確保傳入 ambulanceForward 參數
-    public void IntersectionYield(Vector3 ambulanceForward) {
-        if (isYielding) return;
+   public void IntersectionYield(Vector3 ambulanceForward) {
+    // 💡 修正：如果我已經在執行 S 型靠右避讓了，路口的「停下」指令直接無視！
+    // 這樣就不會出現「先停在路中間才靠右」的笨動作
+    if (isYielding || currentYieldState != YieldState.None) return;
 
-        // 💡 關鍵修正：路口廣播也要過濾對向車！
-        float directionMatch = Vector3.Dot(transform.forward, ambulanceForward);
-        if (directionMatch < 0.5f) return; // 對向車直接無視，繼續開
+    float directionMatch = Vector3.Dot(transform.forward, ambulanceForward);
+    if (directionMatch < 0.5f) return;
 
-        if (IsInIntersection()) {
-            agent.speed = originalSpeed * 0.5f; 
-            agent.isStopped = false;
-        } else {
-            agent.isStopped = true;
-            agent.velocity = Vector3.zero;
-        }
-        
-        isYielding = true;
-        CancelInvoke("ReturnToTrack");
-        Invoke("ReturnToTrack", 5.0f);
+    // 執行停等邏輯 (只有在沒地方閃的時候才跑這裡)
+    if (IsInIntersection()) {
+        agent.speed = originalSpeed * 0.5f; 
+        agent.isStopped = false;
+    } else {
+        agent.isStopped = true;
+        agent.velocity = Vector3.zero;
     }
+    
+    isYielding = true;
+    // 啟動自動恢復計時器
+    StartCoroutine(WaitAndReturn(5.0f)); 
+}
 
-    // 合併後的恢復函數
-    protected virtual void ReturnToTrack() {
-        StopAllCoroutines();
-        ResetToNormal();
-    }
+// 輔助協程：等救護車過去後自動恢復
+private IEnumerator WaitAndReturn(float delay) {
+    yield return new WaitForSeconds(delay);
+    ReturnToTrack();
+}
+   
 
     protected void ResetToNormal() {
         currentYieldState = YieldState.None;
@@ -123,39 +179,38 @@ public class NPC_WaypointDrive : MonoBehaviour
     }
 
     protected virtual void Update() {
-        if (targetNode == null || agent == null) return;
+    if (targetNode == null || agent == null) return;
 
-        // 💡 修正 A：只要在執行 S 型避讓 (currentYieldState 不是 None)，Update 就徹底交出控制權
-        // 這能防止 S 型路徑計算到一半被下方的 isYielding 邏輯截斷
-        if (currentYieldState != YieldState.None) return;
+    // --- 🚨 第一層級：避讓狀態監控 ---
+    // 只要是在避讓（S型換道中 或 避讓後緩行），Update 絕對不插手導航與煞車
+    if (currentYieldState != YieldState.None || isYielding) {
+        // 在此狀態下，所有的 agent.SetDestination 和 isStopped 都由協程 (S_CurveYieldRoutine) 控制
+        // 這樣可以保證「一邊開一邊滑過去」，不會被 Update 的停止指令卡住
+        return; 
+    }
 
-        // 一般紅燈/路口避讓停止
-        if (isYielding) {
-            // 💡 修正 B：這裡必須判斷是否「不在執行 S 型路徑」中，才執行路口停下
-            // 這樣能解決「偵測到救護車先停下來才避讓」的問題
-            if (!agent.pathPending && agent.remainingDistance < 0.8f) {
-                agent.isStopped = true;
-                agent.velocity = Vector3.zero;
-            }
-            return;
-        }
+    // --- 🚦 第二層級：正常行駛判斷 (紅綠燈與防撞) ---
+    // 只有在「非避讓」狀態下，才執行這些判定
+    HandleTrafficLights();    // 檢查紅燈
+    CheckForwardCollision(); // 檢查前面有沒有車
 
-        // 只有在非避讓狀態下，才執行雷達與紅綠燈判定
-        CheckForwardCollision();
-        HandleTrafficLights();
-
-        if (!agent.isStopped) {
-            if (!agent.pathPending && agent.remainingDistance < 2.5f) {
-                TrafficNode nextNode = targetNode.GetNextNode(); 
-                if (nextNode != null) {
-                    targetNode = nextNode;
-                    agent.SetDestination(targetNode.transform.position);
-                } else {
-                    Destroy(gameObject);
-                }
+    // --- 🛣️ 第三層級：節點導航邏輯 ---
+    // 如果沒被雷達或紅燈叫停，就繼續追下一個 Node
+    if (!agent.isStopped) {
+        // 如果快要到達當前目標 Node (距離 < 2.5米)
+        if (!agent.pathPending && agent.remainingDistance < 2.5f) {
+            TrafficNode nextNode = targetNode.GetNextNode(); 
+            if (nextNode != null) {
+                targetNode = nextNode;
+                agent.SetDestination(targetNode.transform.position);
+            } else {
+                // 沒路了就刪除車子
+                Destroy(gameObject);
             }
         }
     }
+}
+
     protected virtual void HandleTrafficLights() {
         if (isYielding) return; 
 

@@ -42,41 +42,41 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
     }
 
     private void SmartNavigation() {
-        // --- 1. 停止邏輯 ---
+        // --- 1. 停止邏輯 (紅綠燈與防撞) ---
         bool shouldStop = false;
 
         if (!isEmergency) {
+            // 普通模式：判斷紅燈
             if (targetNode != null && targetNode.isStopLine && targetNode.currentIsRed) {
                 if (Vector3.Distance(transform.position, targetNode.transform.position) < 8f) {
                     shouldStop = true;
                 }
             }
             
-            // 呼叫父類別防撞邏輯
+            // 普通模式：判斷前方碰撞 (雷達)
+            // 注意：這裡不直接 return，而是設定狀態
             CheckForwardCollision(); 
-            // 如果父類別邏輯讓 agent 停下，我們遵循它
             if (agent.isStopped) shouldStop = true; 
+
         } else {
-            // 緊急模式
+            // 緊急模式：強制不准停（除非快撞到車）
+            agent.isStopped = false;
             NotifyNearbyCars();
             CheckForwardCollisionCustom(4.0f); 
             if (agent.isStopped) shouldStop = true;
         }
 
-        // --- 2. 狀態應用 (修復關鍵) ---
+        // 應用停止狀態
         if (shouldStop) {
             agent.isStopped = true;
             agent.velocity = Vector3.zero;
+            // 💡 重點：即使停下也不要 return，讓下方的尋路邏輯維持目標更新的準備
         } else {
-            // 💡 修正：如果之前是停止的，現在要變回行走，必須強制 Resume 並重設目的地
-            if (agent.isStopped) {
-                agent.isStopped = false;
-                // 確保有目的地可去，否則會原地發呆
-                if (targetNode != null) agent.SetDestination(targetNode.transform.position);
-            }
+            agent.isStopped = false;
         }
 
-        // --- 3. 導航目標決策 ---
+        // --- 2. 導航目標決策 (維持運作) ---
+        // 即使在等紅燈，也要確保目標節點正確切換
         if (!agent.pathPending && agent.remainingDistance < 2.5f) {
             nodesPassed++;
             TrafficNode nextNode = null;
@@ -97,32 +97,33 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
         }
     }
 
-    // 🔍 廣播給附近車輛 (傳入位置與朝向)
-    private void NotifyNearbyCars() {
-        // 1. 周圍廣播 (處理同向避讓)
-        Collider[] nearby = Physics.OverlapSphere(transform.position, detectRadius);
-        foreach (var col in nearby) {
-            if (col.CompareTag("Car") && col.gameObject != gameObject) {
-                var npc = col.GetComponent<NPC_WaypointDrive>();
-                if (npc != null) {
-                    npc.YieldForAmbulance(transform.position, transform.forward);
-                }
-            }
-        }
-
-        // 2. 路口清空廣播 (重點修正！)
-        // 不要用 SendMessage，改用 GetComponent 呼叫，並傳入方向
-        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 6f, transform.forward, intersectionDist);
-        foreach (var hit in hits) {
-            if (hit.collider.CompareTag("Car") && hit.collider.gameObject != gameObject) {
-                var npc = hit.collider.GetComponent<NPC_WaypointDrive>();
-                if (npc != null) {
-                    // 💡 這裡傳入 transform.forward，NPC 才能判定自己是不是對向
-                    npc.IntersectionYield(transform.forward); 
-                }
+  private void NotifyNearbyCars() {
+    // 1. 周圍廣播
+    Collider[] nearby = Physics.OverlapSphere(transform.position, detectRadius);
+    foreach (var col in nearby) {
+        if (col.CompareTag("Car") && col.gameObject != gameObject) {
+            var npc = col.GetComponent<NPC_WaypointDrive>();
+            
+            // 💡 修正：使用剛剛建立的公開屬性 IsYielding
+            if (npc != null && !npc.IsYielding) { 
+                npc.YieldForAmbulance(transform.position, transform.forward);
             }
         }
     }
+
+    // 2. 路口廣播 (同理修正)
+    RaycastHit[] hits = Physics.SphereCastAll(transform.position, 6f, transform.forward, intersectionDist);
+    foreach (var hit in hits) {
+        if (hit.collider.CompareTag("Car") && hit.collider.gameObject != gameObject) {
+            var npc = hit.collider.GetComponent<NPC_WaypointDrive>();
+            
+            // 💡 修正：使用 IsYielding
+            if (npc != null && !npc.IsYielding) {
+                npc.IntersectionYield(transform.forward); 
+            }
+        }
+    }
+}
 
     // 🔍 向量運算：尋找最左邊的點
     private TrafficNode FindMostLeftNode(List<TrafficNode> choices) {
