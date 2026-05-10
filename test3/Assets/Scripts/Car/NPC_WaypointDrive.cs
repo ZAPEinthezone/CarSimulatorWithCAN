@@ -48,14 +48,20 @@ private IEnumerator S_CurveYieldRoutine() {
     currentYieldState = YieldState.MovingToSide;
     
     agent.isStopped = false; 
-    agent.speed = originalSpeed * 1.2f; 
+
+    // 💡 漏了這兩行特效藥！這是消除「停頓感」的關鍵！
+    agent.velocity = transform.forward * originalSpeed; // 瞬間給物理推力，打破發呆狀態
+    agent.autoBraking = false; // 避讓時強迫關閉煞車
+
+    agent.speed = originalSpeed * 1.3f; // 稍微再快一點點
     
-    // 💡 降低加速度與轉向速度，這是徹底防止「原地繞圈、神經質抽動」的關鍵
-    agent.acceleration = 60f; 
-    agent.angularSpeed = 750f; 
+    // 💡 加速度原本 60 還是有點慢，拉高到 100 讓它動作乾脆
+    agent.acceleration = 100f; 
+    agent.angularSpeed = 800f;
 
     // 1. 探測極限偏移量 (確保不撞牆)
-    float targetOffset = 3.8f; // 目標偏移 3 米 (約一個車道)
+    float targetOffset = 3.5f; // 目標偏移 3 米 (約一個車道)
+
     NavMeshHit nmHit;
     if (agent.Raycast(transform.position + transform.right * targetOffset, out nmHit)) {
         targetOffset = Mathf.Max(0.5f, nmHit.distance - 0.8f);
@@ -141,32 +147,38 @@ protected virtual void ReturnToTrack() {
     // 🚑 救護車呼叫：路口強制清空 (救護車靠近中)
     // 請確保傳入 ambulanceForward 參數
    public void IntersectionYield(Vector3 ambulanceForward) {
-    // 💡 修正：如果我已經在執行 S 型靠右避讓了，路口的「停下」指令直接無視！
-    // 這樣就不會出現「先停在路中間才靠右」的笨動作
-    if (isYielding || currentYieldState != YieldState.None) return;
+        if (isYielding || currentYieldState != YieldState.None) return;
 
-    float directionMatch = Vector3.Dot(transform.forward, ambulanceForward);
-    if (directionMatch < 0.5f) return;
+        float directionMatch = Vector3.Dot(transform.forward, ambulanceForward);
+        if (directionMatch < 0.5f) return;
 
-    // 執行停等邏輯 (只有在沒地方閃的時候才跑這裡)
-    if (IsInIntersection()) {
-        agent.speed = originalSpeed * 0.5f; 
-        agent.isStopped = false;
-    } else {
-        agent.isStopped = true;
-        agent.velocity = Vector3.zero;
+        // 💡 關鍵過濾：如果我根本還沒靠近路口，就無視這個「強制停下」的廣播
+        if (targetNode != null && targetNode.isStopLine) {
+            float distToStopLine = Vector3.Distance(transform.position, targetNode.transform.position);
+            // 如果距離路口大於 15 米，我當作沒聽到，繼續開我的直行車
+            if (distToStopLine > 15f && !IsInIntersection()) return; 
+        } else if (!IsInIntersection()) {
+            return; // 目標根本不是路口，無視
+        }
+
+        // 執行停等邏輯
+        if (IsInIntersection()) {
+            agent.speed = originalSpeed * 0.5f; 
+            agent.isStopped = false;
+        } else {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+        }
+        
+        isYielding = true;
+        StartCoroutine(WaitAndReturn(5.0f)); 
     }
-    
-    isYielding = true;
-    // 啟動自動恢復計時器
-    StartCoroutine(WaitAndReturn(5.0f)); 
-}
 
-// 輔助協程：等救護車過去後自動恢復
-private IEnumerator WaitAndReturn(float delay) {
-    yield return new WaitForSeconds(delay);
-    ReturnToTrack();
-}
+    // 輔助協程：等救護車過去後自動恢復
+    private IEnumerator WaitAndReturn(float delay) {
+        yield return new WaitForSeconds(delay);
+        ReturnToTrack();
+    }
    
 
     protected void ResetToNormal() {
@@ -179,53 +191,52 @@ private IEnumerator WaitAndReturn(float delay) {
     }
 
     protected virtual void Update() {
-    if (targetNode == null || agent == null) return;
+        if (targetNode == null || agent == null) return;
 
-    // --- 🚨 第一層級：避讓狀態監控 ---
-    // 只要是在避讓（S型換道中 或 避讓後緩行），Update 絕對不插手導航與煞車
-    if (currentYieldState != YieldState.None || isYielding) {
-        // 在此狀態下，所有的 agent.SetDestination 和 isStopped 都由協程 (S_CurveYieldRoutine) 控制
-        // 這樣可以保證「一邊開一邊滑過去」，不會被 Update 的停止指令卡住
-        return; 
-    }
+        // 避讓中，Update 絕對不插手
+        if (currentYieldState != YieldState.None || isYielding) return; 
 
-    // --- 🚦 第二層級：正常行駛判斷 (紅綠燈與防撞) ---
-    // 只有在「非避讓」狀態下，才執行這些判定
-    HandleTrafficLights();    // 檢查紅燈
-    CheckForwardCollision(); // 檢查前面有沒有車
+        // 💡 關鍵修正：先問紅綠燈要不要停
+        bool stoppedByLight = HandleTrafficLights();
 
-    // --- 🛣️ 第三層級：節點導航邏輯 ---
-    // 如果沒被雷達或紅燈叫停，就繼續追下一個 Node
-    if (!agent.isStopped) {
-        // 如果快要到達當前目標 Node (距離 < 2.5米)
-        if (!agent.pathPending && agent.remainingDistance < 2.5f) {
-            TrafficNode nextNode = targetNode.GetNextNode(); 
-            if (nextNode != null) {
-                targetNode = nextNode;
-                agent.SetDestination(targetNode.transform.position);
-            } else {
-                // 沒路了就刪除車子
-                Destroy(gameObject);
+        // 💡 如果紅綠燈沒叫我停，我才用雷達看前面有沒有車
+        if (!stoppedByLight) {
+            CheckForwardCollision(); 
+        }
+
+        // 節點導航邏輯
+        if (!agent.isStopped) {
+            if (!agent.pathPending && agent.remainingDistance < 2.5f) {
+                TrafficNode nextNode = targetNode.GetNextNode(); 
+                if (nextNode != null) {
+                    targetNode = nextNode;
+                    agent.SetDestination(targetNode.transform.position);
+                } else {
+                    Destroy(gameObject);
+                }
             }
         }
     }
-}
 
-    protected virtual void HandleTrafficLights() {
-        if (isYielding) return; 
+    protected virtual bool HandleTrafficLights() {
+        if (isYielding || currentYieldState != YieldState.None) return false; 
 
         if (targetNode.isStopLine && targetNode.currentIsRed) {
             float dist = Vector3.Distance(transform.position, targetNode.transform.position);
-            if (dist < 6f) {
+            
+            if (dist <= 3.5f) {
+                // 🛑 真的壓到停止線了，徹底煞死
                 agent.isStopped = true;
                 agent.velocity = Vector3.zero;
-                return;
+                return true; // 告訴 Update 我正在等紅燈
+            } else {
+                // 🟢 還沒到線 (就算是 4 米外)，給我繼續開！
+                agent.isStopped = false;
+                return false;
             }
         }
-
-        if (!HasObstacleInFront()) {
-            agent.isStopped = false;
-        }
+        
+        return false; // 綠燈或一般節點
     }
 
     protected virtual void CheckForwardCollision() {
