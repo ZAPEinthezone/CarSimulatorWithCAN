@@ -8,7 +8,7 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
     [Header("模式控制")]
     public bool isEmergency = false; 
     public float emergencySpeed = 15.0f;
-    public float detectRadius = 25f;   
+    public float detectRadius = 55f;   // 💡 再次增加偵測半徑，讓 NPC 更早反應
     public float intersectionDist = 50f; 
 
     [Header("自動導航邏輯 (直行後左轉)")]
@@ -98,26 +98,33 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
     }
 
   private void NotifyNearbyCars() {
-    // 1. 周圍廣播
+    // --- 1. 廣播給路口大腦 (控制紅綠燈) ---
+    // 掃描附近 40 公尺內的路口控制器
+    Collider[] intersections = Physics.OverlapSphere(transform.position, 40f);
+    foreach (var col in intersections) {
+        var brain = col.GetComponent<IntersectionV2X>();
+        if (brain != null) {
+            // 直接呼叫我們剛寫好的路口接管功能
+            brain.AmbulanceApproach();
+        }
+    }
+
+    // --- 2. 原本的周圍 NPC 廣播 (S型避讓) ---
     Collider[] nearby = Physics.OverlapSphere(transform.position, detectRadius);
     foreach (var col in nearby) {
         if (col.CompareTag("Car") && col.gameObject != gameObject) {
             var npc = col.GetComponent<NPC_WaypointDrive>();
-            
-            // 💡 修正：使用剛剛建立的公開屬性 IsYielding
             if (npc != null && !npc.IsYielding) { 
                 npc.YieldForAmbulance(transform.position, transform.forward);
             }
         }
     }
 
-    // 2. 路口廣播 (同理修正)
+    // --- 3. 原本的直行路口廣播 (強制停下) ---
     RaycastHit[] hits = Physics.SphereCastAll(transform.position, 6f, transform.forward, intersectionDist);
     foreach (var hit in hits) {
         if (hit.collider.CompareTag("Car") && hit.collider.gameObject != gameObject) {
             var npc = hit.collider.GetComponent<NPC_WaypointDrive>();
-            
-            // 💡 修正：使用 IsYielding
             if (npc != null && !npc.IsYielding) {
                 npc.IntersectionYield(transform.forward); 
             }
