@@ -34,12 +34,16 @@ public class NPC_WaypointDrive : MonoBehaviour
         // 如果已經在閃了，就不要理會
         if (isYielding || currentYieldState != YieldState.None) return;
 
-        // 距離與方向過濾
+        // 距離與方向過濾 (救護車在後方才需要讓)
         float dist = Vector3.Distance(transform.position, ambulancePos);
-        if (dist > 35f) return;
-        if (Vector3.Dot(transform.forward, ambulanceForward) < 0.5f) return;
+        if (dist > 55f) return; // 💡 修正：與救護車的 detectRadius (55f) 保持一致，確保能收到遠方訊號
+        Vector3 toAmbulance = (ambulancePos - transform.position).normalized;
+        // 關鍵：判斷救護車是否在「我後面」，而不是同向。Dot < -0.3 代表在我車尾方向
+        if (Vector3.Dot(transform.forward, toAmbulance) > -0.3f) return;
 
-        // 💡 關鍵：啟動 S 型避讓
+        // 💡 關鍵：啟動 S 型避讓前，先強制解除 agent 的煞車狀態
+        // 這樣可以避免車子因為前方有車而卡住，無法執行避讓動作
+        agent.isStopped = false;
         StartCoroutine(S_CurveYieldRoutine());
     }
 
@@ -48,16 +52,20 @@ private IEnumerator S_CurveYieldRoutine() {
     currentYieldState = YieldState.MovingToSide;
     
     agent.isStopped = false; 
-
-    // 💡 漏了這兩行特效藥！這是消除「停頓感」的關鍵！
-    agent.velocity = transform.forward * originalSpeed; // 瞬間給物理推力，打破發呆狀態
-    agent.autoBraking = false; // 避讓時強迫關閉煞車
-
-    agent.speed = originalSpeed * 1.3f; // 稍微再快一點點
     
-    // 💡 加速度原本 60 還是有點慢，拉高到 100 讓它動作乾脆
-    agent.acceleration = 100f; 
-    agent.angularSpeed = 800f;
+    // 💡 【終極手段】在賦予速度前，先用 ResetPath() 徹底清除 agent 當前可能存在的
+    // 任何路徑或煞停指令 (例如等紅燈)。這能確保接下來的速度賦予不會被舊狀態干擾。
+    agent.ResetPath();
+
+    // --- 消除停頓感的關鍵 ---
+    // 1. 關閉自動煞車，讓車輛在接近目標點時不會自己減速，使動作更連貫。
+    agent.autoBraking = false;
+    // 2. 直接賦予一個初始速度，強制打破 agent 的靜止或慢速狀態，讓車輛立即動起來。
+    agent.velocity = transform.forward * agent.speed; 
+    
+    agent.speed = originalSpeed * 1.8f; // 避讓時稍微加速
+    agent.acceleration = 120f; // 💡 再次提高加速度，讓起步更果斷
+    agent.angularSpeed =800f;
 
     // 1. 探測極限偏移量 (確保不撞牆)
     float targetOffset = 3.5f; // 目標偏移 3 米 (約一個車道)
@@ -69,7 +77,7 @@ private IEnumerator S_CurveYieldRoutine() {
 
     float currentOffset = 0f;
     float timer = 0f;
-    float yieldDuration = 6.0f; // 避讓總時間
+    float yieldDuration = 8.0f; // 避讓總時間
 
     // 2. 進入動態避讓循環
     while (timer < yieldDuration) {
@@ -120,6 +128,7 @@ protected virtual void ReturnToTrack() {
     
     currentYieldState = YieldState.None;
     isYielding = false;
+    agent.autoBraking = true; // 恢復正常的自動煞車行為
     
     agent.isStopped = false;
     agent.speed = originalSpeed;
@@ -194,7 +203,10 @@ protected virtual void ReturnToTrack() {
         if (targetNode == null || agent == null) return;
 
         // 避讓中，Update 絕對不插手
-        if (currentYieldState != YieldState.None || isYielding) return; 
+        // 💡 【關鍵修正】一旦 isYielding 為 true，就立刻返回，不執行任何後續的駕駛邏輯。
+        // 這可以防止 Update 中的紅綠燈或防撞邏輯干擾 S_CurveYieldRoutine 協程的執行，
+        // 徹底解決因指令衝突造成的「原地發呆」問題。
+        if (isYielding) return; 
 
         // 💡 關鍵修正：先問紅綠燈要不要停
         bool stoppedByLight = HandleTrafficLights();
@@ -284,4 +296,37 @@ protected virtual void ReturnToTrack() {
         Vector3 sensorPos = transform.TransformPoint(sensorOffset);
         Gizmos.DrawLine(sensorPos, sensorPos + transform.forward * sensorLength);
     }
+
+    // 🚑 救護車 V2X 指令：加速逃離
+    public void V2X_Accelerate() 
+    {
+        if (agent != null)
+        {
+            agent.isStopped = false;
+            agent.speed = originalSpeed * 2.0f; // 加速兩倍
+            agent.acceleration = 50f; // 讓起步變快
+        }
+    }
+
+    // 🚑 救護車 V2X 指令：原地強制煞停
+    public void V2X_ForceStop() 
+    {
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+        }
+    }
+
+    // 🚑 救護車過後恢復正常
+    public void V2X_Reset()
+    {
+        if (agent != null)
+        {
+            agent.isStopped = false;
+            agent.speed = originalSpeed;
+            agent.acceleration = 8f; // 恢復正常加速度
+        }
+    }
+    
 }
