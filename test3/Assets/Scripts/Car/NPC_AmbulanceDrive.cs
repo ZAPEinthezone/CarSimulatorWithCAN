@@ -105,7 +105,7 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
         var brain = col.GetComponent<IntersectionV2X>();
         if (brain != null) {
             // 直接呼叫我們剛寫好的路口接管功能
-            brain.AmbulanceApproach();
+            brain.AmbulanceApproach(transform.position, transform.forward);
         }
     }
 
@@ -114,7 +114,7 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
     foreach (var col in nearby) {
         if (col.CompareTag("Car") && col.gameObject != gameObject) {
             var npc = col.GetComponent<NPC_WaypointDrive>();
-            if (npc != null && !npc.IsYielding) { 
+            if (npc != null && !npc.IsYielding) {
                 npc.YieldForAmbulance(transform.position, transform.forward);
             }
         }
@@ -126,7 +126,7 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
         if (hit.collider.CompareTag("Car") && hit.collider.gameObject != gameObject) {
             var npc = hit.collider.GetComponent<NPC_WaypointDrive>();
             if (npc != null && !npc.IsYielding) {
-                npc.IntersectionYield(transform.forward); 
+                npc.IntersectionYield(transform.forward);
             }
         }
     }

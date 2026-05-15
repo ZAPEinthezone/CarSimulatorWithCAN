@@ -261,8 +261,9 @@ protected virtual void ReturnToTrack() {
                         agent.isStopped = false;
                         agent.speed = originalSpeed * 0.4f;
                     } else {
-                        agent.isStopped = true;
-                        agent.velocity = Vector3.zero;
+                        if (!isYielding && currentYieldState == YieldState.None) {
+                            StartCoroutine(S_CurveYieldRoutine());
+                        }
                     }
                 } else {
                     agent.speed = originalSpeed * 0.5f; 

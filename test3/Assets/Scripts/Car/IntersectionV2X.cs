@@ -13,9 +13,12 @@ public class IntersectionV2X : MonoBehaviour
     public List<GameObject> horizontalYellow; // 👈 新增黃燈
     public List<GameObject> horizontalGreen;
 
+    [Header("🚗 路口中央保留區")]
+    public float intersectionCoreRadius = 30f; // 路口中央大圓：進入內部的車要優先清空
+
     private float resetTimer = 0f;
 
-    public void AmbulanceApproach()
+    public void AmbulanceApproach(Vector3 ambulancePos, Vector3 ambulanceForward)
     {
         // --- 🚑 直向：強制變綠 ---
         // 熄滅紅燈與黃燈，只點亮綠燈
@@ -29,7 +32,7 @@ public class IntersectionV2X : MonoBehaviour
         foreach(var y in horizontalYellow) if(y != null) y.SetActive(false);
         foreach(var g in horizontalGreen) if(g != null) g.SetActive(false);
 
-        NotifyNearbyNPCs();
+        NotifyNearbyNPCs(ambulancePos, ambulanceForward);
         resetTimer = 5.0f; // 5 秒沒感應到救護車就交還控制權
     }
 
@@ -46,24 +49,39 @@ public class IntersectionV2X : MonoBehaviour
         }
     }
 
-    void NotifyNearbyNPCs()
+    void NotifyNearbyNPCs(Vector3 ambulancePos, Vector3 ambulanceForward)
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, 40f);
+        Collider[] hits = Physics.OverlapSphere(transform.position, 50f);
         foreach (var hit in hits)
         {
-            if (hit.CompareTag("Car"))
-            {
-                var npc = hit.GetComponent<NPC_WaypointDrive>();
-                if (npc == null) continue;
+            if (!hit.CompareTag("Car")) continue;
 
-                // 判斷是否為同向車道 (1, 2, 5, 6 方向)
-                float dot = Vector3.Dot(npc.transform.forward, transform.up);
-                if (Mathf.Abs(dot) > 0.7f) 
-                {
-                    if (dot > 0) npc.V2X_Accelerate(); // 1 號向前衝
-                    else npc.V2X_ForceStop();        // 6 號對向停下
-                }
+            // 不要影響救護車自己
+            if (hit.GetComponent<NPC_AmbulanceDrive>() != null) continue;
+
+            var npc = hit.GetComponent<NPC_WaypointDrive>();
+            if (npc == null) continue;
+
+            float distToCenter = Vector3.Distance(npc.transform.position, transform.position);
+            float forwardDot = Vector3.Dot(npc.transform.forward, ambulanceForward.normalized);
+            bool sameLane = forwardDot > 0.7f;
+
+            if (distToCenter <= intersectionCoreRadius)
+            {
+                // 已經進入中央大圓的車，要趕快清空路口
+                npc.V2X_Accelerate();
+                continue;
             }
+
+            if (sameLane)
+            {
+                // 同車道但還沒進中央圓的車，也給它加速讓路
+                npc.V2X_Accelerate();
+                continue;
+            }
+
+            // 還沒進中央圓而且不是同車道的停下
+            npc.V2X_ForceStop();
         }
     }
 
