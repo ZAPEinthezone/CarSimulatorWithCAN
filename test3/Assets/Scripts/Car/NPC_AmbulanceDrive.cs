@@ -97,40 +97,30 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
         }
     }
 
-  private void NotifyNearbyCars() {
-    // --- 1. 廣播給路口大腦 (控制紅綠燈) ---
-    // 掃描附近 40 公尺內的路口控制器
-    Collider[] intersections = Physics.OverlapSphere(transform.position, 40f);
-    foreach (var col in intersections) {
-        var brain = col.GetComponent<IntersectionV2X>();
-        if (brain != null) {
-            // 直接呼叫我們剛寫好的路口接管功能
-            brain.AmbulanceApproach(transform.position, transform.forward);
+   private void NotifyNearbyCars() {
+        // --- 1. 廣播給路口大腦 (控制紅綠燈) ---
+        IntersectionV2X[] intersections = FindObjectsOfType<IntersectionV2X>();
+        foreach (var brain in intersections) {
+            if (brain == null) continue;
+            // 💡【關鍵修改】拉長通知路口的距離，從 40 米增加到 65 米，提早開綠燈
+            if (Vector3.Distance(transform.position, brain.transform.position) > 70f) continue;
+            brain.AmbulanceApproach(this);
         }
-    }
 
-    // --- 2. 原本的周圍 NPC 廣播 (S型避讓) ---
-    Collider[] nearby = Physics.OverlapSphere(transform.position, detectRadius);
-    foreach (var col in nearby) {
-        if (col.CompareTag("Car") && col.gameObject != gameObject) {
-            var npc = col.GetComponent<NPC_WaypointDrive>();
-            if (npc != null && !npc.IsYielding) {
-                npc.YieldForAmbulance(transform.position, transform.forward);
+        // --- 2. 廣播給附近車輛，觸發 S 型避讓 (💡 這裡幫你補回來啦！) ---
+        Collider[] hits = Physics.OverlapSphere(transform.position, detectRadius);
+        foreach (var hit in hits) {
+            var vehicleRoot = hit.transform.root.gameObject;
+            if (!vehicleRoot.CompareTag("Car")) continue;
+            if (vehicleRoot == this.gameObject) continue; // 不要廣播給自己
+
+            var npc = vehicleRoot.GetComponent<NPC_WaypointDrive>();
+            if (npc != null) {
+                // 呼叫前車執行 S 型避讓
+                npc.YieldForAmbulance(this); 
             }
         }
     }
-
-    // --- 3. 原本的直行路口廣播 (強制停下) ---
-    RaycastHit[] hits = Physics.SphereCastAll(transform.position, 6f, transform.forward, intersectionDist);
-    foreach (var hit in hits) {
-        if (hit.collider.CompareTag("Car") && hit.collider.gameObject != gameObject) {
-            var npc = hit.collider.GetComponent<NPC_WaypointDrive>();
-            if (npc != null && !npc.IsYielding) {
-                npc.IntersectionYield(transform.forward);
-            }
-        }
-    }
-}
 
     // 🔍 向量運算：尋找最左邊的點
     private TrafficNode FindMostLeftNode(List<TrafficNode> choices) {

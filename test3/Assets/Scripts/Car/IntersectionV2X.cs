@@ -5,35 +5,33 @@ public class IntersectionV2X : MonoBehaviour
 {
     [Header("🚥 直向燈組 (1, 2, 5, 6) - 救護車通行的方向")]
     public List<GameObject> verticalRed; 
-    public List<GameObject> verticalYellow; // 👈 新增黃燈
+    public List<GameObject> verticalYellow; 
     public List<GameObject> verticalGreen;
 
     [Header("🚥 橫向燈組 (3, 4, 7, 8) - 要擋住的方向")]
     public List<GameObject> horizontalRed;
-    public List<GameObject> horizontalYellow; // 👈 新增黃燈
+    public List<GameObject> horizontalYellow; 
     public List<GameObject> horizontalGreen;
 
     [Header("🚗 路口中央保留區")]
-    public float intersectionCoreRadius = 30f; // 路口中央大圓：進入內部的車要優先清空
+    public float intersectionCoreRadius = 30f; 
 
     private float resetTimer = 0f;
 
-    public void AmbulanceApproach(Vector3 ambulancePos, Vector3 ambulanceForward)
+    public void AmbulanceApproach(NPC_AmbulanceDrive ambulance)
     {
         // --- 🚑 直向：強制變綠 ---
-        // 熄滅紅燈與黃燈，只點亮綠燈
         foreach(var r in verticalRed) if(r != null) r.SetActive(false);
         foreach(var y in verticalYellow) if(y != null) y.SetActive(false);
         foreach(var g in verticalGreen) if(g != null) g.SetActive(true);
 
         // --- 🛑 橫向：強制變紅 ---
-        // 點亮紅燈，熄滅黃燈與綠燈
         foreach(var r in horizontalRed) if(r != null) r.SetActive(true);
         foreach(var y in horizontalYellow) if(y != null) y.SetActive(false);
         foreach(var g in horizontalGreen) if(g != null) g.SetActive(false);
 
-        NotifyNearbyNPCs(ambulancePos, ambulanceForward);
-        resetTimer = 5.0f; // 5 秒沒感應到救護車就交還控制權
+        NotifyNearbyNPCs(ambulance);
+        resetTimer = 5.0f; 
     }
 
     void Update() 
@@ -44,53 +42,69 @@ public class IntersectionV2X : MonoBehaviour
             if (resetTimer <= 0) 
             {
                 ResetNPCs();
-                // 燈號會由你原本的「紅綠燈控制套件」在它下一個 Update 週期自動刷回正確顏色
             }
         }
     }
 
-    void NotifyNearbyNPCs(Vector3 ambulancePos, Vector3 ambulanceForward)
+    void NotifyNearbyNPCs(NPC_AmbulanceDrive ambulance)
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, 50f);
+        Collider[] hits = Physics.OverlapSphere(transform.position, 60f);
+        Vector3 ambDir = ambulance != null ? ambulance.transform.forward.normalized : Vector3.forward;
+
         foreach (var hit in hits)
         {
-            if (!hit.CompareTag("Car")) continue;
+            var vehicleRoot = hit.transform.root.gameObject;
+            if (!vehicleRoot.CompareTag("Car")) continue;
+            if (vehicleRoot.GetComponent<NPC_AmbulanceDrive>() != null) continue;
 
-            // 不要影響救護車自己
-            if (hit.GetComponent<NPC_AmbulanceDrive>() != null) continue;
-
-            var npc = hit.GetComponent<NPC_WaypointDrive>();
+            var npc = vehicleRoot.GetComponent<NPC_WaypointDrive>();
             if (npc == null) continue;
 
             float distToCenter = Vector3.Distance(npc.transform.position, transform.position);
-            float forwardDot = Vector3.Dot(npc.transform.forward, ambulanceForward.normalized);
-            bool sameLane = forwardDot > 0.7f;
+            
+            // 💡 判斷這台車是不是「還沒過停止線」(目標節點是 StopLine)
+            bool isWaitingAtStopLine = (npc.targetNode != null && npc.targetNode.isStopLine);
 
-            if (distToCenter <= intersectionCoreRadius)
+            Vector3 dirToCenter = (transform.position - npc.transform.position).normalized;
+            bool isHeadingToCenter = Vector3.Dot(npc.transform.forward, dirToCenter) > 0.1f;
+            
+            float forwardDot = Vector3.Dot(npc.transform.forward, ambDir);
+            bool isSameDirection = forwardDot > 0.4f;
+
+            // 🚥 【精準分流邏輯】 🚥
+
+            // 1. 同向車 (救護車正前方的車)：開特權！
+            // 因為它擋到救護車了，只要靠近路口，不管三七二十一直接踩油門衝過去清空！
+            if (isSameDirection && distToCenter <= intersectionCoreRadius)
             {
-                // 已經進入中央大圓的車，要趕快清空路口
                 npc.V2X_Accelerate();
-                continue;
+                continue; 
             }
 
-            if (sameLane)
+            // 2. 橫向與對向車 (非同向)：必須遵守規矩！
+            if (!isSameDirection)
             {
-                // 同車道但還沒進中央圓的車，也給它加速讓路
-                npc.V2X_Accelerate();
-                continue;
+                // 如果它「已經越過停止線」卡在路口正中央了，只能叫它加速逃離
+                if (distToCenter <= intersectionCoreRadius && !isWaitingAtStopLine)
+                {
+                    npc.V2X_Accelerate();
+                }
+                // 💡 如果它「還沒過停止線」或者正在朝著路口開，乖乖給我死死煞停！
+                else if (isHeadingToCenter || isWaitingAtStopLine)
+                {
+                    npc.V2X_ForceStop();
+                }
             }
-
-            // 還沒進中央圓而且不是同車道的停下
-            npc.V2X_ForceStop();
         }
     }
 
     void ResetNPCs() 
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, 45f);
+        Collider[] hits = Physics.OverlapSphere(transform.position, 70f);
         foreach (var h in hits) 
         {
-            var npc = h.GetComponent<NPC_WaypointDrive>();
+            var vehicleRoot = h.transform.root.gameObject;
+            var npc = vehicleRoot.GetComponent<NPC_WaypointDrive>();
             if (npc != null) npc.V2X_Reset();
         }
     }

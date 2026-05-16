@@ -74,6 +74,20 @@ public class NPC_CarSpawner : MonoBehaviour
                 {
                     if (currentCount >= maxCars) break;
 
+                    // 💡【關鍵新增】在生成前，先檢查出生點周圍是否已經有車，避免擠成一團
+                    // 用一個小半徑 (例如 4 米) 的球體來偵測
+                    Collider[] hitColliders = Physics.OverlapSphere(startNode.transform.position, 4.0f);
+                    bool isBlocked = false;
+                    foreach (var hitCollider in hitColliders)
+                    {
+                        if (hitCollider.transform.root.CompareTag("Car"))
+                        {
+                            isBlocked = true;
+                            break;
+                        }
+                    }
+                    if (isBlocked) continue; // 如果出生點被擋住，就跳過這個點，換下一個
+
                     GameObject prefabToSpawn;
                     bool shouldSpawnAmbulanceHere = !hasAmbulanceSpawned && ambulancePrefab != null &&
                         (ambulanceStartNode == null ? true : startNode == ambulanceStartNode);
@@ -125,5 +139,3 @@ public class NPC_CarSpawner : MonoBehaviour
         }
     }
 }
-
-
