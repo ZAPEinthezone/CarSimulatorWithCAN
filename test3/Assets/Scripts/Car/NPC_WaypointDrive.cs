@@ -11,12 +11,23 @@ public class NPC_WaypointDrive : MonoBehaviour
         [Header("行車與雷達")]
         public float sensorLength = 10f;
         public Vector3 sensorOffset = new Vector3(0, 0.5f, 2.5f);
+        
+        [Header("避讓設定")]
+        public float maxYieldDistance = 55f;
+        public float yieldSideOffset = 3.2f;
+        public float yieldProbeDistance = 6f;
+        public float yieldMoveDistance = 8.0f;
+        public float yieldHoldTime = 3.0f;
+        public float yieldSpeedMultiplier = 1.2f;
+        public float yieldDuration = 4.0f;
+        public float followSpeedRatio = 0.4f;
+        public float stopLineSlowDistance = 8.0f;
 
         protected bool isYielding = false;
         protected float originalSpeed;
         public bool IsYielding => isYielding;
 
-        private enum YieldState { None, MovingToSide, AligningForward }
+        private enum YieldState { None, MovingToSide, AlignToForward }
         private YieldState currentYieldState = YieldState.None;
 
         protected virtual void Awake() {
@@ -41,88 +52,80 @@ public class NPC_WaypointDrive : MonoBehaviour
         // 關鍵：判斷救護車是否在「我後面」，而不是同向。Dot < -0.3 代表在我車尾方向
         if (Vector3.Dot(transform.forward, toAmbulance) > -0.3f) return;
 
-        // 💡 關鍵：啟動 S 型避讓前，先強制解除 agent 的煞車狀態
-        // 這樣可以避免車子因為前方有車而卡住，無法執行避讓動作
+        if (!CanPerformSideYield(ambulancePos, ambulanceForward))
+        {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+            return;
+        }
+
+        // 💡 關鍵：啟動側移前，先強制解除 agent 的煞車狀態
         agent.isStopped = false;
         StartCoroutine(S_CurveYieldRoutine());
     }
 
-private IEnumerator S_CurveYieldRoutine() {
-    isYielding = true;
-    currentYieldState = YieldState.MovingToSide;
-    
-    agent.isStopped = false; 
-    
-    // 💡 【終極手段】在賦予速度前，先用 ResetPath() 徹底清除 agent 當前可能存在的
-    // 任何路徑或煞停指令 (例如等紅燈)。這能確保接下來的速度賦予不會被舊狀態干擾。
-    agent.ResetPath();
-
-    // --- 消除停頓感的關鍵 ---
-    // 1. 關閉自動煞車，讓車輛在接近目標點時不會自己減速，使動作更連貫。
-    agent.autoBraking = false;
-    // 2. 直接賦予一個初始速度，強制打破 agent 的靜止或慢速狀態，讓車輛立即動起來。
-    agent.velocity = transform.forward * agent.speed; 
-    
-    agent.speed = originalSpeed * 1.8f; // 避讓時稍微加速
-    agent.acceleration = 120f; // 💡 再次提高加速度，讓起步更果斷
-    agent.angularSpeed =800f;
-
-    // 1. 探測極限偏移量 (確保不撞牆)
-    float targetOffset = 3.5f; // 目標偏移 3 米 (約一個車道)
-
-    NavMeshHit nmHit;
-    if (agent.Raycast(transform.position + transform.right * targetOffset, out nmHit)) {
-        targetOffset = Mathf.Max(0.5f, nmHit.distance - 0.8f);
+    private bool CanPerformSideYield(Vector3 ambulancePos, Vector3 ambulanceForward)
+    {
+        if (targetNode == null) return false;
+        if (Vector3.Distance(transform.position, ambulancePos) > maxYieldDistance) return false;
+        if (targetNode.isStopLine && targetNode.currentIsRed) return false;
+        if (IsInIntersection()) return false;
+        if (HasObstacleInFront(4f)) return false;
+        return IsSideClear(transform.right) || IsSideClear(-transform.right);
     }
 
-    float currentOffset = 0f;
-    float timer = 0f;
-    float yieldDuration = 8.0f; // 避讓總時間
+    private bool IsSideClear(Vector3 sideDirection)
+    {
+        Vector3 origin = transform.TransformPoint(sensorOffset);
+        Vector3 probeDirForward = (sideDirection + transform.forward * 0.4f).normalized;
+        Vector3 probeDirSide = (sideDirection + transform.forward * 0.1f).normalized;
+        bool forwardClear = !Physics.Raycast(origin, probeDirForward, yieldProbeDistance);
+        bool sideClear = !Physics.Raycast(origin, probeDirSide, yieldProbeDistance * 0.8f);
+        return forwardClear && sideClear;
+    }
 
-    // 2. 進入動態避讓循環
-    while (timer < yieldDuration) {
-        timer += Time.deltaTime;
-
-        if (targetNode != null) {
-            // 💡 【防繞圈機制】
-            // 如果距離 Node 小於 5 米，或者 Node 已經在車子側面/後方 (Dot < 0.2)
-            // 就立刻提早切換到下一個 Node，絕對不讓車子有機會回頭找點
-            Vector3 toNode = targetNode.transform.position - transform.position;
-            if (toNode.magnitude < 5.0f || Vector3.Dot(transform.forward, toNode.normalized) < 0.2f) {
-                TrafficNode next = targetNode.GetNextNode();
-                if (next != null) {
-                    targetNode = next;
-                    toNode = targetNode.transform.position - transform.position; // 更新方向
-                }
-            }
-
-            // 💡 【弧度跟隨機制】
-            // 計算目前這段路 (從車子到 Node) 的絕對右側
-            Vector3 roadDir = toNode.normalized;
-            Vector3 roadRight = Vector3.Cross(Vector3.up, roadDir).normalized;
-
-            // 💡 【完美 S 型核心：Lerp 平滑過渡】
-            // 讓 currentOffset 像踩油門一樣，平滑地從 0 逐漸增加到 targetOffset
-            currentOffset = Mathf.Lerp(currentOffset, targetOffset, Time.deltaTime * 4.0f);
-
-            // 最終目的地 = 目標 Node 本身的位置 + 往右偏移
-            // 因為 targetNode 會沿著道路彎曲，所以這個偏移點也會完美貼合道路弧度！
-            Vector3 dynamicTarget = targetNode.transform.position + (roadRight * currentOffset);
-            
-            // 每幀微調目的地，Agent 就會畫出一條極其柔順的曲線
-            agent.SetDestination(dynamicTarget);
-        }
+    private IEnumerator S_CurveYieldRoutine() {
+        isYielding = true;
+        currentYieldState = YieldState.MovingToSide;
         
-        // 避讓中期 (2秒後)，開始平滑降速讓救護車通過
-        if (timer > 2.0f) {
-            agent.speed = Mathf.Lerp(agent.speed, originalSpeed * 0.4f, Time.deltaTime);
+        agent.isStopped = false; 
+        agent.ResetPath();
+        agent.autoBraking = false;
+        agent.velocity = transform.forward * agent.speed; 
+        
+        agent.speed = originalSpeed * yieldSpeedMultiplier;
+        agent.acceleration = 120f;
+        agent.angularSpeed = 800f;
+
+        bool rightClear = IsSideClear(transform.right);
+        bool leftClear = IsSideClear(-transform.right);
+        if (!rightClear && !leftClear)
+        {
+            ReturnToTrack();
+            yield break;
         }
 
-        yield return null;
-    }
+        float avoidSign = rightClear ? 1f : -1f;
+        Vector3 laneTarget = transform.position + transform.forward * yieldMoveDistance + transform.right * avoidSign * yieldSideOffset;
 
-    ReturnToTrack();
-}
+        while (!HasReached(laneTarget, 1.2f)) {
+            agent.SetDestination(laneTarget);
+            yield return null;
+        }
+
+        currentYieldState = YieldState.AlignToForward;
+        float holdTimer = 0f;
+        while (holdTimer < yieldHoldTime) {
+            holdTimer += Time.deltaTime;
+            Vector3 sideHoldPoint = transform.position + transform.forward * 2f + transform.right * avoidSign * yieldSideOffset;
+            agent.SetDestination(sideHoldPoint);
+            agent.speed = Mathf.Lerp(agent.speed, originalSpeed * followSpeedRatio, Time.deltaTime * 3f);
+            yield return null;
+        }
+
+        currentYieldState = YieldState.None;
+        ReturnToTrack();
+    }
 
 protected virtual void ReturnToTrack() {
     
@@ -235,14 +238,25 @@ protected virtual void ReturnToTrack() {
 
         if (targetNode.isStopLine && targetNode.currentIsRed) {
             float dist = Vector3.Distance(transform.position, targetNode.transform.position);
-            
-            if (dist <= 3.5f) {
+            float slowDistance = stopLineSlowDistance;
+            float stopDistance = 2.5f;
+
+            if (dist <= stopDistance) {
                 // 🛑 真的壓到停止線了，徹底煞死
                 agent.isStopped = true;
                 agent.velocity = Vector3.zero;
-                return true; // 告訴 Update 我正在等紅燈
-            } else {
-                // 🟢 還沒到線 (就算是 4 米外)，給我繼續開！
+                agent.speed = 0f;
+                return true;
+            }
+            else if (dist <= slowDistance) {
+                // ⚠️ 紅燈接近中，提前減速跟車，避免衝線
+                agent.isStopped = false;
+                agent.speed = Mathf.Lerp(agent.speed, originalSpeed * 0.2f, Time.deltaTime * 5f);
+                agent.SetDestination(targetNode.transform.position);
+                return false;
+            }
+            else {
+                // 🟢 還沒到減速範圍，正常前進
                 agent.isStopped = false;
                 return false;
             }
@@ -257,16 +271,13 @@ protected virtual void ReturnToTrack() {
             if (hit.collider.CompareTag("Car")) {
                 float dist = hit.distance;
                 if (dist < 4f) {
-                    if (IsInIntersection()) {
-                        agent.isStopped = false;
-                        agent.speed = originalSpeed * 0.4f;
-                    } else {
-                        if (!isYielding && currentYieldState == YieldState.None) {
-                            StartCoroutine(S_CurveYieldRoutine());
-                        }
-                    }
+                    // 前方有車時，不要亂繞過去，直接停下或慢速跟車
+                    agent.isStopped = true;
+                    agent.velocity = Vector3.zero;
+                    agent.speed = 0f;
                 } else {
-                    agent.speed = originalSpeed * 0.5f; 
+                    agent.isStopped = false;
+                    agent.speed = originalSpeed * 0.4f;
                 }
                 return;
             }
@@ -278,12 +289,18 @@ protected virtual void ReturnToTrack() {
         }
     }
 
-    protected bool HasObstacleInFront() {
+    protected bool HasObstacleInFront(float distance = -1f) {
+        float rayDistance = distance > 0f ? distance : sensorLength;
         RaycastHit hit;
-        if (Physics.Raycast(transform.TransformPoint(sensorOffset), transform.forward, out hit, sensorLength)) {
+        if (Physics.Raycast(transform.TransformPoint(sensorOffset), transform.forward, out hit, rayDistance)) {
             if (hit.collider.CompareTag("Car")) return true;
         }
         return false;
+    }
+
+    private bool HasReached(Vector3 destination, float threshold)
+    {
+        return Vector3.Distance(transform.position, destination) <= threshold;
     }
 
     protected bool IsInIntersection() {
