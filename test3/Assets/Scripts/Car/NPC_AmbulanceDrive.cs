@@ -21,6 +21,8 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
     public AudioSource sirenAudio;   
 
     private bool lastEmergencyState;
+    private bool isWaitingAtRedLight = false; // 💡【關鍵新增】紅燈等待狀態鎖
+    private bool isFullyStopped = false;      // 💡【關鍵新增】徹底停止狀態鎖
 
     protected override void Start() {
         base.Start();
@@ -48,8 +50,28 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
         if (!isEmergency) {
             // 普通模式：判斷紅燈
             if (targetNode != null && targetNode.isStopLine && targetNode.currentIsRed) {
-                if (Vector3.Distance(transform.position, targetNode.transform.position) < 8f) {
+                isWaitingAtRedLight = true; // 只要是紅燈，就進入等待狀態
+                float dist = Vector3.Distance(transform.position, targetNode.transform.position);
+                if (dist < 4.0f) { // 稍微放寬停車判斷距離
+                    // 💡【新方法】改用 isStopped 和 ResetPath() 來凍結車輛，避免 Editor 報錯
                     shouldStop = true;
+                    agent.isStopped = true;
+                    agent.velocity = Vector3.zero;
+                    agent.ResetPath();
+                    isFullyStopped = true;
+                    return; 
+                } else if (dist <= 15f) {
+                    // 在 15 米內，就開始根據距離降低速度，準備停車
+                    agent.speed = Mathf.Lerp(0, originalSpeed, dist / 15f);
+                    agent.isStopped = false;
+                    return; // 💡【關鍵修正】直接返回，讓減速指令不被干擾
+                }
+            } else {
+                // 從紅燈變綠燈的瞬間
+                if (isWaitingAtRedLight) {
+                    isWaitingAtRedLight = false;
+                    isFullyStopped = false;
+                    agent.isStopped = false;
                 }
             }
             
@@ -77,7 +99,8 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
 
         // --- 2. 導航目標決策 (維持運作) ---
         // 即使在等紅燈，也要確保目標節點正確切換
-        if (!agent.pathPending && agent.remainingDistance < 2.5f) {
+        // 💡【關鍵防禦】只有在非等待紅燈的狀態下，才允許切換節點
+        if (!isWaitingAtRedLight && !agent.pathPending && agent.remainingDistance < 2.5f) {
             nodesPassed++;
             TrafficNode nextNode = null;
             List<TrafficNode> choices = targetNode.nextNodes;
@@ -162,6 +185,11 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
                 agent.speed = emergencySpeed;
                 agent.acceleration = 40f;
                 agent.angularSpeed = 1000f;
+                 // 💡【關鍵修正】切換到緊急模式時，強制清除所有紅燈等待狀態
+                isWaitingAtRedLight = false;
+                isFullyStopped = false;
+                agent.isStopped = false;
+
             }
             if (targetNode != null) agent.SetDestination(targetNode.transform.position);
             lastEmergencyState = isEmergency;

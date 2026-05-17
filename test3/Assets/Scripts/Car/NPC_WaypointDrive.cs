@@ -9,7 +9,7 @@ public class NPC_WaypointDrive : MonoBehaviour
         public TrafficNode targetNode; 
 
         [Header("行車與雷達")]
-        public float sensorLength = 10f;
+        public float sensorLength = 3f;
         public Vector3 sensorOffset = new Vector3(0, 0.5f, 2.5f);
 
         protected bool isYielding = false;
@@ -22,6 +22,9 @@ public class NPC_WaypointDrive : MonoBehaviour
         private enum YieldState { None, MovingToSide, AligningForward }
         private YieldState currentYieldState = YieldState.None;
 
+        private bool isWaitingAtRedLight = false; // 💡【關鍵新增】紅燈等待狀態鎖
+        private bool isFullyStopped = false;      // 💡【關鍵新增】徹底停止狀態鎖
+
         protected virtual void Awake() {
             agent = GetComponent<NavMeshAgent>();
         }
@@ -29,8 +32,8 @@ public class NPC_WaypointDrive : MonoBehaviour
         protected virtual void Start() {
             if (agent != null) {
                 // 💡【關鍵修改】增加 NavMeshAgent 的避讓半徑，減少車輛重疊
-                // 這會讓車輛在導航時，本能地與其他 Agent 保持更遠的距離。
-                agent.radius = 1.5f;
+                // 再次增加避讓半徑，強制車輛之間保持更寬的物理距離。
+                agent.radius = 2.0f;
 
                 originalSpeed = agent.speed;
                 if (targetNode != null) agent.SetDestination(targetNode.transform.position);
@@ -185,7 +188,8 @@ public class NPC_WaypointDrive : MonoBehaviour
 
             if (timer > 2.0f)
             {
-                agent.speed = Mathf.Lerp(agent.speed, originalSpeed * 0.4f, Time.deltaTime);
+                // 💡 調整避讓時的減速邏輯，使其更平滑，避免急停
+                agent.speed = Mathf.Lerp(agent.speed, originalSpeed * 0.5f, Time.deltaTime * 2.0f);
             }
 
             yield return null;
@@ -288,25 +292,19 @@ public class NPC_WaypointDrive : MonoBehaviour
     protected virtual void Update() {
         if (targetNode == null || agent == null) return;
 
+        // 💡【關鍵修正】將防撞檢測移到最前面，確保每一幀都無條件發射雷達！
+        CheckForwardCollision();
+
         // 避讓中，Update 絕對不插手
         if (isYielding) return; 
 
-        if (v2xForceStop) {
-            agent.isStopped = true;
-            agent.velocity = Vector3.zero;
-            if (targetNode != null && !agent.hasPath) agent.SetDestination(targetNode.transform.position);
-            return;
-        }
+        // 如果防撞系統已經決定要煞車，就優先聽它的，直接結束這一幀的判斷
+        if (agent.isStopped) return;
 
-        if (v2xForceGo) {
-            agent.isStopped = false;
-        }
-
-        // 先問紅綠燈要不要停，但如果強制通行或強制停車，不要讓一般紅綠燈覆寫
-        bool stoppedByLight = v2xForceGo ? false : HandleTrafficLights();
-
-        if (!stoppedByLight && !v2xForceGo) {
-            CheckForwardCollision(); 
+        // 如果沒被防撞系統攔截，再判斷紅綠燈
+        bool stoppedByLight = HandleTrafficLights();
+        if (stoppedByLight) {
+            return; // 如果紅綠燈要求停車，也直接結束
         }
 
         // 節點導航邏輯
@@ -317,7 +315,8 @@ public class NPC_WaypointDrive : MonoBehaviour
             bool reachedByNav = (!agent.pathPending && agent.hasPath && agent.remainingDistance < 2.5f);
             bool reachedByPhysics = (distToTarget < 3.0f);
 
-            if (reachedByNav || reachedByPhysics) {
+            // 💡【關鍵防禦】只有在非等待紅燈的狀態下，才允許切換節點
+            if (!isWaitingAtRedLight && (reachedByNav || reachedByPhysics)) {
                 TrafficNode nextNode = targetNode.GetNextNode(); 
                 if (nextNode != null) {
                     targetNode = nextNode;
@@ -335,25 +334,37 @@ public class NPC_WaypointDrive : MonoBehaviour
 
     protected virtual bool HandleTrafficLights() {
         if (v2xForceGo) return false;
-        if (v2xForceStop) {
-            agent.isStopped = true;
-            agent.velocity = Vector3.zero;
-            return true;
-        }
         if (isYielding || currentYieldState != YieldState.None) return false; 
 
         if (targetNode.isStopLine && targetNode.currentIsRed) {
+            isWaitingAtRedLight = true; // 進入等待狀態
             float dist = Vector3.Distance(transform.position, targetNode.transform.position);
             
-            if (dist <= 3.5f) {
-                // 🛑 真的壓到停止線了，徹底煞死
+            if (dist <= 4.0f) {
+                // 💡【新方法】改用 isStopped 和 ResetPath() 來凍結車輛，避免 Editor 報錯
                 agent.isStopped = true;
                 agent.velocity = Vector3.zero;
+                agent.ResetPath();
+                isFullyStopped = true;
                 return true; // 告訴 Update 我正在等紅燈
+            } else if (dist <= 15f) {
+                // 在 15 米內，就開始根據距離降低速度，準備停車
+                agent.speed = Mathf.Lerp(0, originalSpeed, dist / 15f);
+                agent.isStopped = false;
+                return true; // 告訴 Update 正在處理紅燈，阻止 CheckForwardCollision 覆寫速度
             } else {
-                // 🟢 還沒到線 (就算是 4 米外)，給我繼續開！
+                // 距離還很遠，繼續正常行駛
                 agent.isStopped = false;
                 return false;
+            }
+        } else {
+            // 從紅燈變綠燈的瞬間
+            if (isWaitingAtRedLight) {
+                isWaitingAtRedLight = false;
+                isFullyStopped = false;
+                agent.isStopped = false;
+                agent.speed = originalSpeed;
+                if (targetNode != null) agent.SetDestination(targetNode.transform.position);
             }
         }
         
@@ -361,75 +372,76 @@ public class NPC_WaypointDrive : MonoBehaviour
     }
 
     protected virtual void CheckForwardCollision() {
-        // 定義感測器的「寬度」：左右各 1.2 米 (總寬 2.4 米)，涵蓋大部分車道寬度
-        Vector3 boxHalfExtents = new Vector3(1.2f, 0.5f, 0.5f);
+        Vector3 boxHalfExtents = new Vector3(0.8f, 1.0f, 0.5f);
+        
+        // 1. 先算出絕對平行的正前方
+        Vector3 flatForward = transform.forward;
+        // 💡【關鍵修正】根據您的建議，讓雷達稍微往下瞄準 (-0.1f)，更能抓到低底盤的車輛
+        flatForward.y = 0f;
+        flatForward.Normalize();
 
-        if (v2xForceGo) {
-            RaycastHit hitGo;
-            if (Physics.BoxCast(transform.TransformPoint(sensorOffset), boxHalfExtents, transform.forward, out hitGo, transform.rotation, 10f)) {
-                if (hitGo.collider.transform.root != this.transform.root && hitGo.collider.CompareTag("Car")) {
-                    float dist = hitGo.distance;
-                    if (dist < 5.0f) {
-                        agent.speed = originalSpeed * 0.6f;
-                        return;
-                    }
-                }
-            }
-            return;
-        }
+        // 2. 【終極改裝：絕對穩定的起點】
+        // 放棄 TransformPoint！直接拿車子的世界座標 (通常在貼地處)，
+        // 往上加 Y (高度)，往絕對前方加 Z (推移距離)。
+        // 這樣不管車身怎麼翹，雷達起點永遠在固定高度！
+        Vector3 startPos = transform.position + (Vector3.up * sensorOffset.y) + (flatForward * sensorOffset.z);
 
-        if (v2xForceStop) {
-            agent.isStopped = true;
-            agent.velocity = Vector3.zero;
-            return;
-        }
+        // 3. 絕對平行的方塊姿態
+        Quaternion flatRotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
 
-        RaycastHit hit;
-        // 🚗 關鍵升級：使用 BoxCast 掃描前方整個車道的寬度
-        if (Physics.BoxCast(transform.TransformPoint(sensorOffset), boxHalfExtents, transform.forward, out hit, transform.rotation, sensorLength)) {
-            
-            // 確保掃到的不是自己的車體，且目標是車輛
-            if (hit.collider.transform.root != this.transform.root && hit.collider.CompareTag("Car")) {
+        // 💡 視覺化：畫出水平的黃色基準線
+        Debug.DrawRay(startPos, flatForward * sensorLength, Color.yellow);
+
+        // 4. 發射 BoxCastAll
+        RaycastHit[] hits = Physics.BoxCastAll(startPos, boxHalfExtents, flatForward, flatRotation, sensorLength);
+
+        // 💡【終極排序修正】對偵測結果按距離排序，確保永遠先處理最近的物體！
+        System.Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
+        
+        bool frontCarDetected = false;
+
+        foreach (RaycastHit hit in hits) {
+            if (hit.collider.CompareTag("Car") && hit.collider.transform.root != this.transform.root) {
+                
+                // 💡 視覺化：打中的紅線
+                Debug.DrawLine(startPos, hit.point, Color.red);
+
+                frontCarDetected = true;
                 float dist = hit.distance;
 
-                // 💡【關鍵修正】簡化並統一防撞邏輯，移除複雜的對向判斷，確保穩定性
-                if (dist < 6.0f) {
-                    // 6米內：完全煞停
-                    if (IsInIntersection()) {
+                // 💡【關鍵修正】因為雷達起點後移，將煞車距離補回來
+                if (dist < 5.0f) { // 原本是 3.5f，加大！
+                    agent.isStopped = true;
+                    agent.velocity = Vector3.zero;
+                    return; 
+                }
+                else if (dist < 12.0f) { // 原本是 10.0f
+                    if (IsInIntersection() || v2xForceGo) {
                         agent.isStopped = false;
-                        agent.speed = originalSpeed * 0.4f;
+                        agent.speed = originalSpeed * 0.5f;
                     } else {
                         agent.isStopped = true;
                         agent.velocity = Vector3.zero;
                     }
-                } else if (dist < 8.0f) { // 6-8米：中度減速
-                    agent.speed = originalSpeed * 0.6f;
-                    agent.isStopped = false;
-                } else if (dist < 12.0f) { // 8-12米：輕微減速
-                    agent.speed = originalSpeed * 0.8f;
-                    agent.isStopped = false;
-                } else {
-                    // 保持正常速度
-                    agent.isStopped = false;
+                    return;
                 }
-                return;
+                else if (dist < 13.0f) {
+                    agent.isStopped = false;
+                    agent.speed = originalSpeed * 0.8f;
+                    return;
+                }
             }
         }
-        
-        if (!isYielding) {
-            agent.isStopped = false;
-            agent.speed = originalSpeed;
-        }
-    }
 
-    // 順便把 HasObstacleInFront 也升級成 BoxCast (如果有用到的話)
-    protected bool HasObstacleInFront() {
-        Vector3 boxHalfExtents = new Vector3(1.2f, 0.5f, 0.1f);
-        RaycastHit hit;
-        if (Physics.BoxCast(transform.TransformPoint(sensorOffset), boxHalfExtents, transform.forward, out hit, transform.rotation, sensorLength)) {
-            if (hit.collider.transform.root != this.transform.root && hit.collider.CompareTag("Car")) return true;
+        if (!frontCarDetected) {
+            if (v2xForceStop) {
+                agent.isStopped = true;
+                agent.velocity = Vector3.zero;
+            } else if (!isYielding) {
+                agent.isStopped = false;
+                agent.speed = originalSpeed;
+            }
         }
-        return false;
     }
 
     protected bool IsInIntersection() {
@@ -438,8 +450,9 @@ public class NPC_WaypointDrive : MonoBehaviour
         return dist > 4f && !targetNode.isStopLine;
     }
 
-    // 更新輔助線，讓你在 Scene 視窗可以看到這個「方塊感測器」長怎樣
-    private void OnDrawGizmosSelected() {
+    // 💡【關鍵修改】將 OnDrawGizmosSelected 改為 OnDrawGizmos
+    // 讓所有 NPC 車輛在 Play 模式下都能持續顯示雷達範圍，方便除錯。
+    private void OnDrawGizmos() {
         Gizmos.color = new Color(1, 0, 0, 0.5f);
         Vector3 sensorPos = transform.TransformPoint(sensorOffset);
         Gizmos.matrix = Matrix4x4.TRS(sensorPos, transform.rotation, Vector3.one);
