@@ -130,16 +130,16 @@ public class NPC_AmbulanceDrive : NPC_WaypointDrive
             brain.AmbulanceApproach(this);
         }
 
-        // --- 2. 廣播給附近車輛，觸發 S 型避讓 (💡 這裡幫你補回來啦！) ---
+        // --- 2. 廣播給附近車輛 (💡 修改這裡：精準的超車與避讓指令) ---
         Collider[] hits = Physics.OverlapSphere(transform.position, detectRadius);
         foreach (var hit in hits) {
             var vehicleRoot = hit.transform.root.gameObject;
-            if (!vehicleRoot.CompareTag("Car")) continue;
-            if (vehicleRoot == this.gameObject) continue; // 不要廣播給自己
+            if (!vehicleRoot.CompareTag("Car") || vehicleRoot == this.gameObject) continue;
 
             var npc = vehicleRoot.GetComponent<NPC_WaypointDrive>();
             if (npc != null) {
-                // 呼叫前車執行 S 型避讓
+                // 💡 【修正】不要再強制所有人加速了！統一發送「救護車來了」的警告
+                // 讓 NPC 自己的腳本去判斷它現在應該「靠邊停」還是「加速過路口」
                 npc.YieldForAmbulance(this); 
             }
         }

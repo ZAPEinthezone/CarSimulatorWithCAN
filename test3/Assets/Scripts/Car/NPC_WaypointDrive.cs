@@ -48,42 +48,37 @@ public class NPC_WaypointDrive : MonoBehaviour
         // 如果已經在閃了，就不要理會
         if (isYielding || currentYieldState != YieldState.None || ambulance == null) return;
 
+        // 防呆：對向車直接無視
+        if (Vector3.Dot(transform.forward, ambulance.transform.forward) < -0.2f) return;
+
         Vector3 ambulancePos = ambulance.transform.position;
-        Vector3 ambulanceForward = ambulance.transform.forward;
+        if (Vector3.Distance(transform.position, ambulancePos) > 55f) return;
 
-        // 距離與方向過濾 (救護車在後方才需要讓)
-        float dist = Vector3.Distance(transform.position, ambulancePos);
-        if (dist > 55f) return;
-
+        // 救護車在前方的話不讓路
         Vector3 toAmbulance = (ambulancePos - transform.position).normalized;
-
-        // 💡【關鍵修正】放寬避讓條件，只要救護車不是在正前方，就應該讓路
-        // Dot > 0.2f 代表救護車在車頭前方約 78 度的扇形區域之外，都視為需要避讓
         if (Vector3.Dot(transform.forward, toAmbulance) > 0.2f) return;
 
-        // 💡【關鍵新增】如果車子正準備開往一個有停止線的路口，而且距離很近了，就不要執行S型避讓，避免在路口亂切
-        if (targetNode != null && targetNode.isStopLine)
-        {
-            float distToStopLine = Vector3.Distance(transform.position, targetNode.transform.position);
-            // 💡【關鍵修改】如果距離停止線小於 50 米，不執行S型避讓，而是稍微加速通過路口
-            if (distToStopLine < 50f)
-            {
-                // 確保車輛在網格上且未被其他指令停止
-                if (agent != null && agent.isActiveAndEnabled && agent.isOnNavMesh && !agent.isStopped) {
-                    agent.speed = originalSpeed * 1.5f; // 稍微加速
-                }
-                return; // 返回，不執行後續的 S_CurveYieldRoutine
-            }
-        }
-
-        //  如果車子已經在路口內，絕對不要做 S 型避讓！直接踩油門衝過去清空！
+        // 🚨【關鍵修正】：如果在路口內，絕對加速清空！
         if (IsInIntersection())
         {
             V2X_Accelerate();
             return;
         }
 
-        // 啟動 S 型避讓前，先確保在網格上，並強制解除煞車
+        // 🚨【關鍵修正】：如果距離停止線非常近 (把 50f 改成 15f)
+        if (targetNode != null && targetNode.isStopLine)
+        {
+            float distToStopLine = Vector3.Distance(transform.position, targetNode.transform.position);
+            
+            // 💡 只有距離路口 15 米內 (大約排在第一、第二台) 的車，才強制闖紅燈加速離開
+            if (distToStopLine < 15f)
+            {
+                V2X_Accelerate(); // 呼叫全速衝刺
+                return; // 不執行 S 型避讓
+            }
+        }
+
+        // 💡 如果以上都不是 (代表在一般道路，或是排在車陣後方)，就乖乖執行 S 型靠邊停車！
         if (agent.isActiveAndEnabled && agent.isOnNavMesh)
         {
             agent.isStopped = false;
@@ -244,23 +239,38 @@ public class NPC_WaypointDrive : MonoBehaviour
     protected virtual void Update() {
         if (targetNode == null || agent == null) return;
 
-        // 💡【關鍵修正】將防撞檢測移到最前面，確保每一幀都無條件發射雷達！
-        CheckForwardCollision();
-
-        // 避讓中，Update 絕對不插手
+        // 💡【關鍵修正】將避讓判斷移到最前面！只要在 S 型避讓中，就絕對不執行任何其他駕駛邏輯。
         if (isYielding) return; 
 
-        // 如果防撞系統已經決定要煞車，就優先聽它的，直接結束這一幀的判斷
-        if (agent.isStopped) return;
-
-        // 如果沒被防撞系統攔截，再判斷紅綠燈
-        bool stoppedByLight = HandleTrafficLights();
-        if (stoppedByLight) {
-            return; // 如果紅綠燈要求停車，也直接結束
+        // 💡【關鍵修正】重構 Update 邏輯，賦予 V2X 指令最高優先級
+        if (v2xForceGo)
+        {
+            if (agent.isActiveAndEnabled && agent.isOnNavMesh) {
+                agent.isStopped = false;
+            }
+            CheckForwardCollision();
+            // ❌ 刪除 return，讓它能繼續往下執行尋找下一個節點！
+        }
+        else if (v2xForceStop)
+        {
+            if (agent.isActiveAndEnabled && agent.isOnNavMesh) {
+                agent.isStopped = true;
+                agent.velocity = Vector3.zero;
+            }
+            return;
         }
 
-        // 節點導航邏輯
-        if (!agent.isStopped) {
+        // 如果沒有被 V2X 指令攔截，才執行正常駕駛邏輯
+        if (!v2xForceGo && !v2xForceStop) {
+            bool stoppedByLight = HandleTrafficLights();
+            if (stoppedByLight) return;
+
+            CheckForwardCollision();
+            if (agent.isStopped) return;
+        }
+
+        // 節點導航邏輯 (所有情況都需要)
+        if (!agent.isStopped && !isWaitingAtRedLight) {
             float distToTarget = Vector3.Distance(transform.position, targetNode.transform.position);
             
             // 必須「真的有路徑且到達」或「物理距離真的很近」才算抵達節點
@@ -415,31 +425,64 @@ public class NPC_WaypointDrive : MonoBehaviour
         foreach (RaycastHit hit in hits) {
             if (hit.collider.CompareTag("Car") && hit.collider.transform.root != this.transform.root) {
                 
-                // 💡 視覺化：打中的紅線
+                // 🚨【新增】：路口轉彎防卡死 (交會讓車) 邏輯 🚨
+                NPC_WaypointDrive otherCar = hit.collider.GetComponentInParent<NPC_WaypointDrive>();
+                if (otherCar != null) {
+                    // 1. 判斷兩台車的行駛方向夾角
+                    // Dot Product 越接近 1 代表同向(跟車)，接近 0 代表垂直交匯，接近 -1 代表對向。
+                    float directionDot = Vector3.Dot(transform.forward, otherCar.transform.forward);
+
+                    // 2. 如果不是單純的「前後排隊跟車」(例如兩車方向差異大於 36 度，Dot < 0.8)
+                    if (directionDot < 0.8f) {
+                        // 3. 【終極防卡死：比大小決定路權】
+                        // 比較兩台車的專屬身分證 ID。ID 大的擁有路權！
+                        if (this.gameObject.GetInstanceID() > otherCar.gameObject.GetInstanceID()) {
+                            // 我是老大！我有路權！
+                            // 使用 continue 忽略這次的碰撞偵測，直接去檢查下一條射線，車子就不會煞車了！
+                            continue; 
+                        }
+                    }
+                }
+                // 🚨 新增邏輯結束 🚨
+
+
                 Debug.DrawLine(startPos, hit.point, Color.red);
 
                 frontCarDetected = true;
                 float dist = hit.distance;
 
                 // 💡【關鍵修正】因為雷達起點後移，將煞車距離補回來
-                if (dist < 3.5f) { // 極限防護區，小於 3.5 米必須死煞
+                if (dist < 3.5f) { 
                     agent.isStopped = true;
                     agent.velocity = Vector3.zero;
                     return; 
                 }
-                // 💡【關鍵修正】當收到 V2X 加速指令 (v2xForceGo) 時，採用更寬鬆的防撞邏輯
-                else if (v2xForceGo)
+                if (v2xForceGo)
                 {
-                    // 收到加速指令時，只要不是快撞上，就保持半速跟車前進
-                    agent.isStopped = false;
-                    agent.speed = originalSpeed * 0.6f;
+                    // 正在逃離時，保持最高速，不減速
                     return;
                 }
-                else if (dist < 12.0f) { 
-                    // 在路口內，減速跟車
+
+                // 💡【路口路權判斷】解決轉彎時互相卡死的問題
+                if (IsInIntersection() && dist < 12.0f) {
+                    Vector3 toOtherCar = hit.transform.position - transform.position;
+                    float rightDot = Vector3.Dot(toOtherCar, transform.right);
+
+                    if (rightDot > 0.1f) { // 如果對方在我的右前方，我應該禮讓
+                        agent.isStopped = true;
+                        agent.velocity = Vector3.zero;
+                    }
+                    // 如果對方在左前方，我擁有路權，忽略碰撞繼續行駛
+                    return;
+                }
+                else if (dist < 12.0f) {                     
                     if (IsInIntersection()) {
+                        // 💡 【新增】：如果不是在逃離救護車，才乖乖跟車減速；
+                        // 如果正在逃離 (v2xForceGo = true)，就保持最高速，不要減速！
+                        if (!v2xForceGo) {
+                            agent.speed = originalSpeed * 0.6f;
+                        }
                         agent.isStopped = false;
-                        agent.speed = originalSpeed * 0.5f;
                     } else {
                         // 一般道路上，正常煞停
                         agent.isStopped = true;
