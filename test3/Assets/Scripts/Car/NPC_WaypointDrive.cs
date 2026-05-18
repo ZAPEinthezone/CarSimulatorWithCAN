@@ -11,6 +11,9 @@ public class NPC_WaypointDrive : MonoBehaviour
         [Header("行車與雷達")]
         public float sensorLength = 3f;
         public Vector3 sensorOffset = new Vector3(0, 0.5f, 2.5f);
+        
+        [Header("雷達尺寸 (半長寬)")]
+        public Vector3 boxHalfExtents = new Vector3(1.0f, 1.0f, 0.2f); 
 
         protected bool isYielding = false;
         protected float originalSpeed;
@@ -54,14 +57,9 @@ public class NPC_WaypointDrive : MonoBehaviour
 
         Vector3 toAmbulance = (ambulancePos - transform.position).normalized;
 
-        // 💡【雙重關鍵修正】防止對向車誤判
-        // 1. 位置判斷：救護車必須在我的後方 (與車頭夾角大於90度，Dot < 0)
-        if (Vector3.Dot(transform.forward, toAmbulance) > 0) return;
-
-        // 2. 方向判斷：救護車必須與我同方向行駛 (車頭方向夾角小於60度，Dot > 0.5)
-        //    這樣可以徹底排除對向來車的情況。
-        float directionMatch = Vector3.Dot(transform.forward, ambulance.transform.forward);
-        if (directionMatch < 0.5f) return;
+        // 💡【關鍵修正】放寬避讓條件，只要救護車不是在正前方，就應該讓路
+        // Dot > 0.2f 代表救護車在車頭前方約 78 度的扇形區域之外，都視為需要避讓
+        if (Vector3.Dot(transform.forward, toAmbulance) > 0.2f) return;
 
         // 💡【關鍵新增】如果車子正準備開往一個有停止線的路口，而且距離很近了，就不要執行S型避讓，避免在路口亂切
         if (targetNode != null && targetNode.isStopLine)
@@ -186,6 +184,19 @@ public class NPC_WaypointDrive : MonoBehaviour
                 }
             }
 
+            // 💡【關鍵修正】在 S 型避讓時，如果前方有車，不要完全煞停，而是慢速跟車
+            RaycastHit frontHit;
+            Vector3 frontSensorStart = transform.position + (Vector3.up * sensorOffset.y) + (transform.forward * sensorOffset.z);
+            if (Physics.BoxCast(frontSensorStart, boxHalfExtents, transform.forward, out frontHit, transform.rotation, 5.0f))
+            {
+                if (frontHit.collider.CompareTag("Car") && frontHit.collider.transform.root != this.transform.root)
+                {
+                    // 發現前車，切換為慢速跟車模式，而不是完全停止
+                    agent.speed = originalSpeed * 0.8f;
+                }
+            }
+
+
             if (timer > 2.0f)
             {
                 // 💡 調整避讓時的減速邏輯，使其更平滑，避免急停
@@ -196,6 +207,81 @@ public class NPC_WaypointDrive : MonoBehaviour
         }
 
         ReturnToTrack();
+    }
+
+
+    // 🚑 救護車呼叫：路口強制清空 (救護車靠近中)
+    // 請確保傳入 ambulanceForward 參數
+   public void IntersectionYield(Vector3 ambulanceForward) {
+        if (isYielding || currentYieldState != YieldState.None) return;
+
+        float directionMatch = Vector3.Dot(transform.forward, ambulanceForward);
+        if (directionMatch < 0.5f) return;
+
+        // 💡 關鍵過濾：如果我根本還沒靠近路口，就無視這個「強制停下」的廣播
+        if (targetNode != null && targetNode.isStopLine) {
+            float distToStopLine = Vector3.Distance(transform.position, targetNode.transform.position);
+            // 如果距離路口大於 15 米，我當作沒聽到，繼續開我的直行車
+            if (distToStopLine > 15f && !IsInIntersection()) return; 
+        } else if (!IsInIntersection()) {
+            return; // 目標根本不是路口，無視
+        }
+
+        // 執行停等邏輯
+        if (IsInIntersection()) {
+            agent.speed = originalSpeed * 0.5f; 
+            agent.isStopped = false;
+        } else {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+        }
+        
+        isYielding = true;
+        StartCoroutine(WaitAndReturn(5.0f)); 
+    }
+
+    
+    protected virtual void Update() {
+        if (targetNode == null || agent == null) return;
+
+        // 💡【關鍵修正】將防撞檢測移到最前面，確保每一幀都無條件發射雷達！
+        CheckForwardCollision();
+
+        // 避讓中，Update 絕對不插手
+        if (isYielding) return; 
+
+        // 如果防撞系統已經決定要煞車，就優先聽它的，直接結束這一幀的判斷
+        if (agent.isStopped) return;
+
+        // 如果沒被防撞系統攔截，再判斷紅綠燈
+        bool stoppedByLight = HandleTrafficLights();
+        if (stoppedByLight) {
+            return; // 如果紅綠燈要求停車，也直接結束
+        }
+
+        // 節點導航邏輯
+        if (!agent.isStopped) {
+            float distToTarget = Vector3.Distance(transform.position, targetNode.transform.position);
+            
+            // 必須「真的有路徑且到達」或「物理距離真的很近」才算抵達節點
+            bool reachedByNav = (!agent.pathPending && agent.hasPath && agent.remainingDistance < 2.5f);
+            bool reachedByPhysics = (distToTarget < 3.0f);
+
+            // 💡【關鍵防禦】只有在非等待紅燈的狀態下，才允許切換節點
+            if (!isWaitingAtRedLight && (reachedByNav || reachedByPhysics)) {
+                TrafficNode nextNode = targetNode.GetNextNode(); 
+                if (nextNode != null) {
+                    targetNode = nextNode;
+                    if (agent.isOnNavMesh) agent.SetDestination(targetNode.transform.position);
+                } else {
+                    Destroy(gameObject); // 真的開到道路盡頭才銷毀
+                }
+            }
+            // 🛡️ 防呆：如果路徑斷了(hasPath=false)，但離目標還很遠，強制重新導航，而不是自毀
+            else if (!agent.hasPath && !agent.pathPending && distToTarget >= 3.0f) {
+                if (agent.isOnNavMesh) agent.SetDestination(targetNode.transform.position);
+            }
+        }
     }
 
     protected bool EnsureAgentOnNavMesh() {
@@ -243,35 +329,6 @@ public class NPC_WaypointDrive : MonoBehaviour
             }
         }
     }
-    // 🚑 救護車呼叫：路口強制清空 (救護車靠近中)
-    // 請確保傳入 ambulanceForward 參數
-   public void IntersectionYield(Vector3 ambulanceForward) {
-        if (isYielding || currentYieldState != YieldState.None) return;
-
-        float directionMatch = Vector3.Dot(transform.forward, ambulanceForward);
-        if (directionMatch < 0.5f) return;
-
-        // 💡 關鍵過濾：如果我根本還沒靠近路口，就無視這個「強制停下」的廣播
-        if (targetNode != null && targetNode.isStopLine) {
-            float distToStopLine = Vector3.Distance(transform.position, targetNode.transform.position);
-            // 如果距離路口大於 15 米，我當作沒聽到，繼續開我的直行車
-            if (distToStopLine > 15f && !IsInIntersection()) return; 
-        } else if (!IsInIntersection()) {
-            return; // 目標根本不是路口，無視
-        }
-
-        // 執行停等邏輯
-        if (IsInIntersection()) {
-            agent.speed = originalSpeed * 0.5f; 
-            agent.isStopped = false;
-        } else {
-            agent.isStopped = true;
-            agent.velocity = Vector3.zero;
-        }
-        
-        isYielding = true;
-        StartCoroutine(WaitAndReturn(5.0f)); 
-    }
 
     // 輔助協程：等救護車過去後自動恢復
     private IEnumerator WaitAndReturn(float delay) {
@@ -287,49 +344,6 @@ public class NPC_WaypointDrive : MonoBehaviour
         agent.speed = originalSpeed;
         agent.acceleration = 8f; 
         if (targetNode != null) agent.SetDestination(targetNode.transform.position);
-    }
-
-    protected virtual void Update() {
-        if (targetNode == null || agent == null) return;
-
-        // 💡【關鍵修正】將防撞檢測移到最前面，確保每一幀都無條件發射雷達！
-        CheckForwardCollision();
-
-        // 避讓中，Update 絕對不插手
-        if (isYielding) return; 
-
-        // 如果防撞系統已經決定要煞車，就優先聽它的，直接結束這一幀的判斷
-        if (agent.isStopped) return;
-
-        // 如果沒被防撞系統攔截，再判斷紅綠燈
-        bool stoppedByLight = HandleTrafficLights();
-        if (stoppedByLight) {
-            return; // 如果紅綠燈要求停車，也直接結束
-        }
-
-        // 節點導航邏輯
-        if (!agent.isStopped) {
-            float distToTarget = Vector3.Distance(transform.position, targetNode.transform.position);
-            
-            // 必須「真的有路徑且到達」或「物理距離真的很近」才算抵達節點
-            bool reachedByNav = (!agent.pathPending && agent.hasPath && agent.remainingDistance < 2.5f);
-            bool reachedByPhysics = (distToTarget < 3.0f);
-
-            // 💡【關鍵防禦】只有在非等待紅燈的狀態下，才允許切換節點
-            if (!isWaitingAtRedLight && (reachedByNav || reachedByPhysics)) {
-                TrafficNode nextNode = targetNode.GetNextNode(); 
-                if (nextNode != null) {
-                    targetNode = nextNode;
-                    if (agent.isOnNavMesh) agent.SetDestination(targetNode.transform.position);
-                } else {
-                    Destroy(gameObject); // 真的開到道路盡頭才銷毀
-                }
-            }
-            // 🛡️ 防呆：如果路徑斷了(hasPath=false)，但離目標還很遠，強制重新導航，而不是自毀
-            else if (!agent.hasPath && !agent.pathPending && distToTarget >= 3.0f) {
-                if (agent.isOnNavMesh) agent.SetDestination(targetNode.transform.position);
-            }
-        }
     }
 
     protected virtual bool HandleTrafficLights() {
@@ -372,8 +386,6 @@ public class NPC_WaypointDrive : MonoBehaviour
     }
 
     protected virtual void CheckForwardCollision() {
-        Vector3 boxHalfExtents = new Vector3(0.8f, 1.0f, 0.5f);
-        
         // 1. 先算出絕對平行的正前方
         Vector3 flatForward = transform.forward;
         // 💡【關鍵修正】根據您的建議，讓雷達稍微往下瞄準 (-0.1f)，更能抓到低底盤的車輛
@@ -410,16 +422,26 @@ public class NPC_WaypointDrive : MonoBehaviour
                 float dist = hit.distance;
 
                 // 💡【關鍵修正】因為雷達起點後移，將煞車距離補回來
-                if (dist < 5.0f) { // 原本是 3.5f，加大！
+                if (dist < 3.5f) { // 極限防護區，小於 3.5 米必須死煞
                     agent.isStopped = true;
                     agent.velocity = Vector3.zero;
                     return; 
                 }
-                else if (dist < 12.0f) { // 原本是 10.0f
-                    if (IsInIntersection() || v2xForceGo) {
+                // 💡【關鍵修正】當收到 V2X 加速指令 (v2xForceGo) 時，採用更寬鬆的防撞邏輯
+                else if (v2xForceGo)
+                {
+                    // 收到加速指令時，只要不是快撞上，就保持半速跟車前進
+                    agent.isStopped = false;
+                    agent.speed = originalSpeed * 0.6f;
+                    return;
+                }
+                else if (dist < 12.0f) { 
+                    // 在路口內，減速跟車
+                    if (IsInIntersection()) {
                         agent.isStopped = false;
                         agent.speed = originalSpeed * 0.5f;
                     } else {
+                        // 一般道路上，正常煞停
                         agent.isStopped = true;
                         agent.velocity = Vector3.zero;
                     }
@@ -439,7 +461,10 @@ public class NPC_WaypointDrive : MonoBehaviour
                 agent.velocity = Vector3.zero;
             } else if (!isYielding) {
                 agent.isStopped = false;
-                agent.speed = originalSpeed;
+                // 💡 如果是強制通行狀態，即使前方沒車也要維持加速
+                if (!v2xForceGo) {
+                    agent.speed = originalSpeed;
+                }
             }
         }
     }
@@ -453,11 +478,11 @@ public class NPC_WaypointDrive : MonoBehaviour
     // 💡【關鍵修改】將 OnDrawGizmosSelected 改為 OnDrawGizmos
     // 讓所有 NPC 車輛在 Play 模式下都能持續顯示雷達範圍，方便除錯。
     private void OnDrawGizmos() {
-        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.color = new Color(1, 0, 0, 0.3f); // 讓顏色淡一點，避免擋住視線
         Vector3 sensorPos = transform.TransformPoint(sensorOffset);
         Gizmos.matrix = Matrix4x4.TRS(sensorPos, transform.rotation, Vector3.one);
-        // 畫出掃描的範圍
-        Gizmos.DrawWireCube(Vector3.forward * (sensorLength / 2f), new Vector3(2.4f, 1f, sensorLength));
+        // 💡【關鍵修正】畫圖時也使用共用的 boxHalfExtents 變數，確保視覺與物理同步
+        Gizmos.DrawWireCube(Vector3.forward * (sensorLength / 2f), boxHalfExtents * 2);
     }
 
     // 🚑 救護車 V2X 指令：加速逃離

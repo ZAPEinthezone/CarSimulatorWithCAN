@@ -16,14 +16,34 @@ public class IntersectionV2X : MonoBehaviour
     [Header("🚗 路口中央保留區")]
     public float intersectionCoreRadius = 30f; 
 
+    // --- 💡 新增的狀態變數 ---
     private float resetTimer = 0f;
+    private bool isOverridden = false; // 是否正處於被救護車覆寫的狀態
+    private Dictionary<GameObject, bool> originalLightStates = new Dictionary<GameObject, bool>(); // 用來記住燈號原始狀態
 
     public void AmbulanceApproach(NPC_AmbulanceDrive ambulance)
     {
+        // 如果不是在覆寫狀態，就先儲存當前的燈號狀態
+        if (!isOverridden)
+        {
+            originalLightStates.Clear();
+            StoreLightStates(verticalRed);
+            StoreLightStates(verticalYellow);
+            StoreLightStates(verticalGreen);
+            StoreLightStates(horizontalRed);
+            StoreLightStates(horizontalYellow);
+            StoreLightStates(horizontalGreen);
+        }
+
+        isOverridden = true;
+
         // --- 🚑 直向：強制變綠 ---
         foreach(var r in verticalRed) if(r != null) r.SetActive(false);
         foreach(var y in verticalYellow) if(y != null) y.SetActive(false);
         foreach(var g in verticalGreen) if(g != null) g.SetActive(true);
+
+        // 💡【關鍵新增】直接找到對應的 TrafficNode，強制更新其內部狀態為綠燈
+        ForceUpdateStopLineNodes(verticalRed, false);
 
         // --- 🛑 橫向：強制變紅 ---
         foreach(var r in horizontalRed) if(r != null) r.SetActive(true);
@@ -31,16 +51,17 @@ public class IntersectionV2X : MonoBehaviour
         foreach(var g in horizontalGreen) if(g != null) g.SetActive(false);
 
         NotifyNearbyNPCs(ambulance);
-        resetTimer = 5.0f; 
+        resetTimer = 8.0f; // 延長重設時間
     }
 
     void Update() 
     {
-        if (resetTimer > 0) 
+        if (isOverridden && resetTimer > 0) 
         {
             resetTimer -= Time.deltaTime;
             if (resetTimer <= 0) 
             {
+                RestoreOriginalLights(); // 恢復燈號
                 ResetNPCs();
             }
         }
@@ -106,6 +127,46 @@ public class IntersectionV2X : MonoBehaviour
             var vehicleRoot = h.transform.root.gameObject;
             var npc = vehicleRoot.GetComponent<NPC_WaypointDrive>();
             if (npc != null) npc.V2X_Reset();
+        }
+    }
+
+    // --- 💡 以下為新增的輔助方法 ---
+
+    // 儲存燈號狀態
+    void StoreLightStates(List<GameObject> lights)
+    {
+        foreach (var light in lights)
+        {
+            if (light != null && !originalLightStates.ContainsKey(light))
+            {
+                originalLightStates.Add(light, light.activeSelf);
+            }
+        }
+    }
+
+    // 恢復燈號狀態
+    void RestoreOriginalLights()
+    {
+        if (!isOverridden) return;
+
+        foreach (var entry in originalLightStates)
+        {
+            if (entry.Key != null)
+            {
+                entry.Key.SetActive(entry.Value);
+            }
+        }
+        isOverridden = false;
+    }
+
+    // 強制更新停止線節點的狀態
+    void ForceUpdateStopLineNodes(List<GameObject> redLights, bool isRed)
+    {
+        TrafficNode[] allNodes = FindObjectsOfType<TrafficNode>();
+        foreach (var node in allNodes) {
+            if (node.isStopLine && redLights.Contains(node.redLightModel)) {
+                node.currentIsRed = isRed;
+            }
         }
     }
 }

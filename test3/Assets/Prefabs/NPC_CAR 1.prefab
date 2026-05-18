@@ -119,8 +119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetNode: {fileID: 0}
-  sensorLength: 2.36
-  sensorOffset: {x: 0, y: 0.7, z: 2.5}
+  sensorLength: 1
+  sensorOffset: {x: 0, y: 1, z: 2.3}
+  boxHalfExtents: {x: 0.5, y: 0.5, z: 0.2}
 --- !u!1001 &9077465991129184209
 PrefabInstance:
   m_ObjectHideFlags: 0
