@@ -3,10 +3,31 @@ using System.Collections.Generic;
 
 public class TrafficNode : MonoBehaviour
 {
-    [Header("下一站的節點 (可放多個)")]
     public List<TrafficNode> nextNodes;
 
-    // 🌟 這個魔法會在 Scene 視窗畫出黃色的連線，讓你看清楚路網！
+    [Header("🚦 紅綠燈系統設定")]
+    [Tooltip("打勾代表這個點是路口的停止線")]
+    public bool isStopLine = false;   
+    
+    [Tooltip("目前是不是紅燈？(這個會自動跟隨套件跳動！)")]
+    public bool currentIsRed = false; 
+
+    [Header("🔌 連接紅綠燈套件")]
+    [Tooltip("把負責紅燈的那顆『燈泡物件』拖進來！")]
+    public GameObject redLightModel; // 👈 就是漏掉這超級關鍵的一行啦！
+
+    // 每一幀檢查紅綠燈狀態
+    void Update()
+    {
+        // 如果這個點是停止線，而且你有把紅燈模型拖給它
+        if (isStopLine && redLightModel != null)
+        {
+            // 翻譯蒟蒻：如果那顆紅燈物件被打開了 (SetActive(true))，就代表現在是紅燈！
+            currentIsRed = redLightModel.activeInHierarchy;
+        }
+    }
+
+    // 畫黃線的視覺化功能
     private void OnDrawGizmos()
     {
         if (nextNodes == null) return;
@@ -23,7 +44,7 @@ public class TrafficNode : MonoBehaviour
         }
     }
 
-    // 讓車子呼叫這個函數來「問路」
+    // 取得下一個節點的功能
     public TrafficNode GetNextNode()
     {
         if (nextNodes == null || nextNodes.Count == 0) return null; // 沒路了(死胡同)
