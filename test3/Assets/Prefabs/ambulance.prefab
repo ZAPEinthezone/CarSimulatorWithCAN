@@ -355,6 +355,7 @@ MonoBehaviour:
   targetNode: {fileID: 0}
   sensorLength: 8
   sensorOffset: {x: 0, y: 0.5, z: 0.5}
+  boxHalfExtents: {x: 1.2, y: 1, z: 0.2}
   isEmergency: 0
   emergencySpeed: 15
   detectRadius: 60
